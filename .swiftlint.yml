@@ -86,6 +86,7 @@ identifier_name:
 
 indentation_width:
   indentation_width: 2
+  include_comments: false
 
 line_length:
   ignores_urls: true
