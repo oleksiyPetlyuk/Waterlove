@@ -25,14 +25,12 @@ platform :ios do
 
   desc "Run tests"
   lane :test do
-    setup_ci if ENV['CI']
     lint
     scan
   end
 
   desc "Build the app"
   lane :create_app do
-    setup_ci if ENV['CI']
     lint
     gym(export_method: "development")
   end
