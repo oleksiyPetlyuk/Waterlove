@@ -25,6 +25,8 @@ jobs:
 
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
+        env:
+          ImageOS: macos-11
         with:
           bundler-cache: true
 
