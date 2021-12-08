@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FA54F06B275A66A8007053AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06A275A66A8007053AA /* AppDelegate.swift */; };
 		FA54F06D275A66A8007053AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06C275A66A8007053AA /* SceneDelegate.swift */; };
-		FA54F06F275A66A8007053AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06E275A66A8007053AA /* ViewController.swift */; };
 		FA54F072275A66A8007053AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54F070275A66A8007053AA /* Main.storyboard */; };
 		FA54F075275A66A8007053AA /* Waterlove.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA54F073275A66A8007053AA /* Waterlove.xcdatamodeld */; };
 		FA54F077275A66AD007053AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA54F076275A66AD007053AA /* Assets.xcassets */; };
@@ -18,6 +17,18 @@
 		FA54F08F275A66AD007053AA /* WaterloveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F08E275A66AD007053AA /* WaterloveUITests.swift */; };
 		FA54F091275A66AD007053AA /* WaterloveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F090275A66AD007053AA /* WaterloveUITestsLaunchTests.swift */; };
 		FA54F0A4275A6D2B007053AA /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = FA54F0A3275A6D2B007053AA /* Rswift */; };
+		FA54F0AA275F97FE007053AA /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0A9275F97FE007053AA /* AppFlowController.swift */; };
+		FA54F0AD275F99C2007053AA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0AC275F99C2007053AA /* UIViewController+Extensions.swift */; };
+		FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0AE275F9DA0007053AA /* OnboardingFlowController.swift */; };
+		FA54F0B3275FA108007053AA /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0B2275FA108007053AA /* TutorialViewController.swift */; };
+		FA54F0B6275FA14B007053AA /* WaterIntakeCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0B5275FA14B007053AA /* WaterIntakeCalculatorViewController.swift */; };
+		FA54F0B9275FA93D007053AA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA54F0B8275FA93D007053AA /* SnapKit */; };
+		FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0BB275FBC7B007053AA /* TutorialPageViewController.swift */; };
+		FA54F0C2275FCFDD007053AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0A6275A6E34007053AA /* R.generated.swift */; };
+		FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C72760F241007053AA /* MainFlowController.swift */; };
+		FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */; };
+		FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */; };
+		FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0D12760F2D9007053AA /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +52,6 @@
 		FA54F067275A66A8007053AA /* Waterlove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waterlove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA54F06A275A66A8007053AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA54F06C275A66A8007053AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA54F06E275A66A8007053AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA54F071275A66A8007053AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA54F074275A66A8007053AA /* Waterlove.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Waterlove.xcdatamodel; sourceTree = "<group>"; };
 		FA54F076275A66AD007053AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +67,16 @@
 		FA54F09F275A6C00007053AA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FA54F0A0275A6C00007053AA /* .ruby-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".ruby-version"; sourceTree = "<group>"; };
 		FA54F0A6275A6E34007053AA /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		FA54F0A9275F97FE007053AA /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
+		FA54F0AC275F99C2007053AA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FA54F0AE275F9DA0007053AA /* OnboardingFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowController.swift; sourceTree = "<group>"; };
+		FA54F0B2275FA108007053AA /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		FA54F0B5275FA14B007053AA /* WaterIntakeCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculatorViewController.swift; sourceTree = "<group>"; };
+		FA54F0BB275FBC7B007053AA /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		FA54F0C72760F241007053AA /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHydrationViewController.swift; sourceTree = "<group>"; };
+		FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FA54F0D12760F2D9007053AA /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA54F0A4275A6D2B007053AA /* Rswift in Frameworks */,
+				FA54F0B9275FA93D007053AA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,9 +134,10 @@
 		FA54F069275A66A8007053AA /* Waterlove */ = {
 			isa = PBXGroup;
 			children = (
+				FA54F0B0275F9F96007053AA /* Feature */,
+				FA54F0A7275F97BF007053AA /* Library */,
 				FA54F06A275A66A8007053AA /* AppDelegate.swift */,
 				FA54F06C275A66A8007053AA /* SceneDelegate.swift */,
-				FA54F06E275A66A8007053AA /* ViewController.swift */,
 				FA54F070275A66A8007053AA /* Main.storyboard */,
 				FA54F076275A66AD007053AA /* Assets.xcassets */,
 				FA54F078275A66AD007053AA /* LaunchScreen.storyboard */,
@@ -142,6 +164,86 @@
 			path = WaterloveUITests;
 			sourceTree = "<group>";
 		};
+		FA54F0A7275F97BF007053AA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FA54F0AB275F999F007053AA /* Extensions */,
+				FA54F0A8275F97CE007053AA /* Flow */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		FA54F0A8275F97CE007053AA /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				FA54F0A9275F97FE007053AA /* AppFlowController.swift */,
+				FA54F0AE275F9DA0007053AA /* OnboardingFlowController.swift */,
+				FA54F0C72760F241007053AA /* MainFlowController.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		FA54F0AB275F999F007053AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA54F0AC275F99C2007053AA /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA54F0B0275F9F96007053AA /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				FA54F0CE2760F2C1007053AA /* Settings */,
+				FA54F0CC2760F2B6007053AA /* History */,
+				FA54F0B4275FA12B007053AA /* WaterIntakeCalculator */,
+				FA54F0B1275F9F9C007053AA /* Tutorial */,
+				FA54F0CB2760F2A0007053AA /* CurrentHydration */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		FA54F0B1275F9F9C007053AA /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				FA54F0B2275FA108007053AA /* TutorialViewController.swift */,
+				FA54F0BB275FBC7B007053AA /* TutorialPageViewController.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		FA54F0B4275FA12B007053AA /* WaterIntakeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				FA54F0B5275FA14B007053AA /* WaterIntakeCalculatorViewController.swift */,
+			);
+			path = WaterIntakeCalculator;
+			sourceTree = "<group>";
+		};
+		FA54F0CB2760F2A0007053AA /* CurrentHydration */ = {
+			isa = PBXGroup;
+			children = (
+				FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */,
+			);
+			path = CurrentHydration;
+			sourceTree = "<group>";
+		};
+		FA54F0CC2760F2B6007053AA /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FA54F0D12760F2D9007053AA /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		FA54F0CE2760F2C1007053AA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +264,7 @@
 			name = Waterlove;
 			packageProductDependencies = (
 				FA54F0A3275A6D2B007053AA /* Rswift */,
+				FA54F0B8275FA93D007053AA /* SnapKit */,
 			);
 			productName = Waterlove;
 			productReference = FA54F067275A66A8007053AA /* Waterlove.app */;
@@ -237,6 +340,7 @@
 			mainGroup = FA54F05E275A66A8007053AA;
 			packageReferences = (
 				FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */,
+				FA54F0B7275FA93D007053AA /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = FA54F068275A66A8007053AA /* Products */;
 			projectDirPath = "";
@@ -321,10 +425,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA54F06F275A66A8007053AA /* ViewController.swift in Sources */,
+				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,
+				FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */,
+				FA54F0B3275FA108007053AA /* TutorialViewController.swift in Sources */,
 				FA54F06B275A66A8007053AA /* AppDelegate.swift in Sources */,
 				FA54F06D275A66A8007053AA /* SceneDelegate.swift in Sources */,
+				FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */,
+				FA54F0B6275FA14B007053AA /* WaterIntakeCalculatorViewController.swift in Sources */,
 				FA54F075275A66A8007053AA /* Waterlove.xcdatamodeld in Sources */,
+				FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */,
+				FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */,
+				FA54F0AD275F99C2007053AA /* UIViewController+Extensions.swift in Sources */,
+				FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */,
+				FA54F0C2275FCFDD007053AA /* R.generated.swift in Sources */,
+				FA54F0AA275F97FE007053AA /* AppFlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -508,10 +623,9 @@
 				INFOPLIST_FILE = Waterlove/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,10 +651,9 @@
 				INFOPLIST_FILE = Waterlove/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -700,6 +813,14 @@
 				minimumVersion = 5.4.0;
 			};
 		};
+		FA54F0B7275FA93D007053AA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -707,6 +828,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */;
 			productName = Rswift;
+		};
+		FA54F0B8275FA93D007053AA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA54F0B7275FA93D007053AA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 
