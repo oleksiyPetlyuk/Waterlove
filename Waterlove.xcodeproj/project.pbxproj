@@ -29,6 +29,7 @@
 		FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */; };
 		FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */; };
 		FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0D12760F2D9007053AA /* HistoryViewController.swift */; };
+		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHydrationViewController.swift; sourceTree = "<group>"; };
 		FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA54F0D12760F2D9007053AA /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		FA54F0A7275F97BF007053AA /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FAC2824B2762809C00A031BA /* Service */,
 				FA54F0AB275F999F007053AA /* Extensions */,
 				FA54F0A8275F97CE007053AA /* Flow */,
 			);
@@ -242,6 +245,14 @@
 				FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		FAC2824B2762809C00A031BA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +444,7 @@
 				FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */,
 				FA54F0B6275FA14B007053AA /* WaterIntakeCalculatorViewController.swift in Sources */,
 				FA54F075275A66A8007053AA /* Waterlove.xcdatamodeld in Sources */,
+				FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */,
 				FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */,
 				FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */,
 				FA54F0AD275F99C2007053AA /* UIViewController+Extensions.swift in Sources */,

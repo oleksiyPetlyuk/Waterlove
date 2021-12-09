@@ -70,34 +70,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water intake calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gck-zT-0zj">
-                                <rect key="frame" x="120" y="442.5" width="174" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zka-lp-wb9">
-                                <rect key="frame" x="179" y="763" width="56" height="31"/>
+                                <rect key="frame" x="144.5" y="485.5" width="125" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="vMF-zQ-Qcp"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start">
+                                    <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapSaveWaterIntakeResults:" destination="x2D-Gv-3lq" eventType="touchUpInside" id="GlB-lh-eo7"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2hm-pV-6vK">
+                                <rect key="frame" x="16" y="243" width="382" height="32"/>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                                <connections>
+                                    <action selector="genderValueChanged:" destination="x2D-Gv-3lq" eventType="valueChanged" id="rgy-cd-sBM"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.45 L" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk3-HL-VGF">
+                                <rect key="frame" x="155.5" y="104" width="103" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8d-oy-vd3">
+                                <rect key="frame" x="16" y="206" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight, kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVn-6c-6pT">
+                                <rect key="frame" x="16" y="306" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="AuV-oh-jY5">
+                                <rect key="frame" x="14" y="357.5" width="386" height="31"/>
+                                <connections>
+                                    <action selector="weightValueChanged:" destination="x2D-Gv-3lq" eventType="valueChanged" id="R5t-oN-JNp"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Gw-PW-w7a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="1Gw-PW-w7a" firstAttribute="bottom" secondItem="zka-lp-wb9" secondAttribute="bottom" constant="68" id="D6c-J1-gaQ"/>
+                            <constraint firstItem="1Gw-PW-w7a" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xVn-6c-6pT" secondAttribute="trailing" constant="16" id="59a-X5-HT4"/>
+                            <constraint firstItem="xVn-6c-6pT" firstAttribute="top" secondItem="2hm-pV-6vK" secondAttribute="bottom" constant="32" id="8XJ-tQ-UnB"/>
+                            <constraint firstItem="1Gw-PW-w7a" firstAttribute="trailing" secondItem="2hm-pV-6vK" secondAttribute="trailing" constant="16" id="9nE-Mi-iam"/>
+                            <constraint firstItem="r8d-oy-vd3" firstAttribute="leading" secondItem="1Gw-PW-w7a" secondAttribute="leading" constant="16" id="AeJ-pB-cjx"/>
+                            <constraint firstItem="2hm-pV-6vK" firstAttribute="leading" secondItem="1Gw-PW-w7a" secondAttribute="leading" constant="16" id="CbM-tE-FH2"/>
                             <constraint firstItem="zka-lp-wb9" firstAttribute="centerX" secondItem="1Gw-PW-w7a" secondAttribute="centerX" id="Gcl-Ur-VG3"/>
-                            <constraint firstItem="gck-zT-0zj" firstAttribute="centerY" secondItem="1Gw-PW-w7a" secondAttribute="centerY" id="kg2-3j-MJM"/>
-                            <constraint firstItem="gck-zT-0zj" firstAttribute="centerX" secondItem="1Gw-PW-w7a" secondAttribute="centerX" id="z09-NY-1Ay"/>
+                            <constraint firstItem="AuV-oh-jY5" firstAttribute="top" secondItem="xVn-6c-6pT" secondAttribute="bottom" constant="30.5" id="GuC-5N-coW"/>
+                            <constraint firstItem="zka-lp-wb9" firstAttribute="top" secondItem="AuV-oh-jY5" secondAttribute="bottom" constant="98" id="ID5-Lp-cVg"/>
+                            <constraint firstItem="AuV-oh-jY5" firstAttribute="leading" secondItem="1Gw-PW-w7a" secondAttribute="leading" constant="16" id="Isg-2h-lQe"/>
+                            <constraint firstItem="rk3-HL-VGF" firstAttribute="centerX" secondItem="1Gw-PW-w7a" secondAttribute="centerX" id="NuJ-ah-W4b"/>
+                            <constraint firstItem="1Gw-PW-w7a" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r8d-oy-vd3" secondAttribute="trailing" constant="16" id="V8Z-fp-1UI"/>
+                            <constraint firstItem="1Gw-PW-w7a" firstAttribute="trailing" secondItem="AuV-oh-jY5" secondAttribute="trailing" constant="16" id="VHV-t7-P5q"/>
+                            <constraint firstItem="xVn-6c-6pT" firstAttribute="leading" secondItem="1Gw-PW-w7a" secondAttribute="leading" constant="16" id="dIc-Pc-oJh"/>
+                            <constraint firstItem="2hm-pV-6vK" firstAttribute="top" secondItem="r8d-oy-vd3" secondAttribute="bottom" constant="16" id="ppa-Bi-yaJ"/>
+                            <constraint firstItem="rk3-HL-VGF" firstAttribute="top" secondItem="1Gw-PW-w7a" secondAttribute="top" constant="60" id="xAF-mf-0Pe"/>
+                            <constraint firstItem="r8d-oy-vd3" firstAttribute="top" secondItem="rk3-HL-VGF" secondAttribute="bottom" constant="60" id="y62-ba-UZa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="genderControl" destination="2hm-pV-6vK" id="hk7-J9-ghG"/>
+                        <outlet property="totalWaterAmountLabel" destination="rk3-HL-VGF" id="ghv-2L-p8c"/>
+                        <outlet property="weightSlider" destination="AuV-oh-jY5" id="R47-NU-4Do"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJm-90-00W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="757"/>
+            <point key="canvasLocation" x="31.884057971014496" y="756.69642857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jRn-oH-9WQ">
@@ -328,6 +384,12 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
