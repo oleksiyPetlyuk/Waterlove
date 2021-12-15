@@ -8,9 +8,14 @@
 import UIKit
 
 class TutorialPageViewController: UIPageViewController {
-  var didUpdatePageCount: ((Int) -> Void)?
+  struct Props {
+    let onUpdatePageCount: CommandWith<Int>
+    let onUpdatePageIndex: CommandWith<Int>
 
-  var didUpdatePageIndex: ((Int) -> Void)?
+    static let initial = Props(onUpdatePageCount: .nop, onUpdatePageIndex: .nop)
+  }
+
+  private(set) var props: Props = .initial
 
   private(set) var orderedViewControllers: [UIViewController] = []
 
@@ -21,6 +26,12 @@ class TutorialPageViewController: UIPageViewController {
     delegate = self
 
     setupViewControllers()
+  }
+
+  func render(_ props: Props) {
+    self.props = props
+
+    view.setNeedsLayout()
   }
 
   private func setupViewControllers() {
@@ -40,9 +51,7 @@ class TutorialPageViewController: UIPageViewController {
       scrollTo(viewController: initialViewController)
     }
 
-    if let didUpdatePageCount = didUpdatePageCount {
-      didUpdatePageCount(orderedViewControllers.count)
-    }
+    props.onUpdatePageCount.perform(with: orderedViewControllers.count)
   }
 
   /**
@@ -90,10 +99,9 @@ class TutorialPageViewController: UIPageViewController {
    */
   private func notifyAboutNewIndex() {
     if
-      let didUpdatePageIndex = didUpdatePageIndex,
       let firstViewController = viewControllers?.first,
       let index = orderedViewControllers.firstIndex(of: firstViewController) {
-      didUpdatePageIndex(index)
+      props.onUpdatePageIndex.perform(with: index)
     }
   }
 }

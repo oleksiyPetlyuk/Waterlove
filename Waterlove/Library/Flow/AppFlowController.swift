@@ -16,7 +16,7 @@ final class AppFlowController: UIViewController {
   private func startTutorial() {
     let onboardingFlow = OnboardingFlowController()
 
-    onboardingFlow.onBoardingDidFinish = { [weak self] in
+    onboardingFlow.onboardingDidFinish = { [weak self] in
       self?.remove(childController: onboardingFlow)
       self?.startMain()
     }

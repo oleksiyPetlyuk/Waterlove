@@ -22,13 +22,14 @@
 		FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0AE275F9DA0007053AA /* OnboardingFlowController.swift */; };
 		FA54F0B3275FA108007053AA /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0B2275FA108007053AA /* TutorialViewController.swift */; };
 		FA54F0B6275FA14B007053AA /* WaterIntakeCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0B5275FA14B007053AA /* WaterIntakeCalculatorViewController.swift */; };
-		FA54F0B9275FA93D007053AA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA54F0B8275FA93D007053AA /* SnapKit */; };
 		FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0BB275FBC7B007053AA /* TutorialPageViewController.swift */; };
 		FA54F0C2275FCFDD007053AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0A6275A6E34007053AA /* R.generated.swift */; };
 		FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C72760F241007053AA /* MainFlowController.swift */; };
 		FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */; };
 		FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */; };
 		FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0D12760F2D9007053AA /* HistoryViewController.swift */; };
+		FA59AC052769FEB900EF02A3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA59AC042769FEB900EF02A3 /* SnapKit */; };
+		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHydrationViewController.swift; sourceTree = "<group>"; };
 		FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA54F0D12760F2D9007053AA /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA54F0A4275A6D2B007053AA /* Rswift in Frameworks */,
-				FA54F0B9275FA93D007053AA /* SnapKit in Frameworks */,
+				FA59AC052769FEB900EF02A3 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +171,7 @@
 		FA54F0A7275F97BF007053AA /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FAA30ED3276779400031B17E /* Utils */,
 				FAC2824B2762809C00A031BA /* Service */,
 				FA54F0AB275F999F007053AA /* Extensions */,
 				FA54F0A8275F97CE007053AA /* Flow */,
@@ -247,6 +250,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		FAA30ED3276779400031B17E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FAA30ED4276779490031B17E /* Command.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		FAC2824B2762809C00A031BA /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,7 +286,7 @@
 			name = Waterlove;
 			packageProductDependencies = (
 				FA54F0A3275A6D2B007053AA /* Rswift */,
-				FA54F0B8275FA93D007053AA /* SnapKit */,
+				FA59AC042769FEB900EF02A3 /* SnapKit */,
 			);
 			productName = Waterlove;
 			productReference = FA54F067275A66A8007053AA /* Waterlove.app */;
@@ -351,7 +362,7 @@
 			mainGroup = FA54F05E275A66A8007053AA;
 			packageReferences = (
 				FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */,
-				FA54F0B7275FA93D007053AA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FA59AC032769FEB900EF02A3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = FA54F068275A66A8007053AA /* Products */;
 			projectDirPath = "";
@@ -436,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA30ED5276779490031B17E /* Command.swift in Sources */,
 				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,
 				FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */,
 				FA54F0B3275FA108007053AA /* TutorialViewController.swift in Sources */,
@@ -825,7 +837,7 @@
 				minimumVersion = 5.4.0;
 			};
 		};
-		FA54F0B7275FA93D007053AA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		FA59AC032769FEB900EF02A3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -841,9 +853,9 @@
 			package = FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */;
 			productName = Rswift;
 		};
-		FA54F0B8275FA93D007053AA /* SnapKit */ = {
+		FA59AC042769FEB900EF02A3 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FA54F0B7275FA93D007053AA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = FA59AC032769FEB900EF02A3 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

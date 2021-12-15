@@ -6,13 +6,33 @@
 //
 
 import UIKit
-import SnapKit
 
 class WaterIntakeCalculatorViewController: UIViewController {
+  // swiftlint:disable nesting
+  struct Props {
+    let totalWaterAmount: Float
+    let gender: Field<WaterIntakeCalculator.Gender>
+    let weight: Field<UInt8>
+    let onSaveWaterIntakeResults: Command
+
+    struct Field<T> {
+      let value: T
+      let onUpdate: CommandWith<T>
+    }
+
+    static let initial = Props(
+      totalWaterAmount: 3.0,
+      gender: .init(value: .male, onUpdate: .nop),
+      weight: .init(value: 75, onUpdate: .nop),
+      onSaveWaterIntakeResults: .nop
+    )
+  }
+  // swiftlint:enable nesting
+
+  private(set) var props: Props = .initial
+
   @IBOutlet private weak var totalWaterAmountLabel: UILabel!
-
   @IBOutlet private weak var genderControl: UISegmentedControl!
-
   @IBOutlet private weak var weightSlider: UISlider!
 
   private var currentWeightLabel: UILabel = {
@@ -25,41 +45,47 @@ class WaterIntakeCalculatorViewController: UIViewController {
     return label
   }()
 
-  private let waterIntakeCalculator = WaterIntakeCalculator()
-
-  var saveWaterIntakeResultsHandler: (() -> Void)?
-
   override func viewDidLoad() {
     super.viewDidLoad()
 
     view.addSubview(currentWeightLabel)
-    updateTotalWaterAmountLabel()
   }
 
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
 
-    updateCurrentWeightLabel()
+    render()
   }
 
-  @IBAction func didTapSaveWaterIntakeResults(_ sender: UIButton) {
-    if let saveWaterIntakeResultsHandler = saveWaterIntakeResultsHandler {
-      saveWaterIntakeResultsHandler()
-    }
+  func render(_ props: Props) {
+    self.props = props
+
+    view.setNeedsLayout()
   }
 
-  @IBAction func genderValueChanged(_ sender: UISegmentedControl) {
-    updateTotalWaterAmountLabel()
+  private func render() {
+    guard isViewLoaded else { return }
+
+    totalWaterAmountLabel.text = String(format: "%.2f L", props.totalWaterAmount)
+    genderControl.selectedSegmentIndex = props.gender.value == .male ? 0 : 1
+    weightSlider.value = Float(props.weight.value)
+    renderWeightSliderLabel()
   }
 
-  @IBAction func weightValueChanged(_ sender: UISlider) {
-    updateCurrentWeightLabel()
-    updateTotalWaterAmountLabel()
+  @IBAction private func didTapSaveWaterIntakeResults(_ sender: UIButton) {
+    props.onSaveWaterIntakeResults.perform()
   }
 
-  private func updateCurrentWeightLabel() {
-    let currentValue = Int(round(weightSlider.value))
-    currentWeightLabel.text = "\(currentValue)"
+  @IBAction private func genderValueChanged(_ sender: UISegmentedControl) {
+    props.gender.onUpdate.perform(with: sender.selectedSegmentIndex == 0 ? .male : .female)
+  }
+
+  @IBAction private func weightValueChanged(_ sender: UISlider) {
+    props.weight.onUpdate.perform(with: UInt8(sender.value))
+  }
+
+  private func renderWeightSliderLabel() {
+    currentWeightLabel.text = "\(props.weight.value)"
 
     let trackRect = weightSlider.trackRect(forBounds: weightSlider.bounds)
     let thumbRect = weightSlider.thumbRect(
@@ -72,13 +98,5 @@ class WaterIntakeCalculatorViewController: UIViewController {
     let y = weightSlider.frame.origin.y - 16
 
     currentWeightLabel.center = CGPoint(x: x, y: y)
-  }
-
-  private func updateTotalWaterAmountLabel() {
-    let weight = Int(round(weightSlider.value))
-    let gender: WaterIntakeCalculator.Gender = genderControl.selectedSegmentIndex == 0 ? .male : .female
-    let waterAmount = waterIntakeCalculator.calculate(gender: gender, weight: weight)
-
-    totalWaterAmountLabel.text = String(format: "%.2f L", waterAmount)
   }
 }

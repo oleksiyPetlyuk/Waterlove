@@ -12,7 +12,7 @@ class WaterIntakeCalculator {
     case male, female
   }
 
-  func calculate(gender: Gender, weight: Int) -> Float {
+  func calculate(gender: Gender, weight: UInt8) -> Float {
     if gender == .male {
       return Float(weight) * 0.035
     }
