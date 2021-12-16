@@ -29,6 +29,9 @@
 		FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */; };
 		FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0D12760F2D9007053AA /* HistoryViewController.swift */; };
 		FA59AC052769FEB900EF02A3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA59AC042769FEB900EF02A3 /* SnapKit */; };
+		FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */; };
+		FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */; };
+		FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */; };
 		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +82,9 @@
 		FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHydrationViewController.swift; sourceTree = "<group>"; };
 		FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA54F0D12760F2D9007053AA /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationProgressView.swift; sourceTree = "<group>"; };
+		FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDelegate.swift; sourceTree = "<group>"; };
 		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +177,7 @@
 		FA54F0A7275F97BF007053AA /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FA59AC0C276B8ADF00EF02A3 /* Views */,
 				FAA30ED3276779400031B17E /* Utils */,
 				FAC2824B2762809C00A031BA /* Service */,
 				FA54F0AB275F999F007053AA /* Extensions */,
@@ -230,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */,
+				FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */,
 			);
 			path = CurrentHydration;
 			sourceTree = "<group>";
@@ -250,10 +258,19 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		FA59AC0C276B8ADF00EF02A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FAA30ED3276779400031B17E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				FAA30ED4276779490031B17E /* Command.swift */,
+				FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -449,6 +466,8 @@
 			files = (
 				FAA30ED5276779490031B17E /* Command.swift in Sources */,
 				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,
+				FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */,
+				FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */,
 				FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */,
 				FA54F0B3275FA108007053AA /* TutorialViewController.swift in Sources */,
 				FA54F06B275A66A8007053AA /* AppDelegate.swift in Sources */,
@@ -458,6 +477,7 @@
 				FA54F075275A66A8007053AA /* Waterlove.xcdatamodeld in Sources */,
 				FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */,
 				FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */,
+				FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */,
 				FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */,
 				FA54F0AD275F99C2007053AA /* UIViewController+Extensions.swift in Sources */,
 				FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */,

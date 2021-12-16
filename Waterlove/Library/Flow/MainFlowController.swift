@@ -48,6 +48,7 @@ final class MainFlowController: UIViewController {
       )
 
       embeddedTabBarController?.viewControllers = [historyController, currentHydrationController, settingsController]
+      embeddedTabBarController?.selectedViewController = currentHydrationController
     }
   }
 }
