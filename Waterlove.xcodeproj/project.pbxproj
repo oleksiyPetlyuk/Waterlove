@@ -32,6 +32,7 @@
 		FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */; };
 		FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */; };
 		FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */; };
+		FA59AC0E276CC60100EF02A3 /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0D276CC60100EF02A3 /* TutorialStepViewController.swift */; };
 		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationProgressView.swift; sourceTree = "<group>"; };
 		FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDelegate.swift; sourceTree = "<group>"; };
+		FA59AC0D276CC60100EF02A3 /* TutorialStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
 		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,6 +223,7 @@
 			children = (
 				FA54F0B2275FA108007053AA /* TutorialViewController.swift */,
 				FA54F0BB275FBC7B007053AA /* TutorialPageViewController.swift */,
+				FA59AC0D276CC60100EF02A3 /* TutorialStepViewController.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */,
 				FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */,
 				FA54F0AD275F99C2007053AA /* UIViewController+Extensions.swift in Sources */,
+				FA59AC0E276CC60100EF02A3 /* TutorialStepViewController.swift in Sources */,
 				FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */,
 				FA54F0C2275FCFDD007053AA /* R.generated.swift in Sources */,
 				FA54F0AA275F97FE007053AA /* AppFlowController.swift in Sources */,

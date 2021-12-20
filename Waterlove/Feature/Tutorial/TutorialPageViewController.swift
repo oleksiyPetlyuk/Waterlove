@@ -9,75 +9,59 @@ import UIKit
 
 class TutorialPageViewController: UIPageViewController {
   struct Props {
-    let onUpdatePageCount: CommandWith<Int>
-    let onUpdatePageIndex: CommandWith<Int>
+    let pages: [TutorialStepViewController.Props]
+    let selectedPageIndex: Int?
+    let didUpdatePageIndex: CommandWith<Int>
 
-    static let initial = Props(onUpdatePageCount: .nop, onUpdatePageIndex: .nop)
+    static let initial = Props(pages: [], selectedPageIndex: nil, didUpdatePageIndex: .nop)
   }
 
-  private(set) var props: Props = .initial
+  var props: Props = .initial {
+    didSet {
+      guard isViewLoaded else { return }
 
-  private(set) var orderedViewControllers: [UIViewController] = []
+      view.setNeedsLayout()
+    }
+  }
+
+  private var orderedViewControllers: [TutorialStepViewController] = []
+
+  private var currentViewController: TutorialStepViewController? {
+    guard let viewController = viewControllers?.first else { return nil }
+
+    return viewController as? TutorialStepViewController
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     dataSource = self
     delegate = self
-
-    setupViewControllers()
   }
 
-  func render(_ props: Props) {
-    self.props = props
+  override func viewWillLayoutSubviews() {
+    for page in props.pages {
+      guard let controller = R.storyboard.main.tutorialStepViewController() else { return }
 
-    view.setNeedsLayout()
-  }
+      controller.props = .init(id: page.id, image: page.image, heading: page.heading, subheading: page.subheading)
 
-  private func setupViewControllers() {
-    if let vcZero = R.storyboard.main.tutorialStepZero() {
-      orderedViewControllers.append(vcZero)
+      if !orderedViewControllers.contains(where: { $0.props.id == page.id }) {
+        orderedViewControllers.append(controller)
+      }
     }
 
-    if let vcOne = R.storyboard.main.tutorialStepOne() {
-      orderedViewControllers.append(vcOne)
-    }
-
-    if let vcTwo = R.storyboard.main.tutorialStepTwo() {
-      orderedViewControllers.append(vcTwo)
-    }
-
-    if let initialViewController = orderedViewControllers.first {
-      scrollTo(viewController: initialViewController)
-    }
-
-    props.onUpdatePageCount.perform(with: orderedViewControllers.count)
-  }
-
-  /**
-   Scrolls to the next view controller.
-   */
-  func scrollToNextViewController() {
     if
-      let visibleViewController = viewControllers?.first,
-      let nextViewController = pageViewController(self, viewControllerAfter: visibleViewController) {
-      scrollTo(viewController: nextViewController)
-    }
-  }
-
-  /**
-   Scrolls to the view controller at the given index. Automatically calculates
-   the direction.
-
-   - parameter newIndex: the new index to scroll to
-   */
-  func scrollTo(index newIndex: Int) {
-    if
-      let firstViewController = viewControllers?.first,
-      let currentIndex = orderedViewControllers.firstIndex(of: firstViewController) {
-      let direction: UIPageViewController.NavigationDirection = newIndex >= currentIndex ? .forward : .reverse
-      let nextViewController = orderedViewControllers[newIndex]
-      scrollTo(viewController: nextViewController, direction: direction)
+      let selectedPageIndex = props.selectedPageIndex,
+      orderedViewControllers.indices.contains(selectedPageIndex),
+      orderedViewControllers[selectedPageIndex].props.id != currentViewController?.props.id {
+      if
+        let currentViewController = currentViewController,
+        let index = orderedViewControllers.firstIndex(of: currentViewController),
+        index < selectedPageIndex {
+        scrollTo(viewController: orderedViewControllers[selectedPageIndex])
+      } else {
+        scrollTo(viewController: orderedViewControllers[selectedPageIndex], direction: .reverse)
+      }
     }
   }
 
@@ -99,17 +83,20 @@ class TutorialPageViewController: UIPageViewController {
    */
   private func notifyAboutNewIndex() {
     if
-      let firstViewController = viewControllers?.first,
+      let firstViewController = viewControllers?.first as? TutorialStepViewController,
       let index = orderedViewControllers.firstIndex(of: firstViewController) {
-      props.onUpdatePageIndex.perform(with: index)
+      props.didUpdatePageIndex.perform(with: index)
     }
   }
 }
 
-// MARK: UIPageViewControllerDataSource
+// MARK: Page View Controller DataSource
 extension TutorialPageViewController: UIPageViewControllerDataSource {
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-    guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
+    guard
+      let tutorialStepViewController = viewController as? TutorialStepViewController,
+      let viewControllerIndex = orderedViewControllers.firstIndex(of: tutorialStepViewController)
+    else {
       return nil
     }
 
@@ -119,7 +106,10 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
   }
 
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-    guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
+    guard
+      let tutorialStepViewController = viewController as? TutorialStepViewController,
+      let viewControllerIndex = orderedViewControllers.firstIndex(of: tutorialStepViewController)
+    else {
       return nil
     }
 
@@ -129,6 +119,7 @@ extension TutorialPageViewController: UIPageViewControllerDataSource {
   }
 }
 
+// MARK: Page View Controller Delegate
 extension TutorialPageViewController: UIPageViewControllerDelegate {
   func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
     notifyAboutNewIndex()

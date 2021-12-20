@@ -13,23 +13,29 @@ class WaterIntakeCalculatorViewController: UIViewController {
     let totalWaterAmount: Float
     let gender: Field<WaterIntakeCalculator.Gender>
     let weight: Field<UInt8>
-    let onSaveWaterIntakeResults: Command
+    let didSaveWaterIntakeResults: Command
 
     struct Field<T> {
       let value: T
-      let onUpdate: CommandWith<T>
+      let didUpdate: CommandWith<T>
     }
 
     static let initial = Props(
       totalWaterAmount: 3.0,
-      gender: .init(value: .male, onUpdate: .nop),
-      weight: .init(value: 75, onUpdate: .nop),
-      onSaveWaterIntakeResults: .nop
+      gender: .init(value: .male, didUpdate: .nop),
+      weight: .init(value: 75, didUpdate: .nop),
+      didSaveWaterIntakeResults: .nop
     )
   }
   // swiftlint:enable nesting
 
-  private(set) var props: Props = .initial
+  var props: Props = .initial {
+    didSet {
+      guard isViewLoaded else { return }
+
+      view.setNeedsLayout()
+    }
+  }
 
   @IBOutlet private weak var totalWaterAmountLabel: UILabel!
   @IBOutlet private weak var genderControl: UISegmentedControl!
@@ -54,18 +60,6 @@ class WaterIntakeCalculatorViewController: UIViewController {
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
 
-    render()
-  }
-
-  func render(_ props: Props) {
-    self.props = props
-
-    view.setNeedsLayout()
-  }
-
-  private func render() {
-    guard isViewLoaded else { return }
-
     totalWaterAmountLabel.text = String(format: "%.2f L", props.totalWaterAmount)
     genderControl.selectedSegmentIndex = props.gender.value == .male ? 0 : 1
     weightSlider.value = Float(props.weight.value)
@@ -73,15 +67,15 @@ class WaterIntakeCalculatorViewController: UIViewController {
   }
 
   @IBAction private func didTapSaveWaterIntakeResults(_ sender: UIButton) {
-    props.onSaveWaterIntakeResults.perform()
+    props.didSaveWaterIntakeResults.perform()
   }
 
-  @IBAction private func genderValueChanged(_ sender: UISegmentedControl) {
-    props.gender.onUpdate.perform(with: sender.selectedSegmentIndex == 0 ? .male : .female)
+  @IBAction func didChangeGender(_ sender: UISegmentedControl) {
+    props.gender.didUpdate.perform(with: sender.selectedSegmentIndex == 0 ? .male : .female)
   }
 
-  @IBAction private func weightValueChanged(_ sender: UISlider) {
-    props.weight.onUpdate.perform(with: UInt8(sender.value))
+  @IBAction func didChangeWeight(_ sender: UISlider) {
+    props.weight.didUpdate.perform(with: UInt8(sender.value))
   }
 
   private func renderWeightSliderLabel() {

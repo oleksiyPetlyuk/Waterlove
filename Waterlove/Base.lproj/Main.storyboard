@@ -90,7 +90,7 @@
                                     <segment title="Female"/>
                                 </segments>
                                 <connections>
-                                    <action selector="genderValueChanged:" destination="x2D-Gv-3lq" eventType="valueChanged" id="rgy-cd-sBM"/>
+                                    <action selector="didChangeGender:" destination="x2D-Gv-3lq" eventType="valueChanged" id="iif-Yp-fr9"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.45 L" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk3-HL-VGF">
@@ -119,7 +119,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="AuV-oh-jY5">
                                 <rect key="frame" x="14" y="357.5" width="386" height="31"/>
                                 <connections>
-                                    <action selector="weightValueChanged:" destination="x2D-Gv-3lq" eventType="valueChanged" id="R5t-oN-JNp"/>
+                                    <action selector="didChangeWeight:" destination="x2D-Gv-3lq" eventType="valueChanged" id="0il-Nx-8gf"/>
                                 </connections>
                             </slider>
                         </subviews>
@@ -155,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="31.884057971014496" y="756.69642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial Step View Controller-->
         <scene sceneID="jRn-oH-9WQ">
             <objects>
-                <viewController storyboardIdentifier="TutorialStepZero" id="apu-TS-7c1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialStepViewController" id="apu-TS-7c1" customClass="TutorialStepViewController" customModule="Waterlove" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lLi-t5-XiX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,102 +196,15 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="705"/>
+                    <connections>
+                        <outlet property="headingLabel" destination="nOV-NO-9RI" id="aMW-AX-4On"/>
+                        <outlet property="imageView" destination="3xq-gk-aEJ" id="7S4-Qy-BEp"/>
+                        <outlet property="subheadingLabel" destination="jkU-mm-iDV" id="G7U-ow-gOB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VES-d0-Pya" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="790" y="-52"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tAa-4s-lBO">
-            <objects>
-                <viewController storyboardIdentifier="TutorialStepOne" id="QF9-bW-rhy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gtr-1Z-K4Z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty and Health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qs1-ji-i70">
-                                <rect key="frame" x="16" y="603" width="382" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drinking enough water has a favourable effect on the body helping to retain beauty from inside" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2i-GP-Aqg">
-                                <rect key="frame" x="16" y="648" width="382" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="mirror" translatesAutoresizingMaskIntoConstraints="NO" id="6kC-wE-dVl">
-                                <rect key="frame" x="32" y="108" width="350" height="439"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="dJz-Mb-mJD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="qs1-ji-i70" firstAttribute="top" secondItem="6kC-wE-dVl" secondAttribute="bottom" constant="56" id="82p-lD-LHW"/>
-                            <constraint firstItem="qs1-ji-i70" firstAttribute="leading" secondItem="dJz-Mb-mJD" secondAttribute="leading" constant="16" id="90P-4N-RVU"/>
-                            <constraint firstItem="dJz-Mb-mJD" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6kC-wE-dVl" secondAttribute="trailing" constant="32" id="KBW-43-kBe"/>
-                            <constraint firstItem="dJz-Mb-mJD" firstAttribute="trailing" secondItem="qs1-ji-i70" secondAttribute="trailing" constant="16" id="Maw-27-pgU"/>
-                            <constraint firstItem="dJz-Mb-mJD" firstAttribute="leading" secondItem="h2i-GP-Aqg" secondAttribute="leading" constant="-16" id="MzJ-Da-bZM"/>
-                            <constraint firstItem="h2i-GP-Aqg" firstAttribute="top" secondItem="qs1-ji-i70" secondAttribute="bottom" constant="16" id="XWh-CQ-cRN"/>
-                            <constraint firstItem="6kC-wE-dVl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dJz-Mb-mJD" secondAttribute="leading" constant="32" id="Xa8-TV-WiA"/>
-                            <constraint firstItem="6kC-wE-dVl" firstAttribute="centerX" secondItem="dJz-Mb-mJD" secondAttribute="centerX" id="eDq-T8-UJE"/>
-                            <constraint firstItem="dJz-Mb-mJD" firstAttribute="trailing" secondItem="h2i-GP-Aqg" secondAttribute="trailing" constant="16" id="j6B-PD-nqW"/>
-                            <constraint firstItem="dJz-Mb-mJD" firstAttribute="bottom" secondItem="h2i-GP-Aqg" secondAttribute="bottom" constant="16" id="qbb-7P-zuQ"/>
-                            <constraint firstItem="6kC-wE-dVl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dJz-Mb-mJD" secondAttribute="top" constant="64" id="yTH-Nt-twJ"/>
-                        </constraints>
-                    </view>
-                    <size key="freeformSize" width="414" height="705"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8vr-mm-OdS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1559" y="-53"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ewi-XQ-pWI">
-            <objects>
-                <viewController storyboardIdentifier="TutorialStepTwo" id="qUf-j8-EXV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PRu-Aj-iYS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Being Fit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLt-gH-2yA">
-                                <rect key="frame" x="16" y="603" width="382" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A glass of water before a meal not only boosts your metabolism but also helps eating less" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CB-B2-EwW">
-                                <rect key="frame" x="16" y="648" width="382" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cup" translatesAutoresizingMaskIntoConstraints="NO" id="7lG-ri-ptq">
-                                <rect key="frame" x="32" y="108" width="350" height="439"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="luj-GR-1DF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="7lG-ri-ptq" firstAttribute="centerX" secondItem="luj-GR-1DF" secondAttribute="centerX" id="3Ca-6e-v4m"/>
-                            <constraint firstItem="luj-GR-1DF" firstAttribute="leading" secondItem="9CB-B2-EwW" secondAttribute="leading" constant="-16" id="3Jp-fe-J4h"/>
-                            <constraint firstItem="7lG-ri-ptq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="luj-GR-1DF" secondAttribute="top" constant="64" id="8HT-jY-c0F"/>
-                            <constraint firstItem="qLt-gH-2yA" firstAttribute="top" secondItem="7lG-ri-ptq" secondAttribute="bottom" constant="56" id="HHY-ID-sSh"/>
-                            <constraint firstItem="9CB-B2-EwW" firstAttribute="top" secondItem="qLt-gH-2yA" secondAttribute="bottom" constant="16" id="KkZ-8c-s2Q"/>
-                            <constraint firstItem="luj-GR-1DF" firstAttribute="trailing" secondItem="qLt-gH-2yA" secondAttribute="trailing" constant="16" id="M4D-T7-wIz"/>
-                            <constraint firstItem="luj-GR-1DF" firstAttribute="trailing" secondItem="9CB-B2-EwW" secondAttribute="trailing" constant="16" id="Wlh-cw-GOg"/>
-                            <constraint firstItem="luj-GR-1DF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7lG-ri-ptq" secondAttribute="trailing" constant="32" id="k3f-eq-Ir6"/>
-                            <constraint firstItem="7lG-ri-ptq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="luj-GR-1DF" secondAttribute="leading" constant="32" id="nz9-1r-b9U"/>
-                            <constraint firstItem="luj-GR-1DF" firstAttribute="bottom" secondItem="9CB-B2-EwW" secondAttribute="bottom" constant="16" id="vVm-7P-TUo"/>
-                            <constraint firstItem="qLt-gH-2yA" firstAttribute="leading" secondItem="luj-GR-1DF" secondAttribute="leading" constant="16" id="y1W-9Y-tYv"/>
-                        </constraints>
-                    </view>
-                    <size key="freeformSize" width="414" height="705"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b2R-yK-M8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2354" y="-53"/>
         </scene>
         <!--Current Hydration View Controller-->
         <scene sceneID="tY4-Q7-LbY">
@@ -382,8 +295,6 @@
     </scenes>
     <resources>
         <image name="bottle" width="296" height="717"/>
-        <image name="cup" width="508" height="591"/>
-        <image name="mirror" width="584" height="744"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

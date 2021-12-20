@@ -10,15 +10,28 @@ import SnapKit
 
 class TutorialViewController: UIViewController {
   struct Props {
-    let onDidFinishTutorial: Command
+    let pageViewControllerProps: TutorialPageViewController.Props
+    let didTapNextButton: Command
+    let didChangePageControlValue: CommandWith<Int>
+    let didFinishTutorial: Command
 
-    static let initial = Props(onDidFinishTutorial: .nop)
+    static let initial = Props(
+      pageViewControllerProps: .initial,
+      didTapNextButton: .nop,
+      didChangePageControlValue: .nop,
+      didFinishTutorial: .nop
+    )
   }
 
-  private(set) var props: Props = .initial
+  var props: Props = .initial {
+    didSet {
+      guard isViewLoaded else { return }
+
+      view.setNeedsLayout()
+    }
+  }
 
   @IBOutlet private weak var pageControl: UIPageControl!
-
   @IBOutlet private weak var pageViewContainer: UIView!
 
   private var pageViewController: TutorialPageViewController?
@@ -26,27 +39,17 @@ class TutorialViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    addPageViewController()
+    setupPageViewController()
   }
 
-  func render(_ props: Props) {
-    self.props = props
+  override func viewWillLayoutSubviews() {
+    pageControl.numberOfPages = props.pageViewControllerProps.pages.count
+    pageControl.currentPage = props.pageViewControllerProps.selectedPageIndex ?? 0
 
-    view.setNeedsLayout()
+    pageViewController?.props = makePageViewControllerProps()
   }
 
-  private func makeProps() -> TutorialPageViewController.Props {
-    return .init(
-      onUpdatePageCount: .init { [weak self] count in
-        self?.pageControl.numberOfPages = count
-      },
-      onUpdatePageIndex: .init { [weak self] index in
-        self?.pageControl.currentPage = index
-      }
-    )
-  }
-
-  private func addPageViewController() {
+  private func setupPageViewController() {
     let pageViewController = TutorialPageViewController(
       transitionStyle: .scroll,
       navigationOrientation: .horizontal,
@@ -62,24 +65,30 @@ class TutorialViewController: UIViewController {
 
     pageViewController.didMove(toParent: self)
 
-    pageViewController.render(makeProps())
-
     self.pageViewController = pageViewController
   }
 
-  @IBAction func didChangePageControlValue(_ sender: UIPageControl) {
-    pageViewController?.scrollTo(index: sender.currentPage)
+  private func makePageViewControllerProps() -> TutorialPageViewController.Props {
+    return .init(
+      pages: props.pageViewControllerProps.pages,
+      selectedPageIndex: props.pageViewControllerProps.selectedPageIndex,
+      didUpdatePageIndex: props.pageViewControllerProps.didUpdatePageIndex
+    )
   }
 
-  @IBAction func didTapNextButton(_ sender: UIButton) {
+  @IBAction private func didChangePageControlValue(_ sender: UIPageControl) {
+    props.didChangePageControlValue.perform(with: sender.currentPage)
+  }
+
+  @IBAction private func didTapNextButton(_ sender: UIButton) {
     if
-      let pageViewController = pageViewController,
-      pageControl.currentPage < pageViewController.orderedViewControllers.count - 1 {
-      pageViewController.scrollToNextViewController()
+      let selectedPageIndex = props.pageViewControllerProps.selectedPageIndex,
+      selectedPageIndex < props.pageViewControllerProps.pages.count - 1 {
+      props.didTapNextButton.perform()
 
       return
     }
 
-    props.onDidFinishTutorial.perform()
+    props.didFinishTutorial.perform()
   }
 }

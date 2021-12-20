@@ -18,7 +18,31 @@ final class OnboardingFlowController: UIViewController {
     return R.storyboard.main.tutorialViewController()
   }()
 
-  var onboardingDidFinish: (() -> Void)?
+  private var selectedTutorialPageIndex = 0 {
+    didSet {
+      if let controller = tutorialVC {
+        controller.props = makeTutorialProps()
+      }
+    }
+  }
+
+  private var gender = WaterIntakeCalculator.Gender.male {
+    didSet {
+      if let controller = waterIntakeCalculatorVC {
+        controller.props = makeWaterIntakeCalculatorProps()
+      }
+    }
+  }
+
+  private var weight: UInt8 = 75 {
+    didSet {
+      if let controller = waterIntakeCalculatorVC {
+        controller.props = makeWaterIntakeCalculatorProps()
+      }
+    }
+  }
+
+  var didFinishOnboarding: (() -> Void)?
 
   init() {
     super.init(nibName: nil, bundle: nil)
@@ -38,7 +62,7 @@ final class OnboardingFlowController: UIViewController {
 
   private func startTutorial() {
     if let controller = tutorialVC {
-      controller.render(makeTutorialProps())
+      controller.props = makeTutorialProps()
 
       embeddedNavigationController?.viewControllers = [controller]
     }
@@ -46,9 +70,7 @@ final class OnboardingFlowController: UIViewController {
 
   private func startWaterIntakeCalculator() {
     if let controller = waterIntakeCalculatorVC {
-      let props = makeProps(gender: controller.props.gender.value, weight: controller.props.weight.value)
-
-      controller.render(props)
+      controller.props = makeWaterIntakeCalculatorProps()
 
       embeddedNavigationController?.pushViewController(controller, animated: true)
     }
@@ -58,45 +80,75 @@ final class OnboardingFlowController: UIViewController {
 // MARK: - Tutorial Presenter
 extension OnboardingFlowController {
   private func makeTutorialProps() -> TutorialViewController.Props {
-    return .init(onDidFinishTutorial: .init(action: startWaterIntakeCalculator))
+    return .init(
+      pageViewControllerProps: .init(
+        pages: [
+          .init(
+            id: 1,
+            image: "bottle",
+            heading: "Concentration Ability and Brain Activity",
+            subheading: """
+            A healthy habit to drink water during the day helps to maintain concentration and keep your brain active
+            """
+          ),
+          .init(
+            id: 2,
+            image: "mirror",
+            heading: "Beauty and Health",
+            subheading: """
+            Drinking enough water has a favourable effect on the body helping to retain beauty from inside
+            """
+          ),
+          .init(
+            id: 3,
+            image: "cup",
+            heading: "Being Fit",
+            subheading: """
+            A glass of water before a meal not only boosts your metabolism but also helps eating less
+            """
+          )
+        ],
+        selectedPageIndex: selectedTutorialPageIndex,
+        didUpdatePageIndex: .init { [weak self] index in
+          self?.selectedTutorialPageIndex = index
+        }
+      ),
+      didTapNextButton: .init { [weak self] in
+        self?.selectedTutorialPageIndex += 1
+      },
+      didChangePageControlValue: .init { [weak self] page in
+        self?.selectedTutorialPageIndex = page
+      },
+      didFinishTutorial: .init { [weak self] in
+        self?.startWaterIntakeCalculator()
+      }
+    )
   }
 }
 
 // MARK: - Water Intake Calculator Presenter
 extension OnboardingFlowController {
-  private func makeProps(gender: WaterIntakeCalculator.Gender, weight: UInt8) -> WaterIntakeCalculatorViewController.Props {
+  private func makeWaterIntakeCalculatorProps() -> WaterIntakeCalculatorViewController.Props {
     let waterIntakeCalc = WaterIntakeCalculator()
     let waterAmount = waterIntakeCalc.calculate(gender: gender, weight: weight)
 
     return .init(
       totalWaterAmount: waterAmount,
-      gender: .init(value: gender, onUpdate: .init(action: onGenderValueChanged(_:))),
-      weight: .init(value: weight, onUpdate: .init(action: onWeightValueChanged(_:))),
-      onSaveWaterIntakeResults: .init(action: onSaveWaterIntakeResults)
+      gender: .init(value: gender, didUpdate: .init { [weak self] newValue in
+        self?.gender = newValue
+      }),
+      weight: .init(value: weight, didUpdate: .init { [weak self] newValue in
+        self?.weight = newValue
+      }),
+      didSaveWaterIntakeResults: .init { [weak self] in
+        guard let self = self else { return }
+
+        if let controller = self.waterIntakeCalculatorVC {
+          self.remove(childController: controller)
+
+          self.didFinishOnboarding?()
+        }
+      }
     )
-  }
-
-  func onGenderValueChanged(_ newValue: WaterIntakeCalculator.Gender) {
-    guard let controller = waterIntakeCalculatorVC else { return }
-
-    let props = makeProps(gender: newValue, weight: controller.props.weight.value)
-
-    controller.render(props)
-  }
-
-  func onWeightValueChanged(_ newValue: UInt8) {
-    guard let controller = waterIntakeCalculatorVC else { return }
-
-    let props = makeProps(gender: controller.props.gender.value, weight: newValue)
-
-    controller.render(props)
-  }
-
-  func onSaveWaterIntakeResults() {
-    guard let controller = waterIntakeCalculatorVC else { return }
-
-    remove(childController: controller)
-
-    onboardingDidFinish?()
   }
 }
