@@ -33,6 +33,9 @@ jobs:
           ruby-version: "3.0.3"
           bundler-cache: true
 
+      - name: Install Mint
+        run: brew install mint
+
       - name: Run Mint bootstrap
         run: mint bootstrap
 
