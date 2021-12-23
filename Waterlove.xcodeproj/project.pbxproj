@@ -425,6 +425,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		FA54F0A1275A6C76007053AA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -442,14 +443,13 @@
 		};
 		FA54F0A5275A6D61007053AA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
+				"$(TEMP_DIR)/rswift-lastrun",
 			);
 			outputFileListPaths = (
 			);

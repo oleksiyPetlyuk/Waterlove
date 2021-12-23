@@ -27,6 +27,15 @@ jobs:
           path: SourcePackages
           key: ${{ runner.os }}-spm-source-packages
 
+      - name: Cache Mint's packages
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-mint-packages
+        with:
+          # Mint cache files are stored in `~/.mint`.
+          path: ~/.mint
+          key: ${{ runner.os }}-mint-packages
+
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
