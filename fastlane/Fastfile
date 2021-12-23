@@ -25,7 +25,6 @@ platform :ios do
 
   desc "Run tests"
   lane :test do
-    lint
     scan
   end
 
