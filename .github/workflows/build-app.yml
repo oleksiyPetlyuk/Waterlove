@@ -13,10 +13,14 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: self-hosted
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Run lane
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.0.3"
+          bundler-cache: true
+      - name: Run test lane
         run: bundle exec fastlane test
