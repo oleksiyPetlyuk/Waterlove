@@ -17,14 +17,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Cache SPM's packages
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-spm-packages
+        with:
+          # SPM cache files are stored in `SourcePackages`.
+          path: SourcePackages
+          key: ${{ runner.os }}-spm-source-packages
+
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.0.3"
           bundler-cache: true
+
       - name: Run lint lane
         run: bundle exec fastlane lint
+
       - name: Run build lane
         run: bundle exec fastlane build
+
       - name: Run test lane
         run: bundle exec fastlane test

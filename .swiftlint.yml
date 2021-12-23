@@ -4,6 +4,7 @@ excluded:
   - ${PWD}/DerivedData
   - ${PWD}/*.generated.swift
   - ${PWD}/vendor/bundle
+  - ${PWD}/SourcePackages
 
 disabled_rules:
   - discarded_notification_center_observer
