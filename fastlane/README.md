@@ -30,7 +30,7 @@ Run tests
 ```
 fastlane ios create_app
 ```
-Build the app
+Build the project
 
 ----
 

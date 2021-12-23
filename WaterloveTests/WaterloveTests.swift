@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import Waterlove
 
 class WaterloveTests: XCTestCase {
 }
