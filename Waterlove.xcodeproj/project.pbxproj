@@ -438,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --no-cache\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  mint run swiftlint --no-cache\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 		FA54F0A5275A6D61007053AA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -458,7 +458,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif which rswift >/dev/null; then\n  rswift generate \"$SRCROOT/R.generated.swift\"\nelse\n  echo \"warning: Rswift not installed\"\nfi\n\n";
+			shellScript = "if mint list | grep -q 'R.swift'; then\n  mint run R.swift rswift generate \"$SRCROOT/R.generated.swift\"\nelse\n  echo \"error: R.swift not installed; run 'mint bootstrap' to install\"\n  return -1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
