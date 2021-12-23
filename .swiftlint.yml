@@ -3,6 +3,7 @@ excluded:
   - ${PWD}/Pods
   - ${PWD}/DerivedData
   - ${PWD}/*.generated.swift
+  - ${PWD}/vendor/bundle
 
 disabled_rules:
   - discarded_notification_center_observer
