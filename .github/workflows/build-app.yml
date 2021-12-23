@@ -33,6 +33,9 @@ jobs:
           ruby-version: "3.0.3"
           bundler-cache: true
 
+      - name: Run Mint bootstrap
+        run: mint bootstrap
+
       - name: Run lint lane
         run: bundle exec fastlane lint
 
