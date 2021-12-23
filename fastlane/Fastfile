@@ -17,7 +17,7 @@ platform :ios do
   end
 
   desc "Build the project"
-  lane :create_app do
+  lane :build do
     xcodebuild(
       scheme: "Waterlove",
       destination: 'generic/platform=iOS Simulator',
