@@ -8,22 +8,22 @@
 import Foundation
 
 protocol DailyWaterIntakeStoreProtocol {
-  func storeDailyIntake(_ amount: UInt)
+  func storeDailyIntake(_ amount: Measurement<UnitVolume>)
 
-  func getDailyIntake() -> UInt?
+  func getDailyIntake() -> Measurement<UnitVolume>?
 }
 
 class DailyWaterIntakeStore: DailyWaterIntakeStoreProtocol {
   private let defaults = UserDefaults.standard
   private let key = "dailyWaterIntake"
 
-  func storeDailyIntake(_ amount: UInt) {
-    defaults.set(amount, forKey: key)
+  func storeDailyIntake(_ amount: Measurement<UnitVolume>) {
+    defaults.set(try? PropertyListEncoder().encode(amount), forKey: key)
   }
 
-  func getDailyIntake() -> UInt? {
-    let amount = defaults.integer(forKey: key)
+  func getDailyIntake() -> Measurement<UnitVolume>? {
+    guard let data = defaults.value(forKey: key) as? Data else { return nil }
 
-    return amount == 0 ? nil : UInt(amount)
+    return try? PropertyListDecoder().decode(Measurement<UnitVolume>.self, from: data)
   }
 }

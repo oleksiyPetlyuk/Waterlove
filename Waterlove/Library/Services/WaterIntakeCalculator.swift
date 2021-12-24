@@ -15,13 +15,13 @@ class WaterIntakeCalculator {
   /// Calculates daily water intake based on gender and weight
   /// - Parameters:
   ///   - gender: Represents a gender (male or female)
-  ///   - weight: Represents a weight in kilograms
-  /// - Returns: Daily water intake in millilitres
-  func calculate(gender: Gender, weight: UInt8) -> UInt {
+  ///   - weight: Represents a weight
+  /// - Returns: Daily water intake
+  func calculate(gender: Gender, weight: Measurement<UnitMass>) -> Measurement<UnitVolume> {
     if gender == .male {
-      return UInt(Double(weight) * 0.035 * 1000)
+      return .init(value: (weight.converted(to: .kilograms) * 35).value, unit: .milliliters)
     }
 
-    return UInt(Double(weight) * 0.031 * 1000)
+    return .init(value: (weight.converted(to: .kilograms) * 31).value, unit: .milliliters)
   }
 }

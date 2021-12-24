@@ -10,9 +10,9 @@ import UIKit
 class WaterIntakeCalculatorViewController: UIViewController {
   // swiftlint:disable nesting
   struct Props {
-    let totalWaterAmount: UInt
+    let totalWaterAmount: Measurement<UnitVolume>
     let gender: Field<WaterIntakeCalculator.Gender>
-    let weight: Field<UInt8>
+    let weight: Field<Measurement<UnitMass>>
     let didSaveWaterIntakeResults: Command
 
     struct Field<T> {
@@ -21,9 +21,9 @@ class WaterIntakeCalculatorViewController: UIViewController {
     }
 
     static let initial = Props(
-      totalWaterAmount: 3000,
+      totalWaterAmount: .init(value: 3000, unit: .milliliters),
       gender: .init(value: .male, didUpdate: .nop),
-      weight: .init(value: 75, didUpdate: .nop),
+      weight: .init(value: .init(value: 75, unit: .kilograms), didUpdate: .nop),
       didSaveWaterIntakeResults: .nop
     )
   }
@@ -40,6 +40,8 @@ class WaterIntakeCalculatorViewController: UIViewController {
   @IBOutlet private weak var totalWaterAmountLabel: UILabel!
   @IBOutlet private weak var genderControl: UISegmentedControl!
   @IBOutlet private weak var weightSlider: UISlider!
+
+  private let formatter = MeasurementFormatter()
 
   private var currentWeightLabel: UILabel = {
     let label = UILabel(frame: .init(x: 0, y: 0, width: 50, height: 25))
@@ -60,9 +62,9 @@ class WaterIntakeCalculatorViewController: UIViewController {
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
 
-    totalWaterAmountLabel.text = String(format: "%.2f L", Float(props.totalWaterAmount) / 1000)
+    totalWaterAmountLabel.text = formatter.string(from: props.totalWaterAmount)
     genderControl.selectedSegmentIndex = props.gender.value == .male ? 0 : 1
-    weightSlider.value = Float(props.weight.value)
+    weightSlider.value = Float(props.weight.value.value)
     renderWeightSliderLabel()
   }
 
@@ -75,11 +77,12 @@ class WaterIntakeCalculatorViewController: UIViewController {
   }
 
   @IBAction func didChangeWeight(_ sender: UISlider) {
-    props.weight.didUpdate.perform(with: UInt8(sender.value))
+    props.weight.didUpdate.perform(with: .init(value: Double(sender.value), unit: .kilograms))
   }
 
   private func renderWeightSliderLabel() {
-    currentWeightLabel.text = "\(props.weight.value)"
+    let weight: Measurement<UnitMass> = .init(value: Double(Int(props.weight.value.value)), unit: .kilograms)
+    currentWeightLabel.text = formatter.string(from: weight)
 
     let trackRect = weightSlider.trackRect(forBounds: weightSlider.bounds)
     let thumbRect = weightSlider.thumbRect(

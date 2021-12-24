@@ -38,7 +38,7 @@ final class OnboardingFlowController: UIViewController {
     }
   }
 
-  private var weight: UInt8 = 75 {
+  private var weight: Measurement<UnitMass> = .init(value: 75, unit: .kilograms) {
     didSet {
       if let controller = waterIntakeCalculatorVC {
         controller.props = makeWaterIntakeCalculatorProps()
