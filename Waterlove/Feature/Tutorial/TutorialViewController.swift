@@ -46,7 +46,7 @@ class TutorialViewController: UIViewController {
     pageControl.numberOfPages = props.pageViewControllerProps.pages.count
     pageControl.currentPage = props.pageViewControllerProps.selectedPageIndex ?? 0
 
-    pageViewController?.props = makePageViewControllerProps()
+    pageViewController?.props = props.pageViewControllerProps
   }
 
   private func setupPageViewController() {
@@ -66,14 +66,6 @@ class TutorialViewController: UIViewController {
     pageViewController.didMove(toParent: self)
 
     self.pageViewController = pageViewController
-  }
-
-  private func makePageViewControllerProps() -> TutorialPageViewController.Props {
-    return .init(
-      pages: props.pageViewControllerProps.pages,
-      selectedPageIndex: props.pageViewControllerProps.selectedPageIndex,
-      didUpdatePageIndex: props.pageViewControllerProps.didUpdatePageIndex
-    )
   }
 
   @IBAction private func didChangePageControlValue(_ sender: UIPageControl) {
