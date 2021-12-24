@@ -33,6 +33,17 @@
 		FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */; };
 		FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */; };
 		FA59AC0E276CC60100EF02A3 /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0D276CC60100EF02A3 /* TutorialStepViewController.swift */; };
+		FA65587427733153002A233B /* DailyWaterIntakeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587327733153002A233B /* DailyWaterIntakeStore.swift */; };
+		FA655876277334B1002A233B /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655875277334B1002A233B /* DependencyContainer.swift */; };
+		FA65587B277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655879277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift */; };
+		FA65587C277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587A277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift */; };
+		FA65588327738531002A233B /* DrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65588227738531002A233B /* DrinkType.swift */; };
+		FA6558852774A6B9002A233B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558842774A6B9002A233B /* Repository.swift */; };
+		FA65588C2774AA81002A233B /* IntakeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65588B2774AA81002A233B /* IntakeEntry.swift */; };
+		FA6558932774B2EE002A233B /* IntakeEntryEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558922774B2EE002A233B /* IntakeEntryEntityMapper.swift */; };
+		FA6558952774B33B002A233B /* DBContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558942774B33B002A233B /* DBContextProvider.swift */; };
+		FA6558972774B498002A233B /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558962774B498002A233B /* CoreDataRepository.swift */; };
+		FA6558992774B9C3002A233B /* DBEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558982774B9C3002A233B /* DBEntityMapper.swift */; };
 		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +98,17 @@
 		FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationProgressView.swift; sourceTree = "<group>"; };
 		FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDelegate.swift; sourceTree = "<group>"; };
 		FA59AC0D276CC60100EF02A3 /* TutorialStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
+		FA65587327733153002A233B /* DailyWaterIntakeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWaterIntakeStore.swift; sourceTree = "<group>"; };
+		FA655875277334B1002A233B /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		FA655879277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntakeEntryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA65587A277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntakeEntryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA65588227738531002A233B /* DrinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkType.swift; sourceTree = "<group>"; };
+		FA6558842774A6B9002A233B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		FA65588B2774AA81002A233B /* IntakeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntry.swift; sourceTree = "<group>"; };
+		FA6558922774B2EE002A233B /* IntakeEntryEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntryEntityMapper.swift; sourceTree = "<group>"; };
+		FA6558942774B33B002A233B /* DBContextProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBContextProvider.swift; sourceTree = "<group>"; };
+		FA6558962774B498002A233B /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		FA6558982774B9C3002A233B /* DBEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBEntityMapper.swift; sourceTree = "<group>"; };
 		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,7 +176,6 @@
 				FA54F076275A66AD007053AA /* Assets.xcassets */,
 				FA54F078275A66AD007053AA /* LaunchScreen.storyboard */,
 				FA54F07B275A66AD007053AA /* Info.plist */,
-				FA54F073275A66A8007053AA /* Waterlove.xcdatamodeld */,
 			);
 			path = Waterlove;
 			sourceTree = "<group>";
@@ -179,9 +200,10 @@
 		FA54F0A7275F97BF007053AA /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FA65587D277377E9002A233B /* Model */,
 				FA59AC0C276B8ADF00EF02A3 /* Views */,
 				FAA30ED3276779400031B17E /* Utils */,
-				FAC2824B2762809C00A031BA /* Service */,
+				FAC2824B2762809C00A031BA /* Services */,
 				FA54F0AB275F999F007053AA /* Extensions */,
 				FA54F0A8275F97CE007053AA /* Flow */,
 			);
@@ -269,21 +291,56 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FA65587D277377E9002A233B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA65588A2774AA4F002A233B /* CoreData */,
+				FA65588227738531002A233B /* DrinkType.swift */,
+				FA65588B2774AA81002A233B /* IntakeEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA65588A2774AA4F002A233B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FA6558912774B2B5002A233B /* EntityMappers */,
+				FA54F073275A66A8007053AA /* Waterlove.xcdatamodeld */,
+				FA655879277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift */,
+				FA65587A277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FA6558912774B2B5002A233B /* EntityMappers */ = {
+			isa = PBXGroup;
+			children = (
+				FA6558922774B2EE002A233B /* IntakeEntryEntityMapper.swift */,
+			);
+			path = EntityMappers;
+			sourceTree = "<group>";
+		};
 		FAA30ED3276779400031B17E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				FAA30ED4276779490031B17E /* Command.swift */,
 				FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */,
+				FA655875277334B1002A233B /* DependencyContainer.swift */,
+				FA6558842774A6B9002A233B /* Repository.swift */,
+				FA6558962774B498002A233B /* CoreDataRepository.swift */,
+				FA6558942774B33B002A233B /* DBContextProvider.swift */,
+				FA6558982774B9C3002A233B /* DBEntityMapper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		FAC2824B2762809C00A031BA /* Service */ = {
+		FAC2824B2762809C00A031BA /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */,
+				FA65587327733153002A233B /* DailyWaterIntakeStore.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,26 +524,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA65587C277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift in Sources */,
 				FAA30ED5276779490031B17E /* Command.swift in Sources */,
 				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,
+				FA65587427733153002A233B /* DailyWaterIntakeStore.swift in Sources */,
 				FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */,
 				FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */,
 				FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */,
+				FA6558952774B33B002A233B /* DBContextProvider.swift in Sources */,
 				FA54F0B3275FA108007053AA /* TutorialViewController.swift in Sources */,
 				FA54F06B275A66A8007053AA /* AppDelegate.swift in Sources */,
 				FA54F06D275A66A8007053AA /* SceneDelegate.swift in Sources */,
 				FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */,
 				FA54F0B6275FA14B007053AA /* WaterIntakeCalculatorViewController.swift in Sources */,
 				FA54F075275A66A8007053AA /* Waterlove.xcdatamodeld in Sources */,
+				FA6558992774B9C3002A233B /* DBEntityMapper.swift in Sources */,
 				FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */,
 				FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */,
+				FA65588C2774AA81002A233B /* IntakeEntry.swift in Sources */,
 				FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */,
+				FA6558972774B498002A233B /* CoreDataRepository.swift in Sources */,
 				FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */,
+				FA655876277334B1002A233B /* DependencyContainer.swift in Sources */,
 				FA54F0AD275F99C2007053AA /* UIViewController+Extensions.swift in Sources */,
+				FA65588327738531002A233B /* DrinkType.swift in Sources */,
 				FA59AC0E276CC60100EF02A3 /* TutorialStepViewController.swift in Sources */,
+				FA65587B277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift in Sources */,
 				FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */,
 				FA54F0C2275FCFDD007053AA /* R.generated.swift in Sources */,
+				FA6558932774B2EE002A233B /* IntakeEntryEntityMapper.swift in Sources */,
 				FA54F0AA275F97FE007053AA /* AppFlowController.swift in Sources */,
+				FA6558852774A6B9002A233B /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

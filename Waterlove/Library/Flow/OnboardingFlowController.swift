@@ -8,6 +8,10 @@
 import UIKit
 
 final class OnboardingFlowController: UIViewController {
+  typealias Dependencies = HasDailyWaterIntakeStore
+
+  let dependencies: Dependencies
+
   private var embeddedNavigationController: UINavigationController?
 
   private lazy var waterIntakeCalculatorVC: WaterIntakeCalculatorViewController? = {
@@ -44,7 +48,9 @@ final class OnboardingFlowController: UIViewController {
 
   var didFinishOnboarding: (() -> Void)?
 
-  init() {
+  init(dependencies: Dependencies) {
+    self.dependencies = dependencies
+
     super.init(nibName: nil, bundle: nil)
 
     let navigationController = UINavigationController()
@@ -53,7 +59,7 @@ final class OnboardingFlowController: UIViewController {
   }
 
   required init?(coder: NSCoder) {
-    super.init(coder: coder)
+    fatalError("init(coder:) has not been implemented")
   }
 
   func start() {
@@ -142,6 +148,8 @@ extension OnboardingFlowController {
       }),
       didSaveWaterIntakeResults: .init { [weak self] in
         guard let self = self else { return }
+
+        self.dependencies.dailyWaterIntakeStore.storeDailyIntake(waterAmount)
 
         if let controller = self.waterIntakeCalculatorVC {
           self.remove(childController: controller)

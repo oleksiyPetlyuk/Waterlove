@@ -10,7 +10,7 @@ import UIKit
 class WaterIntakeCalculatorViewController: UIViewController {
   // swiftlint:disable nesting
   struct Props {
-    let totalWaterAmount: Float
+    let totalWaterAmount: UInt
     let gender: Field<WaterIntakeCalculator.Gender>
     let weight: Field<UInt8>
     let didSaveWaterIntakeResults: Command
@@ -21,7 +21,7 @@ class WaterIntakeCalculatorViewController: UIViewController {
     }
 
     static let initial = Props(
-      totalWaterAmount: 3.0,
+      totalWaterAmount: 3000,
       gender: .init(value: .male, didUpdate: .nop),
       weight: .init(value: 75, didUpdate: .nop),
       didSaveWaterIntakeResults: .nop
@@ -60,7 +60,7 @@ class WaterIntakeCalculatorViewController: UIViewController {
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
 
-    totalWaterAmountLabel.text = String(format: "%.2f L", props.totalWaterAmount)
+    totalWaterAmountLabel.text = String(format: "%.2f L", Float(props.totalWaterAmount) / 1000)
     genderControl.selectedSegmentIndex = props.gender.value == .male ? 0 : 1
     weightSlider.value = Float(props.weight.value)
     renderWeightSliderLabel()
