@@ -12,4 +12,14 @@ enum DrinkType: String {
   case coffee
   case tea
   case juice
+
+  init?(tag: Int) {
+    switch tag {
+    case 0: self = .water
+    case 1: self = .coffee
+    case 2: self = .tea
+    case 3: self = .juice
+    default: return nil
+    }
+  }
 }

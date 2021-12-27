@@ -23,12 +23,11 @@ final class MainFlowController: UIViewController {
   }
 
   func start() {
-    let currentHydrationController = R.storyboard.main.currentHydrationViewController()
+    let currentHydrationController = CurrentHydrationFlowController()
     let historyController = R.storyboard.main.historyViewController()
     let settingsController = R.storyboard.main.settingsViewController()
 
     if
-      let currentHydrationController = currentHydrationController,
       let historyController = historyController,
       let settingsController = settingsController {
       historyController.tabBarItem = UITabBarItem(
@@ -49,6 +48,7 @@ final class MainFlowController: UIViewController {
 
       embeddedTabBarController?.viewControllers = [historyController, currentHydrationController, settingsController]
       embeddedTabBarController?.selectedViewController = currentHydrationController
+      currentHydrationController.start()
     }
   }
 }

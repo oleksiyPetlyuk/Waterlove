@@ -72,11 +72,11 @@ class WaterIntakeCalculatorViewController: UIViewController {
     props.didSaveWaterIntakeResults.perform()
   }
 
-  @IBAction func didChangeGender(_ sender: UISegmentedControl) {
+  @IBAction private func didChangeGender(_ sender: UISegmentedControl) {
     props.gender.didUpdate.perform(with: sender.selectedSegmentIndex == 0 ? .male : .female)
   }
 
-  @IBAction func didChangeWeight(_ sender: UISlider) {
+  @IBAction private func didChangeWeight(_ sender: UISlider) {
     props.weight.didUpdate.perform(with: .init(value: Double(sender.value), unit: .kilograms))
   }
 

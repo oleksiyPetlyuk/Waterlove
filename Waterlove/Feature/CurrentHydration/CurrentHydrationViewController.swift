@@ -9,11 +9,10 @@ import UIKit
 
 class CurrentHydrationViewController: UIViewController {
   struct Props {
-    let progress: [(CGFloat, UInt)]
+    let progress: (CGFloat, UInt)
+    let didTapAddNewIntake: CommandWith<DrinkType>
 
-    static let initial = Props(progress: [
-      (0, 0), (0.1, 250), (0.5, 1050), (0.7, 1400), (0.3, 350), (0.95, 1870), (1, 2000)
-    ])
+    static let initial = Props(progress: (0, 0), didTapAddNewIntake: .nop)
   }
 
   var props: Props = .initial {
@@ -26,17 +25,19 @@ class CurrentHydrationViewController: UIViewController {
 
   @IBOutlet private weak var hydrationProgressView: HydrationProgressView!
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
 
-    props.progress.enumerated().forEach { offset, progress in
-      DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(offset)) { [weak self] in
-        self?.hydrationProgressView.props = .init(
-          progressBarProps: .init(progress: progress.0),
-          progressValue: progress.0,
-          intookWaterAmount: progress.1
-        )
-      }
-    }
+    hydrationProgressView.props = .init(
+      progressBarProps: .init(progress: props.progress.0),
+      progressValue: props.progress.0,
+      intookWaterAmount: props.progress.1
+    )
+  }
+
+  @IBAction private func didTapAddNewIntakeButton(_ sender: UIButton) {
+    guard let drinkType = DrinkType(tag: sender.tag) else { return }
+
+    props.didTapAddNewIntake.perform(with: drinkType)
   }
 }

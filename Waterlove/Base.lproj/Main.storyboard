@@ -215,19 +215,91 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XG5-25-4De" customClass="HydrationProgressView" customModule="Waterlove" customModuleProvider="target">
-                                <rect key="frame" x="84.5" y="330.5" width="245" height="245"/>
+                                <rect key="frame" x="43.5" y="153.5" width="327" height="327"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XG5-25-4De" secondAttribute="height" multiplier="1:1" id="NBX-IE-tHO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gos-v7-Y4d">
+                                <rect key="frame" x="0.0" y="480.5" width="414" height="381.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Li1-ar-wRS">
+                                        <rect key="frame" x="16" y="227.5" width="382" height="104"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Dh9-f1-cCn">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4op-07-cau">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="44"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Water" cornerStyle="large" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapAddNewIntakeButton:" destination="4Fw-Yh-Y7R" eventType="touchUpInside" id="jcz-Vo-sQ5"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb4-C4-orA">
+                                                        <rect key="frame" x="199" y="0.0" width="183" height="44"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Coffee" cornerStyle="large" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapAddNewIntakeButton:" destination="4Fw-Yh-Y7R" eventType="touchUpInside" id="pC9-wK-ojG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6Kd-Ma-OYT">
+                                                <rect key="frame" x="0.0" y="60" width="382" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPm-EL-l4c">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="44"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Tea" cornerStyle="large" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <color key="baseBackgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapAddNewIntakeButton:" destination="4Fw-Yh-Y7R" eventType="touchUpInside" id="kJ6-Aq-1Sj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-9b-Rzy">
+                                                        <rect key="frame" x="199" y="0.0" width="183" height="44"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Juice" cornerStyle="large" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <color key="baseBackgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapAddNewIntakeButton:" destination="4Fw-Yh-Y7R" eventType="touchUpInside" id="Yng-KV-wpW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Li1-ar-wRS" secondAttribute="trailing" constant="16" id="byq-vz-a5r"/>
+                                    <constraint firstItem="Li1-ar-wRS" firstAttribute="leading" secondItem="Gos-v7-Y4d" secondAttribute="leading" constant="16" id="cJz-6j-rif"/>
+                                    <constraint firstAttribute="bottom" secondItem="Li1-ar-wRS" secondAttribute="bottom" constant="50" id="xCS-L4-zjQ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W7b-2a-POC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="W7b-2a-POC" firstAttribute="trailing" secondItem="Gos-v7-Y4d" secondAttribute="trailing" id="5BF-t4-MiN"/>
+                            <constraint firstItem="W7b-2a-POC" firstAttribute="bottom" secondItem="Gos-v7-Y4d" secondAttribute="bottom" id="6BD-wi-Uyk"/>
                             <constraint firstItem="XG5-25-4De" firstAttribute="centerX" secondItem="W7b-2a-POC" secondAttribute="centerX" id="Pye-zr-fhs"/>
-                            <constraint firstItem="XG5-25-4De" firstAttribute="centerY" secondItem="W7b-2a-POC" secondAttribute="centerY" id="e0f-fb-BCi"/>
-                            <constraint firstItem="XG5-25-4De" firstAttribute="height" secondItem="W7b-2a-POC" secondAttribute="height" multiplier="0.3" id="xJj-bk-9nR"/>
+                            <constraint firstItem="XG5-25-4De" firstAttribute="centerY" secondItem="W7b-2a-POC" secondAttribute="centerY" multiplier="0.7" id="e0f-fb-BCi"/>
+                            <constraint firstItem="Gos-v7-Y4d" firstAttribute="top" secondItem="XG5-25-4De" secondAttribute="bottom" id="eE7-FN-83B"/>
+                            <constraint firstItem="Gos-v7-Y4d" firstAttribute="leading" secondItem="W7b-2a-POC" secondAttribute="leading" id="md0-eF-OoK"/>
+                            <constraint firstItem="XG5-25-4De" firstAttribute="height" secondItem="W7b-2a-POC" secondAttribute="height" multiplier="0.4" id="xJj-bk-9nR"/>
                         </constraints>
                     </view>
                     <connections>
@@ -236,7 +308,325 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3BR-mH-SCz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="1498"/>
+            <point key="canvasLocation" x="31.884057971014496" y="1497.9910714285713"/>
+        </scene>
+        <!--Save Intake Entry View Controller-->
+        <scene sceneID="qEb-ge-u5N">
+            <objects>
+                <viewController storyboardIdentifier="SaveIntakeEntryViewController" id="gFD-KW-uwZ" customClass="SaveIntakeEntryViewController" customModule="Waterlove" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sx9-Ns-PIv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="160 ml" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTr-wd-juB">
+                                <rect key="frame" x="152" y="104" width="110.5" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Juice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XB-QO-JfY">
+                                <rect key="frame" x="180.5" y="162" width="53" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0K-SR-PFS">
+                                <rect key="frame" x="0.0" y="239.5" width="414" height="136"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hnq-dP-5dF">
+                                        <rect key="frame" x="16" y="16" width="382" height="104"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3ih-GE-OHz">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1B-Mh-Tow">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="44"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Water" cornerStyle="large" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapDrinkTypeButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="HbM-i5-U4M"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MR7-me-52A">
+                                                        <rect key="frame" x="199" y="0.0" width="183" height="44"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Coffee" cornerStyle="large" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapDrinkTypeButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="7se-NJ-aF2"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tV1-bA-fXB">
+                                                <rect key="frame" x="0.0" y="60" width="382" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS8-ib-aZk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="44"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Tea" cornerStyle="large" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <color key="baseBackgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapDrinkTypeButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="iDl-ab-IEv"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOQ-tf-mRS">
+                                                        <rect key="frame" x="199" y="0.0" width="183" height="44"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Juice" cornerStyle="large" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <color key="baseBackgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapDrinkTypeButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="G67-Lh-rYu"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hnq-dP-5dF" secondAttribute="bottom" constant="16" id="F9G-c0-MSA"/>
+                                    <constraint firstAttribute="trailing" secondItem="hnq-dP-5dF" secondAttribute="trailing" constant="16" id="GPB-70-QuH"/>
+                                    <constraint firstItem="hnq-dP-5dF" firstAttribute="top" secondItem="X0K-SR-PFS" secondAttribute="top" constant="16" id="T9T-vk-l2V"/>
+                                    <constraint firstItem="hnq-dP-5dF" firstAttribute="leading" secondItem="X0K-SR-PFS" secondAttribute="leading" constant="16" id="oZX-fl-YXb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64K-i3-7Ah">
+                                <rect key="frame" x="0.0" y="425.5" width="414" height="281.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="LQK-o6-N2O">
+                                        <rect key="frame" x="16" y="0.0" width="382" height="281.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6d6-un-yae">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="58.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVl-d5-9wf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="116.5" height="58.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="kVl-d5-9wf" secondAttribute="height" multiplier="2:1" id="oLQ-QS-X7t"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="1" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="dTD-IY-hx1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rX-Ta-wBP">
+                                                        <rect key="frame" x="132.5" y="0.0" width="117" height="58.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="2" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="kXx-BF-Ij4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-cw-vNh">
+                                                        <rect key="frame" x="265.5" y="0.0" width="116.5" height="58.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="3" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="1pD-gc-Bd1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zae-hF-jcO">
+                                                <rect key="frame" x="0.0" y="74.5" width="382" height="58"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9o-Er-T04">
+                                                        <rect key="frame" x="0.0" y="0.0" width="116.5" height="58"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="4" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="RJA-OU-nzS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVg-wH-irB">
+                                                        <rect key="frame" x="132.5" y="0.0" width="117" height="58"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="5" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="8Ga-7U-Rbd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upx-5d-fC9">
+                                                        <rect key="frame" x="265.5" y="0.0" width="116.5" height="58"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="6" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="T7F-Gx-c58"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lsX-ef-K4C">
+                                                <rect key="frame" x="0.0" y="148.5" width="382" height="58.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4j-fP-Ugd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="116.5" height="58.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="7" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="g39-xJ-rK7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6I4-1s-tIz">
+                                                        <rect key="frame" x="132.5" y="0.0" width="117" height="58.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="8" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="7oH-yJ-Y7N"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylm-c4-GNZ">
+                                                        <rect key="frame" x="265.5" y="0.0" width="116.5" height="58.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="9" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="3Xz-Pl-lv5"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oZF-6f-DPO">
+                                                <rect key="frame" x="0.0" y="223" width="382" height="58.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CU-Ln-9sk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="116.5" height="58.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="0" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="X6n-Mb-bPs"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lm2-xi-yMo">
+                                                        <rect key="frame" x="132.5" y="0.0" width="117" height="58.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="00" titleAlignment="center">
+                                                            <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                            <color key="baseBackgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="kRd-hi-NXp"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yok-SP-mlq">
+                                                        <rect key="frame" x="265.5" y="0.0" width="116.5" height="58.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="delete.left" catalog="system">
+                                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                                            <color key="baseBackgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="didTapNumberButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="PJl-vL-AYX"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="LQK-o6-N2O" firstAttribute="top" secondItem="64K-i3-7Ah" secondAttribute="top" id="8dG-Nd-SpH"/>
+                                    <constraint firstItem="LQK-o6-N2O" firstAttribute="leading" secondItem="64K-i3-7Ah" secondAttribute="leading" constant="16" id="LX7-nX-xeb"/>
+                                    <constraint firstAttribute="bottom" secondItem="LQK-o6-N2O" secondAttribute="bottom" id="sgv-t9-s7v"/>
+                                    <constraint firstAttribute="trailing" secondItem="LQK-o6-N2O" secondAttribute="trailing" constant="16" id="vfL-Xa-m3C"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uho-dt-0nx">
+                                <rect key="frame" x="82" y="811.5" width="250" height="34.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Vb1-Dm-5dX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapNextButton:" destination="7fs-fq-UOy" eventType="touchUpInside" id="llD-82-gfN"/>
+                                    <action selector="didTapSaveButton:" destination="gFD-KW-uwZ" eventType="touchUpInside" id="vpw-6i-8BW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vu5-U8-7NA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jTr-wd-juB" firstAttribute="top" secondItem="Vu5-U8-7NA" secondAttribute="top" constant="60" id="0R5-su-KUQ"/>
+                            <constraint firstItem="64K-i3-7Ah" firstAttribute="top" secondItem="X0K-SR-PFS" secondAttribute="bottom" constant="50" id="2yD-Sd-s36"/>
+                            <constraint firstItem="1XB-QO-JfY" firstAttribute="centerX" secondItem="Vu5-U8-7NA" secondAttribute="centerX" id="521-0o-0M3"/>
+                            <constraint firstItem="X0K-SR-PFS" firstAttribute="leading" secondItem="Vu5-U8-7NA" secondAttribute="leading" id="ALg-6M-ePc"/>
+                            <constraint firstItem="X0K-SR-PFS" firstAttribute="top" secondItem="1XB-QO-JfY" secondAttribute="bottom" constant="50" id="CH4-kw-myK"/>
+                            <constraint firstItem="Uho-dt-0nx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="64K-i3-7Ah" secondAttribute="bottom" constant="8" id="NyR-VU-dqH"/>
+                            <constraint firstItem="Vu5-U8-7NA" firstAttribute="trailing" secondItem="64K-i3-7Ah" secondAttribute="trailing" id="RYu-0w-dzK"/>
+                            <constraint firstItem="Uho-dt-0nx" firstAttribute="centerX" secondItem="Vu5-U8-7NA" secondAttribute="centerX" id="SRf-u5-lvc"/>
+                            <constraint firstItem="jTr-wd-juB" firstAttribute="centerX" secondItem="Vu5-U8-7NA" secondAttribute="centerX" id="bQN-MT-sLW"/>
+                            <constraint firstItem="Vu5-U8-7NA" firstAttribute="bottom" secondItem="Uho-dt-0nx" secondAttribute="bottom" constant="16" id="fX5-oC-EWs"/>
+                            <constraint firstItem="1XB-QO-JfY" firstAttribute="top" secondItem="jTr-wd-juB" secondAttribute="bottom" constant="16" id="mGW-bj-hLN"/>
+                            <constraint firstItem="64K-i3-7Ah" firstAttribute="leading" secondItem="Vu5-U8-7NA" secondAttribute="leading" id="ohI-Mb-2io"/>
+                            <constraint firstItem="Vu5-U8-7NA" firstAttribute="trailing" secondItem="X0K-SR-PFS" secondAttribute="trailing" id="pwX-5s-EZl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="jTr-wd-juB" id="a5S-a6-HYu"/>
+                        <outlet property="drinkTypeLabel" destination="1XB-QO-JfY" id="DhJ-NT-CYB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D68-tK-lAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934.78260869565224" y="1497.9910714285713"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="fKM-PF-BfH">
@@ -295,17 +685,30 @@
     </scenes>
     <resources>
         <image name="bottle" width="296" height="717"/>
+        <image name="delete.left" catalog="system" width="128" height="104"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
