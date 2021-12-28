@@ -11,6 +11,11 @@ class IntakeEntry {
   var guid: UUID
   var drinkType: DrinkType
   var amount: Measurement<UnitVolume>
+  var waterAmount: Measurement<UnitVolume> {
+    let value = round(amount.converted(to: .milliliters).value * drinkType.waterAmountMultiplier)
+
+    return .init(value: value, unit: .milliliters)
+  }
   var createdAt: Date
 
   init(guid: UUID, drinkType: DrinkType, amount: Measurement<UnitVolume>, createdAt: Date) {

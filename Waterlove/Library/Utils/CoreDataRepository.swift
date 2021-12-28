@@ -19,7 +19,7 @@ final class DBRepository<DomainModel, DBEntity>: Repository<DomainModel>, NSFetc
   private var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
   private let entityMapper: DBEntityMapper<DomainModel, DBEntity>
 
-  init(contextSource: DBContextProviderProtocol, entityMapper: DBEntityMapper<DomainModel, DBEntity>, autoUpdateSearchRequest: RepositorySearchRequest? = nil) {
+  init(contextSource: DBContextProviderProtocol, entityMapper: DBEntityMapper<DomainModel, DBEntity>, autoUpdateSearchRequest: RepositorySearchRequestProtocol? = nil) {
     self.contextSource = contextSource
     self.associatedEntityName = String(describing: DBEntity.self)
     self.entityMapper = entityMapper
@@ -35,7 +35,7 @@ final class DBRepository<DomainModel, DBEntity>: Repository<DomainModel>, NSFetc
     saveIn(data: objects, completion: completion)
   }
 
-  override func present(by request: RepositorySearchRequest, completion: @escaping ((Result<[DomainModel], Error>) -> Void)) {
+  override func present(by request: RepositorySearchRequestProtocol, completion: @escaping ((Result<[DomainModel], Error>) -> Void)) {
     let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: associatedEntityName)
     fetchRequest.predicate = request.predicate
     fetchRequest.sortDescriptors = request.sortDescriptors
@@ -61,7 +61,7 @@ final class DBRepository<DomainModel, DBEntity>: Repository<DomainModel>, NSFetc
     }
   }
 
-  override func delete(by request: RepositorySearchRequest, completion: @escaping ((Result<Void, Error>) -> Void)) {
+  override func delete(by request: RepositorySearchRequestProtocol, completion: @escaping ((Result<Void, Error>) -> Void)) {
     let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: associatedEntityName)
     fetchRequest.predicate = request.predicate
     fetchRequest.includesPropertyValues = false
@@ -129,7 +129,7 @@ private extension DBRepository {
     }
   }
 
-  func configureSearchedDataUpdating(_ request: RepositorySearchRequest) -> NSFetchedResultsController<NSFetchRequestResult> {
+  func configureSearchedDataUpdating(_ request: RepositorySearchRequestProtocol) -> NSFetchedResultsController<NSFetchRequestResult> {
     let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: associatedEntityName)
 
     fetchRequest.predicate = request.predicate

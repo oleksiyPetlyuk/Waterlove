@@ -9,10 +9,10 @@ import UIKit
 
 class CurrentHydrationViewController: UIViewController {
   struct Props {
-    let progress: (CGFloat, UInt)
+    let hydrationProgressViewProps: HydrationProgressView.Props
     let didTapAddNewIntake: CommandWith<DrinkType>
 
-    static let initial = Props(progress: (0, 0), didTapAddNewIntake: .nop)
+    static let initial = Props(hydrationProgressViewProps: .initial, didTapAddNewIntake: .nop)
   }
 
   var props: Props = .initial {
@@ -28,11 +28,7 @@ class CurrentHydrationViewController: UIViewController {
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
 
-    hydrationProgressView.props = .init(
-      progressBarProps: .init(progress: props.progress.0),
-      progressValue: props.progress.0,
-      intookWaterAmount: props.progress.1
-    )
+    hydrationProgressView.props = props.hydrationProgressViewProps
   }
 
   @IBAction private func didTapAddNewIntakeButton(_ sender: UIButton) {

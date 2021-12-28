@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 final class CurrentHydrationFlowController: UIViewController {
+  typealias Dependencies = HasDailyWaterIntakeStore
+
+  let dependencies: Dependencies
+
   private var embeddedNavigationController: UINavigationController?
 
   private lazy var currentHydrationVC: CurrentHydrationViewController? = {
@@ -16,6 +21,14 @@ final class CurrentHydrationFlowController: UIViewController {
 
   private lazy var saveIntakeEntryVC: SaveIntakeEntryViewController? = {
     return R.storyboard.main.saveIntakeEntryViewController()
+  }()
+
+  private var repository: Repository<IntakeEntry>
+
+  private var subscribers: [AnyCancellable] = []
+
+  private lazy var dailyIntakeAmount: Measurement<UnitVolume> = {
+    return dependencies.dailyWaterIntakeStore.getDailyIntake() ?? .init(value: 2500, unit: .milliliters)
   }()
 
   private var intakeEntryAmount: Measurement<UnitVolume> = .init(value: 0, unit: .milliliters) {
@@ -34,7 +47,31 @@ final class CurrentHydrationFlowController: UIViewController {
     }
   }
 
-  init() {
+  private var hydrationProgress: UInt8 = 0 {
+    didSet {
+      if let controller = currentHydrationVC {
+        controller.props = makeCurrentHydrationProps()
+      }
+    }
+  }
+
+  private var intookWaterAmount: Measurement<UnitVolume> = .init(value: 0, unit: .milliliters) {
+    didSet {
+      if let controller = currentHydrationVC {
+        controller.props = makeCurrentHydrationProps()
+      }
+    }
+  }
+
+  init(dependencies: Dependencies) {
+    self.dependencies = dependencies
+
+    self.repository = DBRepository(
+      contextSource: DBContextProvider(),
+      entityMapper: IntakeEntryEntityMapper(),
+      autoUpdateSearchRequest: IntakeEntrySpecificDateSearchRequest()
+    )
+
     super.init(nibName: nil, bundle: nil)
 
     let navigationController = UINavigationController()
@@ -54,6 +91,28 @@ final class CurrentHydrationFlowController: UIViewController {
     if let controller = currentHydrationVC {
       controller.props = makeCurrentHydrationProps()
 
+      repository.$searchedData
+        .receive(on: DispatchQueue.main)
+        .sink { [weak self] entries in
+          guard let self = self else { return }
+
+          var totalAmount: Measurement<UnitVolume> = .init(value: 0, unit: .milliliters)
+
+          entries.forEach { entry in
+            // swiftlint:disable:next shorthand_operator
+            totalAmount = totalAmount + entry.waterAmount
+          }
+
+          if totalAmount >= self.dailyIntakeAmount {
+            self.hydrationProgress = 100
+          } else {
+            self.hydrationProgress = UInt8(totalAmount.value / self.dailyIntakeAmount.value * 100)
+          }
+
+          self.intookWaterAmount = totalAmount
+        }
+        .store(in: &subscribers)
+
       embeddedNavigationController?.viewControllers = [controller]
     }
   }
@@ -71,7 +130,10 @@ final class CurrentHydrationFlowController: UIViewController {
 extension CurrentHydrationFlowController {
   private func makeCurrentHydrationProps() -> CurrentHydrationViewController.Props {
     return .init(
-      progress: (0, 0),
+      hydrationProgressViewProps: .init(
+        progressBarProps: .init(progress: hydrationProgress),
+        intookWaterAmount: intookWaterAmount
+      ),
       didTapAddNewIntake: .init { [weak self] drinkType in
         self?.drinkType = drinkType
         self?.startSaveIntakeEntry()
@@ -108,7 +170,32 @@ extension CurrentHydrationFlowController {
         }
       },
       didTapSaveButton: .init { [weak self] in
-        self?.embeddedNavigationController?.dismiss(animated: true, completion: nil)
+        guard let self = self else { return }
+
+        guard self.intakeEntryAmount > .init(value: 0, unit: .milliliters) else {
+          self.embeddedNavigationController?.dismiss(animated: true, completion: nil)
+
+          return
+        }
+
+        let newIntake = IntakeEntry(
+          guid: UUID(),
+          drinkType: self.drinkType,
+          amount: self.intakeEntryAmount,
+          createdAt: .now
+        )
+
+        self.repository.save([newIntake]) { result in
+          switch result {
+          case .success:
+            DispatchQueue.main.async {
+              self.intakeEntryAmount = .init(value: 0, unit: .milliliters)
+              self.embeddedNavigationController?.dismiss(animated: true, completion: nil)
+            }
+          case .failure(let error):
+            print("Error occurred during saving a new intake entry: \(error)")
+          }
+        }
       }
     )
   }

@@ -38,7 +38,7 @@ final class AppFlowController: UIViewController {
   }
 
   private func startMain() {
-    let mainFlow = MainFlowController()
+    let mainFlow = MainFlowController(dependencies: dependencyContainer)
 
     add(childController: mainFlow)
     mainFlow.start()

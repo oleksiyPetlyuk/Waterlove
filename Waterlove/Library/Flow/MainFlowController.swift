@@ -8,9 +8,15 @@
 import UIKit
 
 final class MainFlowController: UIViewController {
+  typealias Dependencies = HasDailyWaterIntakeStore
+
+  let dependencies: Dependencies
+
   private var embeddedTabBarController: UITabBarController?
 
-  init() {
+  init(dependencies: Dependencies) {
+    self.dependencies = dependencies
+
     super.init(nibName: nil, bundle: nil)
 
     let tabBarController = UITabBarController()
@@ -19,11 +25,11 @@ final class MainFlowController: UIViewController {
   }
 
   required init?(coder: NSCoder) {
-    super.init(coder: coder)
+    fatalError("init(coder:) has not been implemented")
   }
 
   func start() {
-    let currentHydrationController = CurrentHydrationFlowController()
+    let currentHydrationController = CurrentHydrationFlowController(dependencies: dependencies)
     let historyController = R.storyboard.main.historyViewController()
     let settingsController = R.storyboard.main.settingsViewController()
 

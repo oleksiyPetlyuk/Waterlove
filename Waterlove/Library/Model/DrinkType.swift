@@ -13,6 +13,16 @@ enum DrinkType: String {
   case tea
   case juice
 
+  /// Indicates the amount of water in different drink types (e.g. 100 ml of coffee contains 30 ml of water)
+  var waterAmountMultiplier: Double {
+    switch self {
+    case .water: return 1
+    case .coffee: return 0.3
+    case .tea: return 0.8
+    case .juice: return 0.2
+    }
+  }
+
   init?(tag: Int) {
     switch tag {
     case 0: self = .water

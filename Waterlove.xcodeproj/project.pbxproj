@@ -47,6 +47,7 @@
 		FA6558AA2779D125002A233B /* SaveIntakeEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558A92779D125002A233B /* SaveIntakeEntryViewController.swift */; };
 		FA6558AC2779DB47002A233B /* CurrentHydrationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558AB2779DB47002A233B /* CurrentHydrationFlowController.swift */; };
 		FA6558AE2779F8E5002A233B /* String+capitalizeFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */; };
+		FAA0D703277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */; };
 		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -115,6 +116,7 @@
 		FA6558A92779D125002A233B /* SaveIntakeEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveIntakeEntryViewController.swift; sourceTree = "<group>"; };
 		FA6558AB2779DB47002A233B /* CurrentHydrationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHydrationFlowController.swift; sourceTree = "<group>"; };
 		FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+capitalizeFirstLetter.swift"; sourceTree = "<group>"; };
+		FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntrySearchRequests.swift; sourceTree = "<group>"; };
 		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,6 +315,7 @@
 		FA65588A2774AA4F002A233B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				FAA0D701277B2FA0009C7D14 /* SearchRequests */,
 				FA6558912774B2B5002A233B /* EntityMappers */,
 				FA54F073275A66A8007053AA /* Waterlove.xcdatamodeld */,
 				FA655879277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift */,
@@ -335,6 +338,14 @@
 				FA6558A92779D125002A233B /* SaveIntakeEntryViewController.swift */,
 			);
 			path = SaveIntakeEntry;
+			sourceTree = "<group>";
+		};
+		FAA0D701277B2FA0009C7D14 /* SearchRequests */ = {
+			isa = PBXGroup;
+			children = (
+				FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */,
+			);
+			path = SearchRequests;
 			sourceTree = "<group>";
 		};
 		FAA30ED3276779400031B17E /* Utils */ = {
@@ -541,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA0D703277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift in Sources */,
 				FA65587C277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift in Sources */,
 				FAA30ED5276779490031B17E /* Command.swift in Sources */,
 				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,

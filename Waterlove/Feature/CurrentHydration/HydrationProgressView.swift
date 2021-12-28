@@ -11,10 +11,9 @@ import SnapKit
 class HydrationProgressView: UIView {
   struct Props {
     let progressBarProps: CircularProgressBar.Props
-    let progressValue: CGFloat
-    let intookWaterAmount: UInt
+    let intookWaterAmount: Measurement<UnitVolume>
 
-    static let initial = Props(progressBarProps: .initial, progressValue: 0, intookWaterAmount: 0)
+    static let initial = Props(progressBarProps: .initial, intookWaterAmount: .init(value: 0, unit: .milliliters))
   }
 
   var props: Props = .initial {
@@ -43,6 +42,13 @@ class HydrationProgressView: UIView {
     label.numberOfLines = 0
 
     return label
+  }()
+
+  private let formatter: MeasurementFormatter = {
+    let formatter = MeasurementFormatter()
+    formatter.unitOptions = .providedUnit
+
+    return formatter
   }()
 
   override init(frame: CGRect) {
@@ -93,7 +99,7 @@ class HydrationProgressView: UIView {
 
   private func render() {
     circularProgressBar.props = props.progressBarProps
-    progressValueLabel.text = String(format: "%.0f %%", props.progressValue * 100)
-    intookWaterAmountLabel.text = "\(props.intookWaterAmount) ml"
+    progressValueLabel.text = "\(props.progressBarProps.progress) %"
+    intookWaterAmountLabel.text = formatter.string(from: props.intookWaterAmount)
   }
 }

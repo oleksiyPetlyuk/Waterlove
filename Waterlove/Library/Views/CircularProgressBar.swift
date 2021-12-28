@@ -9,7 +9,7 @@ import UIKit
 
 class CircularProgressBar: UIView {
   struct Props {
-    let progress: CGFloat
+    let progress: UInt8
 
     static let initial = Props(progress: 0)
   }
@@ -48,11 +48,13 @@ class CircularProgressBar: UIView {
     progressLayer.path = circularPath.cgPath
     progressLayer.lineCap = .round
     progressLayer.strokeStart = 0
-    progressLayer.strokeEnd = props.progress
+
+    let strokeEnd = CGFloat(props.progress) / 100
+    progressLayer.strokeEnd = strokeEnd
     progressLayer.strokeColor = Constants.color.cgColor
 
     addAnimation(layer: progressLayer, keyPath: "strokeEnd") {
-      self.progressLayer.strokeEnd = self.props.progress
+      self.progressLayer.strokeEnd = strokeEnd
     }
   }
 }
