@@ -10,6 +10,10 @@ import UIKit
 final class AppFlowController: UIViewController {
   let dependencyContainer: DependencyContainer
 
+  private var isUserDidFinishTutorial: Bool {
+    return UserDefaults.standard.bool(forKey: "userDidFinishTutorial")
+  }
+
   init(dependencyContainer: DependencyContainer) {
     self.dependencyContainer = dependencyContainer
 
@@ -22,13 +26,14 @@ final class AppFlowController: UIViewController {
 
   /// Start the flow
   func start() {
-    startTutorial()
+    isUserDidFinishTutorial ? startMain() : startTutorial()
   }
 
   private func startTutorial() {
     let onboardingFlow = OnboardingFlowController(dependencies: dependencyContainer)
 
     onboardingFlow.didFinishOnboarding = { [weak self] in
+      UserDefaults.standard.set(true, forKey: "userDidFinishTutorial")
       self?.remove(childController: onboardingFlow)
       self?.startMain()
     }
