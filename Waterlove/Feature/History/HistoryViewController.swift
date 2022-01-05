@@ -128,7 +128,7 @@ class HistoryViewController: UIViewController {
       dataSource.update()
 
       if let recommendedDailyAmount = loadedProps.recommendedDailyAmount {
-        chartView.leftAxis.axisMaximum = recommendedDailyAmount.value + 500
+        chartView.leftAxis.axisMaximum = recommendedDailyAmount.value + 1000
 
         let limitLine = ChartLimitLine(limit: recommendedDailyAmount.value, label: "Recommended")
         chartView.leftAxis.addLimitLine(limitLine)

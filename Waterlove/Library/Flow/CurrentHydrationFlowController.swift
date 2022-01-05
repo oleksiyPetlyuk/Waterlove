@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Combine
 
 final class CurrentHydrationFlowController: UIViewController {
   typealias Dependencies = HasDailyWaterIntakeStore
@@ -24,8 +23,6 @@ final class CurrentHydrationFlowController: UIViewController {
   }()
 
   private var repository: Repository<IntakeEntry>
-
-  private var subscribers: [AnyCancellable] = []
 
   private lazy var dailyIntakeAmount: Measurement<UnitVolume> = {
     return dependencies.dailyWaterIntakeStore.getDailyIntake() ?? .init(value: 2500, unit: .milliliters)
@@ -69,7 +66,7 @@ final class CurrentHydrationFlowController: UIViewController {
     self.repository = DBRepository(
       contextSource: DBContextProvider(),
       entityMapper: IntakeEntryEntityMapper(),
-      autoUpdateSearchRequest: IntakeEntrySpecificDateSearchRequest()
+      autoUpdateSearchRequest: nil
     )
 
     super.init(nibName: nil, bundle: nil)
@@ -83,6 +80,12 @@ final class CurrentHydrationFlowController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    loadCurrentHydration()
+  }
+
   func start() {
     startCurrentHydration()
   }
@@ -91,18 +94,26 @@ final class CurrentHydrationFlowController: UIViewController {
     if let controller = currentHydrationVC {
       controller.props = makeCurrentHydrationProps()
 
-      repository.$searchedData
-        .receive(on: DispatchQueue.main)
-        .sink { [weak self] entries in
-          guard let self = self else { return }
+      embeddedNavigationController?.viewControllers = [controller]
+    }
+  }
 
-          var totalAmount: Measurement<UnitVolume> = .init(value: 0, unit: .milliliters)
+  private func loadCurrentHydration() {
+    repository.present(by: IntakeEntrySpecificDateSearchRequest()) { [weak self] result in
+      guard let self = self else { return }
 
-          entries.forEach { entry in
-            // swiftlint:disable:next shorthand_operator
-            totalAmount = totalAmount + entry.waterAmount
-          }
+      switch result {
+      case .failure(let error):
+        print(error)
+      case .success(let entries):
+        var totalAmount: Measurement<UnitVolume> = .init(value: 0, unit: .milliliters)
 
+        entries.forEach { entry in
+          // swiftlint:disable:next shorthand_operator
+          totalAmount = totalAmount + entry.waterAmount
+        }
+
+        DispatchQueue.main.async {
           if totalAmount >= self.dailyIntakeAmount {
             self.hydrationProgress = 100
           } else {
@@ -111,9 +122,7 @@ final class CurrentHydrationFlowController: UIViewController {
 
           self.intookWaterAmount = totalAmount
         }
-        .store(in: &subscribers)
-
-      embeddedNavigationController?.viewControllers = [controller]
+      }
     }
   }
 
@@ -188,6 +197,7 @@ extension CurrentHydrationFlowController {
         self.repository.save([newIntake]) { result in
           switch result {
           case .success:
+            self.loadCurrentHydration()
             DispatchQueue.main.async {
               self.intakeEntryAmount = .init(value: 0, unit: .milliliters)
               self.embeddedNavigationController?.dismiss(animated: true, completion: nil)
