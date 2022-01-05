@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA516479277C816000D58204 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = FA516478277C816000D58204 /* Charts */; };
 		FA54F06B275A66A8007053AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06A275A66A8007053AA /* AppDelegate.swift */; };
 		FA54F06D275A66A8007053AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06C275A66A8007053AA /* SceneDelegate.swift */; };
 		FA54F072275A66A8007053AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54F070275A66A8007053AA /* Main.storyboard */; };
@@ -47,9 +48,13 @@
 		FA6558AA2779D125002A233B /* SaveIntakeEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558A92779D125002A233B /* SaveIntakeEntryViewController.swift */; };
 		FA6558AC2779DB47002A233B /* CurrentHydrationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558AB2779DB47002A233B /* CurrentHydrationFlowController.swift */; };
 		FA6558AE2779F8E5002A233B /* String+capitalizeFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */; };
+		FA6FD793277CC0150048A8AD /* IntakeEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FD792277CC0150048A8AD /* IntakeEntryTableViewCell.swift */; };
 		FAA0D703277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */; };
 		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
+		FAAF1306278457FD008278EA /* HistoryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF1305278457FD008278EA /* HistoryFlowController.swift */; };
 		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
+		FACD599427849BCA00314891 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD599327849BCA00314891 /* Date+Extensions.swift */; };
+		FACD59962785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,9 +121,13 @@
 		FA6558A92779D125002A233B /* SaveIntakeEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveIntakeEntryViewController.swift; sourceTree = "<group>"; };
 		FA6558AB2779DB47002A233B /* CurrentHydrationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHydrationFlowController.swift; sourceTree = "<group>"; };
 		FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+capitalizeFirstLetter.swift"; sourceTree = "<group>"; };
+		FA6FD792277CC0150048A8AD /* IntakeEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntryTableViewCell.swift; sourceTree = "<group>"; };
 		FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntrySearchRequests.swift; sourceTree = "<group>"; };
 		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		FAAF1305278457FD008278EA /* HistoryFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFlowController.swift; sourceTree = "<group>"; };
 		FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculator.swift; sourceTree = "<group>"; };
+		FACD599327849BCA00314891 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntryGetByGuidSearchRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA54F0A4275A6D2B007053AA /* Rswift in Frameworks */,
+				FA516479277C816000D58204 /* Charts in Frameworks */,
 				FA59AC052769FEB900EF02A3 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +235,7 @@
 				FA54F0AE275F9DA0007053AA /* OnboardingFlowController.swift */,
 				FA54F0C72760F241007053AA /* MainFlowController.swift */,
 				FA6558AB2779DB47002A233B /* CurrentHydrationFlowController.swift */,
+				FAAF1305278457FD008278EA /* HistoryFlowController.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 			children = (
 				FA54F0AC275F99C2007053AA /* UIViewController+Extensions.swift */,
 				FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */,
+				FACD599327849BCA00314891 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */,
+				FA6FD792277CC0150048A8AD /* IntakeEntryTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */,
+				FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */,
 			);
 			path = SearchRequests;
 			sourceTree = "<group>";
@@ -392,6 +406,7 @@
 			packageProductDependencies = (
 				FA54F0A3275A6D2B007053AA /* Rswift */,
 				FA59AC042769FEB900EF02A3 /* SnapKit */,
+				FA516478277C816000D58204 /* Charts */,
 			);
 			productName = Waterlove;
 			productReference = FA54F067275A66A8007053AA /* Waterlove.app */;
@@ -468,6 +483,7 @@
 			packageReferences = (
 				FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */,
 				FA59AC032769FEB900EF02A3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FA516477277C816000D58204 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = FA54F068275A66A8007053AA /* Products */;
 			projectDirPath = "";
@@ -553,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA0D703277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift in Sources */,
+				FAAF1306278457FD008278EA /* HistoryFlowController.swift in Sources */,
 				FA65587C277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift in Sources */,
 				FAA30ED5276779490031B17E /* Command.swift in Sources */,
 				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,
@@ -560,6 +577,8 @@
 				FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */,
 				FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */,
 				FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */,
+				FACD599427849BCA00314891 /* Date+Extensions.swift in Sources */,
+				FACD59962785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */,
 				FA6558952774B33B002A233B /* DBContextProvider.swift in Sources */,
 				FA54F0B3275FA108007053AA /* TutorialViewController.swift in Sources */,
 				FA54F06B275A66A8007053AA /* AppDelegate.swift in Sources */,
@@ -574,6 +593,7 @@
 				FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */,
 				FA65588C2774AA81002A233B /* IntakeEntry.swift in Sources */,
 				FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */,
+				FA6FD793277CC0150048A8AD /* IntakeEntryTableViewCell.swift in Sources */,
 				FA6558972774B498002A233B /* CoreDataRepository.swift in Sources */,
 				FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */,
 				FA655876277334B1002A233B /* DependencyContainer.swift in Sources */,
@@ -953,6 +973,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA516477277C816000D58204 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
@@ -972,6 +1000,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA516478277C816000D58204 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA516477277C816000D58204 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
 		FA54F0A3275A6D2B007053AA /* Rswift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */;

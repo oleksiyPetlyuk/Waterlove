@@ -25,6 +25,12 @@ class CurrentHydrationViewController: UIViewController {
 
   @IBOutlet private weak var hydrationProgressView: HydrationProgressView!
 
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    navigationItem.title = "Current Hydration"
+  }
+
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
 

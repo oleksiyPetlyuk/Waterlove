@@ -30,12 +30,10 @@ final class MainFlowController: UIViewController {
 
   func start() {
     let currentHydrationController = CurrentHydrationFlowController(dependencies: dependencies)
-    let historyController = R.storyboard.main.historyViewController()
+    let historyController = HistoryFlowController(dependencies: dependencies)
     let settingsController = R.storyboard.main.settingsViewController()
 
-    if
-      let historyController = historyController,
-      let settingsController = settingsController {
+    if let settingsController = settingsController {
       historyController.tabBarItem = UITabBarItem(
         title: "History",
         image: UIImage(systemName: "clock"),
@@ -54,6 +52,8 @@ final class MainFlowController: UIViewController {
 
       embeddedTabBarController?.viewControllers = [historyController, currentHydrationController, settingsController]
       embeddedTabBarController?.selectedViewController = currentHydrationController
+
+      historyController.start()
       currentHydrationController.start()
     }
   }
