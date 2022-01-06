@@ -12,13 +12,15 @@ class IntakeEntrySpecificDateSearchRequest: RepositorySearchRequest {
   /// - Parameters:
   ///   - startDate: start date to search for
   ///   - endDate: end date to search for
-  convenience init(startDate: Date, endDate: Date) {
+  ///   - sortDescriptors: sort descriptors
+  convenience init(startDate: Date, endDate: Date, sortDescriptors: [NSSortDescriptor] = []) {
     let predicate = NSPredicate(format: "createdAt >= %@ AND createdAt < %@", argumentArray: [startDate, endDate])
 
-    self.init(predicate: predicate, sortDescriptors: [])
+    self.init(predicate: predicate, sortDescriptors: sortDescriptors)
   }
 
-  /// Initialize a new search request with a current day date range predicate
+  /// Initialize a new search request with a current day date range predicate.
+  /// Sorted descending by date.
   convenience init() {
     var calendar = Calendar.current
     calendar.timeZone = NSTimeZone.local
@@ -26,6 +28,8 @@ class IntakeEntrySpecificDateSearchRequest: RepositorySearchRequest {
     let startDate = calendar.startOfDay(for: Date())
     let endDate = calendar.date(byAdding: .day, value: 1, to: startDate) ?? .now
 
-    self.init(startDate: startDate, endDate: endDate)
+    let sort = NSSortDescriptor(key: "createdAt", ascending: false)
+
+    self.init(startDate: startDate, endDate: endDate, sortDescriptors: [sort])
   }
 }

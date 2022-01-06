@@ -199,7 +199,11 @@ extension HistoryViewController {
           snapshot.deleteItems([element])
         case let .insert(_, element, _):
           if snapshot.indexOfItem(element) == nil {
-            snapshot.appendItems([element], toSection: .main)
+            if let first = snapshot.itemIdentifiers.first {
+              snapshot.insertItems([element], beforeItem: first)
+            } else {
+              snapshot.appendItems([element], toSection: .main)
+            }
           }
         }
       }

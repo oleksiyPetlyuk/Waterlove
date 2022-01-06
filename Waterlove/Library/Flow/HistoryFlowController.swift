@@ -144,7 +144,9 @@ private extension HistoryFlowController {
       endDate = .now.endOfMonth()
     }
 
-    let request = IntakeEntrySpecificDateSearchRequest(startDate: startDate, endDate: endDate)
+    let sort = NSSortDescriptor(key: "createdAt", ascending: true)
+
+    let request = IntakeEntrySpecificDateSearchRequest(startDate: startDate, endDate: endDate, sortDescriptors: [sort])
 
     repository.present(by: request) { result in
       DispatchQueue.main.async {
