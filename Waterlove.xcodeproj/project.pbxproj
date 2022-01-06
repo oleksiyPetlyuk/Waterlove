@@ -56,6 +56,8 @@
 		FACD599427849BCA00314891 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD599327849BCA00314891 /* Date+Extensions.swift */; };
 		FACD59962785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */; };
 		FAE998E527871D4700523B54 /* HistoryStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E427871D4700523B54 /* HistoryStateMachine.swift */; };
+		FAE998E82787336900523B54 /* WeekdayValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E72787336900523B54 /* WeekdayValueFormatter.swift */; };
+		FAE998EA2787340F00523B54 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E92787340F00523B54 /* Weekday.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,8 @@
 		FACD599327849BCA00314891 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntryGetByGuidSearchRequest.swift; sourceTree = "<group>"; };
 		FAE998E427871D4700523B54 /* HistoryStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateMachine.swift; sourceTree = "<group>"; };
+		FAE998E72787336900523B54 /* WeekdayValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayValueFormatter.swift; sourceTree = "<group>"; };
+		FAE998E92787340F00523B54 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,7 @@
 		FA54F0A7275F97BF007053AA /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FAE998E62787335800523B54 /* Formatters */,
 				FAE998E327871D2100523B54 /* StateMachines */,
 				FA65587D277377E9002A233B /* Model */,
 				FA59AC0C276B8ADF00EF02A3 /* Views */,
@@ -375,6 +380,7 @@
 				FA6558962774B498002A233B /* CoreDataRepository.swift */,
 				FA6558942774B33B002A233B /* DBContextProvider.swift */,
 				FA6558982774B9C3002A233B /* DBEntityMapper.swift */,
+				FAE998E92787340F00523B54 /* Weekday.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -394,6 +400,14 @@
 				FAE998E427871D4700523B54 /* HistoryStateMachine.swift */,
 			);
 			path = StateMachines;
+			sourceTree = "<group>";
+		};
+		FAE998E62787335800523B54 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				FAE998E72787336900523B54 /* WeekdayValueFormatter.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -582,10 +596,12 @@
 				FAA0D703277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift in Sources */,
 				FAAF1306278457FD008278EA /* HistoryFlowController.swift in Sources */,
 				FA65587C277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift in Sources */,
+				FAE998E82787336900523B54 /* WeekdayValueFormatter.swift in Sources */,
 				FAA30ED5276779490031B17E /* Command.swift in Sources */,
 				FAE998E527871D4700523B54 /* HistoryStateMachine.swift in Sources */,
 				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,
 				FA65587427733153002A233B /* DailyWaterIntakeStore.swift in Sources */,
+				FAE998EA2787340F00523B54 /* Weekday.swift in Sources */,
 				FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */,
 				FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */,
 				FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */,

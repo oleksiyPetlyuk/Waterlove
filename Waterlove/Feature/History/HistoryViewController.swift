@@ -315,33 +315,3 @@ extension HistoryViewController: HistoryStateMachineObserver {
 enum SearchInterval: Int {
   case week, month
 }
-
-enum Weekday: Int, CaseIterable {
-  case sunday = 1
-  case monday = 2
-  case tuesday = 3
-  case wednesday = 4
-  case thursday = 5
-  case friday = 6
-  case saturday = 7
-
-  var shortDescription: String {
-    switch self {
-    case .sunday: return "S"
-    case .monday: return "M"
-    case .tuesday: return "T"
-    case .wednesday: return "W"
-    case .thursday: return "T"
-    case .friday: return "F"
-    case .saturday: return "S"
-    }
-  }
-}
-
-class WeekdayValueFormatter: AxisValueFormatter {
-  func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-    guard let weekday = Weekday(rawValue: Int(value)) else { return "" }
-
-    return weekday.shortDescription
-  }
-}
