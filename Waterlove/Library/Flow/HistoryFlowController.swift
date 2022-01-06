@@ -14,23 +14,27 @@ final class HistoryFlowController: UIViewController {
 
   private var embeddedNavigationController: UINavigationController?
 
+  private var historyStateMachine = HistoryStateMachine()
+
   private lazy var historyVC: HistoryViewController? = {
-    return R.storyboard.main.historyViewController()
+    guard let controller = R.storyboard.main.historyViewController() else { return nil }
+
+    historyStateMachine.observer = controller
+
+    return controller
   }()
 
   private var repository: Repository<IntakeEntry>
 
   private var searchInterval = SearchInterval.week {
     didSet {
-      loadHistory(showLoading: false)
+      loadHistory()
     }
   }
 
   private var entries: [IntakeEntry] = [] {
     didSet {
-      if let controller = historyVC {
-        controller.props = .loaded(makeHistoryLoadedProps())
-      }
+      historyStateMachine.transition(with: .loadingFinished(makeHistoryLoadedProps()))
     }
   }
 
@@ -57,7 +61,7 @@ final class HistoryFlowController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    loadHistory(showLoading: false)
+    loadHistory()
   }
 
   func start() {
@@ -74,8 +78,8 @@ final class HistoryFlowController: UIViewController {
 }
 
 private extension HistoryFlowController {
-  func makeHistoryLoadedProps() -> HistoryViewController.Props.LoadedProps {
-    let entries: [HistoryViewController.Props.LoadedProps.Data] = entries.map { entry in
+  func makeHistoryLoadedProps() -> HistoryViewController.Props {
+    let entries: [HistoryViewController.Props.Entry] = entries.map { entry in
       return .init(
         id: entry.guid,
         drinkType: entry.drinkType,
@@ -89,14 +93,12 @@ private extension HistoryFlowController {
           self.repository.delete(by: IntakeEntryGetByGuidSearchRequest(guids: [entry.guid])) { result in
             switch result {
             case .failure(let error):
-              if let controller = self.historyVC {
-                DispatchQueue.main.async {
-                  controller.props = .error(description: error.localizedDescription)
-                }
+              DispatchQueue.main.async {
+                self.historyStateMachine.transition(with: .loadingFailed(error))
               }
             case .success:
               DispatchQueue.main.async {
-                self.loadHistory(showLoading: false)
+                self.loadHistory()
               }
             }
           }
@@ -105,7 +107,7 @@ private extension HistoryFlowController {
     }
 
     return .init(
-      data: entries,
+      entries: entries,
       searchInterval: searchInterval,
       recommendedDailyAmount: dependencies.dailyWaterIntakeStore.getDailyIntake(),
       didChangeSearchInterval: .init { [weak self] newInterval in
@@ -114,19 +116,15 @@ private extension HistoryFlowController {
     )
   }
 
-  func loadHistory(showLoading: Bool = true) {
-    if let controller = historyVC {
-      if showLoading {
-        controller.props = .loading
-      }
+  func loadHistory() {
+    historyStateMachine.transition(with: .startLoading)
 
-      fetchEntries { [weak self] result in
-        switch result {
-        case .failure(let error):
-          controller.props = .error(description: error.localizedDescription)
-        case .success(let entries):
-          self?.entries = entries
-        }
+    fetchEntries { [weak self] result in
+      switch result {
+      case .failure(let error):
+        self?.historyStateMachine.transition(with: .loadingFailed(error))
+      case .success(let entries):
+        self?.entries = entries
       }
     }
   }

@@ -55,6 +55,7 @@
 		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
 		FACD599427849BCA00314891 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD599327849BCA00314891 /* Date+Extensions.swift */; };
 		FACD59962785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */; };
+		FAE998E527871D4700523B54 /* HistoryStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E427871D4700523B54 /* HistoryStateMachine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculator.swift; sourceTree = "<group>"; };
 		FACD599327849BCA00314891 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntryGetByGuidSearchRequest.swift; sourceTree = "<group>"; };
+		FAE998E427871D4700523B54 /* HistoryStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateMachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 		FA54F0A7275F97BF007053AA /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FAE998E327871D2100523B54 /* StateMachines */,
 				FA65587D277377E9002A233B /* Model */,
 				FA59AC0C276B8ADF00EF02A3 /* Views */,
 				FAA30ED3276779400031B17E /* Utils */,
@@ -383,6 +386,14 @@
 				FA65587327733153002A233B /* DailyWaterIntakeStore.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FAE998E327871D2100523B54 /* StateMachines */ = {
+			isa = PBXGroup;
+			children = (
+				FAE998E427871D4700523B54 /* HistoryStateMachine.swift */,
+			);
+			path = StateMachines;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -572,6 +583,7 @@
 				FAAF1306278457FD008278EA /* HistoryFlowController.swift in Sources */,
 				FA65587C277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift in Sources */,
 				FAA30ED5276779490031B17E /* Command.swift in Sources */,
+				FAE998E527871D4700523B54 /* HistoryStateMachine.swift in Sources */,
 				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,
 				FA65587427733153002A233B /* DailyWaterIntakeStore.swift in Sources */,
 				FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */,

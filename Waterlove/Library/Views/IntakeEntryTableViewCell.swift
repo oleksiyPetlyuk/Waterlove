@@ -21,7 +21,7 @@ class IntakeEntryTableViewCell: UITableViewCell {
     return formatter
   }()
 
-  var intakeEntry: HistoryViewController.Props.LoadedProps.Data? {
+  var intakeEntry: HistoryViewController.Props.Entry? {
     didSet {
       guard let entry = intakeEntry else { return }
 
