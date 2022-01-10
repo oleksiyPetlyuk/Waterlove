@@ -1,0 +1,441 @@
+[
+  {
+    "amount" : 300,
+    "createdAt" : 663458400,
+    "drinkType" : "water",
+    "guid" : "D2CA7176-FC7A-43DE-B76A-441D676422D2"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663458400,
+    "drinkType" : "tea",
+    "guid" : "48947D5E-DC70-4215-B21E-B570C7C05873"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663458400,
+    "drinkType" : "coffee",
+    "guid" : "B9B3F0CF-4528-424D-A00D-406E71CCEDFE"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663458400,
+    "drinkType" : "juice",
+    "guid" : "622798DA-3354-4C7B-AE38-22DBE4E5E60B"
+  },
+  {
+    "amount" : 300,
+    "createdAt" : 663458400,
+    "drinkType" : "water",
+    "guid" : "D71879A1-0568-41CD-95A0-2A435A25B2DD"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663458400,
+    "drinkType" : "tea",
+    "guid" : "F5749EB8-009C-4291-BB53-40D5D79E6A2F"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663458400,
+    "drinkType" : "coffee",
+    "guid" : "7DE578AB-0BF1-48EB-B007-E4AEEAB96838"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663458400,
+    "drinkType" : "juice",
+    "guid" : "228D2ED9-0744-4F3B-8E53-B59F586E339B"
+  },
+  {
+    "amount" : 300,
+    "createdAt" : 663458400,
+    "drinkType" : "water",
+    "guid" : "F0401537-5237-4468-9E09-6DB1B0633387"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663458400,
+    "drinkType" : "tea",
+    "guid" : "30C4DBF4-E310-45F1-A0B5-742CA09652E6"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663458400,
+    "drinkType" : "coffee",
+    "guid" : "B2ADE91E-F093-4345-912F-8EF057DEBC12"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663458400,
+    "drinkType" : "juice",
+    "guid" : "B035AC5E-1744-4DA8-A170-F36CB67AD8B7"
+  },
+  {
+    "amount" : 460,
+    "createdAt" : 663544800,
+    "drinkType" : "water",
+    "guid" : "53463689-4415-46B8-9E7C-0F82508FD62F"
+  },
+  {
+    "amount" : 160,
+    "createdAt" : 663544800,
+    "drinkType" : "tea",
+    "guid" : "3A5EA6F1-C601-404D-A242-D78CE17D2700"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663544800,
+    "drinkType" : "coffee",
+    "guid" : "CEEF90C3-9BA1-4900-AD51-A6B29A92C00B"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663544800,
+    "drinkType" : "juice",
+    "guid" : "367CC9D0-DC15-4B39-8664-803970A7D6A1"
+  },
+  {
+    "amount" : 360,
+    "createdAt" : 663544800,
+    "drinkType" : "water",
+    "guid" : "DD60AE98-77E9-4E14-87DE-16DEDA9F2667"
+  },
+  {
+    "amount" : 300,
+    "createdAt" : 663544800,
+    "drinkType" : "tea",
+    "guid" : "43F92EC4-AA4E-4CFE-A28E-4467AC4EE7A9"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663544800,
+    "drinkType" : "coffee",
+    "guid" : "43AF1C72-CB7F-4723-BC75-235E70703B16"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663544800,
+    "drinkType" : "juice",
+    "guid" : "EF5DCE57-4FC5-4757-9385-AE4A15348561"
+  },
+  {
+    "amount" : 450,
+    "createdAt" : 663544800,
+    "drinkType" : "water",
+    "guid" : "751EC57A-6859-41B2-BE86-A4C0330493E3"
+  },
+  {
+    "amount" : 400,
+    "createdAt" : 663544800,
+    "drinkType" : "tea",
+    "guid" : "76DCF4C0-3DA7-4864-B045-31649C98B3E0"
+  },
+  {
+    "amount" : 425,
+    "createdAt" : 663544800,
+    "drinkType" : "coffee",
+    "guid" : "B80D102D-8455-49C8-BAD4-EB82941A2406"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663544800,
+    "drinkType" : "juice",
+    "guid" : "EC6E2B94-CB31-4432-A370-AC28E6B027BF"
+  },
+  {
+    "amount" : 220,
+    "createdAt" : 663544800,
+    "drinkType" : "tea",
+    "guid" : "A95F55C8-B9FD-4E6B-AFFB-50729D6BE23E"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663544800,
+    "drinkType" : "coffee",
+    "guid" : "BD885942-2F6C-4B1D-A49E-CAAABB7B7721"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663544800,
+    "drinkType" : "juice",
+    "guid" : "AA6E0987-1683-4DF3-845F-F3513A6851A8"
+  },
+  {
+    "amount" : 360,
+    "createdAt" : 663544800,
+    "drinkType" : "water",
+    "guid" : "6AD2FE72-3A62-42A5-98A8-C1F5DEDF772B"
+  },
+  {
+    "amount" : 410,
+    "createdAt" : 663544800,
+    "drinkType" : "tea",
+    "guid" : "CFDE06A6-8E4F-4EE3-BE17-067BFC5F73D9"
+  },
+  {
+    "amount" : 325,
+    "createdAt" : 663544800,
+    "drinkType" : "coffee",
+    "guid" : "466B6B7E-E2EE-4C9A-B743-50F6E615197E"
+  },
+  {
+    "amount" : 350,
+    "createdAt" : 663544800,
+    "drinkType" : "juice",
+    "guid" : "C2D11289-38B5-475C-9475-CC15FA419D97"
+  },
+  {
+    "amount" : 360,
+    "createdAt" : 663631200,
+    "drinkType" : "water",
+    "guid" : "06BF7EA9-7D74-41D2-84C5-4017D5348C96"
+  },
+  {
+    "amount" : 160,
+    "createdAt" : 663631200,
+    "drinkType" : "tea",
+    "guid" : "25119F96-769B-49B3-B0FF-678C46CF9D22"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663631200,
+    "drinkType" : "coffee",
+    "guid" : "B2904B4B-050D-4CE3-AE4E-C22BB035970A"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663631200,
+    "drinkType" : "juice",
+    "guid" : "426BDE3A-D366-4EBF-8EAD-C6021230B433"
+  },
+  {
+    "amount" : 360,
+    "createdAt" : 663631200,
+    "drinkType" : "water",
+    "guid" : "34FE9663-B05D-47E6-AC2F-C23B2040BAA9"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663631200,
+    "drinkType" : "tea",
+    "guid" : "CF54F8A3-45BE-4C5D-B8E5-8F18A19ED3CA"
+  },
+  {
+    "amount" : 300,
+    "createdAt" : 663717600,
+    "drinkType" : "water",
+    "guid" : "AA5F4555-0FB5-4AD9-ACBE-1CABB31D744A"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663717600,
+    "drinkType" : "tea",
+    "guid" : "B16319E9-52AD-41D1-BC59-513E125B86E2"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663717600,
+    "drinkType" : "coffee",
+    "guid" : "67B9C64E-0F0B-4A29-AFBC-AE239CA5CA75"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663717600,
+    "drinkType" : "juice",
+    "guid" : "88D78FAA-32E9-48F5-9BD4-4833CAD32CAD"
+  },
+  {
+    "amount" : 300,
+    "createdAt" : 663717600,
+    "drinkType" : "water",
+    "guid" : "8F0E1C98-B754-4732-B7F8-46A622FF08F7"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663717600,
+    "drinkType" : "tea",
+    "guid" : "23539961-BC22-460F-9E7A-9C32A3DCF6E1"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663717600,
+    "drinkType" : "coffee",
+    "guid" : "FE77633A-837C-4095-BDB9-A329E3045D44"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663717600,
+    "drinkType" : "juice",
+    "guid" : "ED8F4587-EFDD-42A2-9A91-5EDF9C8558FA"
+  },
+  {
+    "amount" : 300,
+    "createdAt" : 663717600,
+    "drinkType" : "water",
+    "guid" : "4A1C1E66-5D64-42CB-9E7E-98EA0E8E8F8B"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663717600,
+    "drinkType" : "tea",
+    "guid" : "3E6F1E4C-B87D-4B99-88E1-2B2484030F2F"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663717600,
+    "drinkType" : "coffee",
+    "guid" : "2A7C0C8B-E314-4D97-A378-7D546D2F7D00"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663717600,
+    "drinkType" : "juice",
+    "guid" : "0C4B8676-927C-487B-A624-7888940A3745"
+  },
+  {
+    "amount" : 360,
+    "createdAt" : 663804000,
+    "drinkType" : "water",
+    "guid" : "B048CC7B-A4EA-48EB-A1D7-B40BBBC8F4A5"
+  },
+  {
+    "amount" : 160,
+    "createdAt" : 663804000,
+    "drinkType" : "tea",
+    "guid" : "B34224B2-FE72-4848-8ED2-CC705E51AFB6"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663804000,
+    "drinkType" : "coffee",
+    "guid" : "B79A7F09-8619-4859-8782-D1E13528CC1A"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663804000,
+    "drinkType" : "juice",
+    "guid" : "9C0F1418-F855-4D66-A637-AAF675D2AC99"
+  },
+  {
+    "amount" : 360,
+    "createdAt" : 663804000,
+    "drinkType" : "water",
+    "guid" : "F266B9BD-08B2-4417-A26C-303C1CB13D62"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663804000,
+    "drinkType" : "tea",
+    "guid" : "52856B84-1328-4539-BC2D-9B19B47A1C00"
+  },
+  {
+    "amount" : 300,
+    "createdAt" : 663890400,
+    "drinkType" : "water",
+    "guid" : "F4BB9964-5945-4031-B48F-ABD7DC01D223"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663890400,
+    "drinkType" : "tea",
+    "guid" : "6D024EA0-AE1F-497A-B357-CD986C7BF06D"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663890400,
+    "drinkType" : "coffee",
+    "guid" : "58DB630F-18DB-4B43-B60D-42B158AA9238"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663890400,
+    "drinkType" : "juice",
+    "guid" : "99A6D41D-E970-4FE4-91A1-2D0C873AA273"
+  },
+  {
+    "amount" : 300,
+    "createdAt" : 663890400,
+    "drinkType" : "water",
+    "guid" : "102F51FF-3C82-473E-A26E-2E39C08304FE"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663890400,
+    "drinkType" : "tea",
+    "guid" : "3CED3131-D9F2-41B0-8E6A-A0B260A29DBE"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663890400,
+    "drinkType" : "coffee",
+    "guid" : "BD236F97-C167-4E12-8D84-B42E3A205E2B"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663890400,
+    "drinkType" : "juice",
+    "guid" : "03A74E10-B92F-45D8-8153-25397E17BC69"
+  },
+  {
+    "amount" : 300,
+    "createdAt" : 663890400,
+    "drinkType" : "water",
+    "guid" : "F9955AC8-C6EC-40FE-9463-A65A552C4318"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663890400,
+    "drinkType" : "tea",
+    "guid" : "53636DD6-FAD7-433D-9209-C1B01B487AD6"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663890400,
+    "drinkType" : "coffee",
+    "guid" : "17B01846-B586-4BE7-940A-E4F381932FDB"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663890400,
+    "drinkType" : "juice",
+    "guid" : "BD117F6A-661A-45E8-AAAE-9335EBFD0CC5"
+  },
+  {
+    "amount" : 360,
+    "createdAt" : 663976800,
+    "drinkType" : "water",
+    "guid" : "A1018368-E9D2-436C-8E1A-DDD0E97ACEBC"
+  },
+  {
+    "amount" : 160,
+    "createdAt" : 663976800,
+    "drinkType" : "tea",
+    "guid" : "21ADFF25-BCFF-46D9-A5FE-B175190AB645"
+  },
+  {
+    "amount" : 125,
+    "createdAt" : 663976800,
+    "drinkType" : "coffee",
+    "guid" : "289FD370-525E-490B-B98E-25D9B30068FD"
+  },
+  {
+    "amount" : 250,
+    "createdAt" : 663976800,
+    "drinkType" : "juice",
+    "guid" : "83E2E703-B00B-4152-8F48-46609CFCA4F5"
+  },
+  {
+    "amount" : 360,
+    "createdAt" : 663976800,
+    "drinkType" : "water",
+    "guid" : "CDA8D024-1AF8-4F8C-921A-DD722D9C792E"
+  },
+  {
+    "amount" : 100,
+    "createdAt" : 663976800,
+    "drinkType" : "tea",
+    "guid" : "78BF1054-6811-44AB-8D1B-63CEC829462D"
+  }
+]
+

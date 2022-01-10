@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA51151E278C8FBB0090B1E5 /* example_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = FA51151D278C8FBB0090B1E5 /* example_entries.json */; };
 		FA516479277C816000D58204 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = FA516478277C816000D58204 /* Charts */; };
 		FA54F06B275A66A8007053AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06A275A66A8007053AA /* AppDelegate.swift */; };
 		FA54F06D275A66A8007053AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06C275A66A8007053AA /* SceneDelegate.swift */; };
@@ -58,6 +59,57 @@
 		FAE998E527871D4700523B54 /* HistoryStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E427871D4700523B54 /* HistoryStateMachine.swift */; };
 		FAE998E82787336900523B54 /* WeekdayValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E72787336900523B54 /* WeekdayValueFormatter.swift */; };
 		FAE998EA2787340F00523B54 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E92787340F00523B54 /* Weekday.swift */; };
+		FAE998F52787359E00523B54 /* IntakeEntrySearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */; };
+		FAE998F62787359E00523B54 /* HistoryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF1305278457FD008278EA /* HistoryFlowController.swift */; };
+		FAE998F72787359E00523B54 /* IntakeEntryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587A277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift */; };
+		FAE998F82787359E00523B54 /* WeekdayValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E72787336900523B54 /* WeekdayValueFormatter.swift */; };
+		FAE998F92787359E00523B54 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
+		FAE998FA2787359E00523B54 /* HistoryStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E427871D4700523B54 /* HistoryStateMachine.swift */; };
+		FAE998FB2787359E00523B54 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C72760F241007053AA /* MainFlowController.swift */; };
+		FAE998FC2787359E00523B54 /* DailyWaterIntakeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587327733153002A233B /* DailyWaterIntakeStore.swift */; };
+		FAE998FD2787359E00523B54 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E92787340F00523B54 /* Weekday.swift */; };
+		FAE998FE2787359E00523B54 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */; };
+		FAE998FF2787359E00523B54 /* HydrationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */; };
+		FAE999012787359E00523B54 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD599327849BCA00314891 /* Date+Extensions.swift */; };
+		FAE999022787359E00523B54 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */; };
+		FAE999032787359E00523B54 /* DBContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558942774B33B002A233B /* DBContextProvider.swift */; };
+		FAE999042787359E00523B54 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0B2275FA108007053AA /* TutorialViewController.swift */; };
+		FAE999052787359E00523B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06A275A66A8007053AA /* AppDelegate.swift */; };
+		FAE999062787359E00523B54 /* SaveIntakeEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558A92779D125002A233B /* SaveIntakeEntryViewController.swift */; };
+		FAE999072787359E00523B54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06C275A66A8007053AA /* SceneDelegate.swift */; };
+		FAE999082787359E00523B54 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0D12760F2D9007053AA /* HistoryViewController.swift */; };
+		FAE999092787359E00523B54 /* WaterIntakeCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0B5275FA14B007053AA /* WaterIntakeCalculatorViewController.swift */; };
+		FAE9990A2787359E00523B54 /* Waterlove.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA54F073275A66A8007053AA /* Waterlove.xcdatamodeld */; };
+		FAE9990B2787359E00523B54 /* DBEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558982774B9C3002A233B /* DBEntityMapper.swift */; };
+		FAE9990C2787359E00523B54 /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
+		FAE9990D2787359E00523B54 /* CurrentHydrationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558AB2779DB47002A233B /* CurrentHydrationFlowController.swift */; };
+		FAE9990E2787359E00523B54 /* CurrentHydrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */; };
+		FAE9990F2787359E00523B54 /* IntakeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65588B2774AA81002A233B /* IntakeEntry.swift */; };
+		FAE999102787359E00523B54 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */; };
+		FAE999112787359E00523B54 /* IntakeEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FD792277CC0150048A8AD /* IntakeEntryTableViewCell.swift */; };
+		FAE999122787359E00523B54 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558962774B498002A233B /* CoreDataRepository.swift */; };
+		FAE999132787359E00523B54 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0BB275FBC7B007053AA /* TutorialPageViewController.swift */; };
+		FAE999142787359E00523B54 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655875277334B1002A233B /* DependencyContainer.swift */; };
+		FAE999152787359E00523B54 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0AC275F99C2007053AA /* UIViewController+Extensions.swift */; };
+		FAE999162787359E00523B54 /* DrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65588227738531002A233B /* DrinkType.swift */; };
+		FAE999172787359E00523B54 /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0D276CC60100EF02A3 /* TutorialStepViewController.swift */; };
+		FAE999182787359E00523B54 /* IntakeEntryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655879277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift */; };
+		FAE999192787359E00523B54 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */; };
+		FAE9991A2787359E00523B54 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0A6275A6E34007053AA /* R.generated.swift */; };
+		FAE9991B2787359E00523B54 /* IntakeEntryEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558922774B2EE002A233B /* IntakeEntryEntityMapper.swift */; };
+		FAE9991C2787359E00523B54 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0A9275F97FE007053AA /* AppFlowController.swift */; };
+		FAE9991D2787359E00523B54 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558842774A6B9002A233B /* Repository.swift */; };
+		FAE9991E2787359E00523B54 /* String+capitalizeFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */; };
+		FAE999202787359E00523B54 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = FAE998EC2787359E00523B54 /* Rswift */; };
+		FAE999212787359E00523B54 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = FAE998F02787359E00523B54 /* Charts */; };
+		FAE999222787359E00523B54 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FAE998EE2787359E00523B54 /* SnapKit */; };
+		FAE999242787359E00523B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54F078275A66AD007053AA /* LaunchScreen.storyboard */; };
+		FAE999252787359E00523B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA54F076275A66AD007053AA /* Assets.xcassets */; };
+		FAE999262787359E00523B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54F070275A66A8007053AA /* Main.storyboard */; };
+		FAE9992D278736A600523B54 /* StorybookSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9992C278736A600523B54 /* StorybookSceneDelegate.swift */; };
+		FAE9993227873C0B00523B54 /* StorybookFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9993027873BAB00523B54 /* StorybookFlowController.swift */; };
+		FAE9993527873CCF00523B54 /* StorybookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9993327873CCC00523B54 /* StorybookTableViewController.swift */; };
+		FAE9993627873CEE00523B54 /* OnboardingFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0AE275F9DA0007053AA /* OnboardingFlowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +130,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA51151D278C8FBB0090B1E5 /* example_entries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = example_entries.json; sourceTree = "<group>"; };
 		FA54F067275A66A8007053AA /* Waterlove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waterlove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA54F06A275A66A8007053AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA54F06C275A66A8007053AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +187,11 @@
 		FAE998E427871D4700523B54 /* HistoryStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateMachine.swift; sourceTree = "<group>"; };
 		FAE998E72787336900523B54 /* WeekdayValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayValueFormatter.swift; sourceTree = "<group>"; };
 		FAE998E92787340F00523B54 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		FAE9992A2787359E00523B54 /* Waterlove Storybook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Waterlove Storybook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE9992B2787359E00523B54 /* Waterlove copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Waterlove copy-Info.plist"; path = "/Users/alex/Developer/Waterlove/Waterlove copy-Info.plist"; sourceTree = "<absolute>"; };
+		FAE9992C278736A600523B54 /* StorybookSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookSceneDelegate.swift; sourceTree = "<group>"; };
+		FAE9993027873BAB00523B54 /* StorybookFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookFlowController.swift; sourceTree = "<group>"; };
+		FAE9993327873CCC00523B54 /* StorybookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +219,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAE9991F2787359E00523B54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE999202787359E00523B54 /* Rswift in Frameworks */,
+				FAE999212787359E00523B54 /* Charts in Frameworks */,
+				FAE999222787359E00523B54 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -176,6 +244,7 @@
 				FA54F083275A66AD007053AA /* WaterloveTests */,
 				FA54F08D275A66AD007053AA /* WaterloveUITests */,
 				FA54F068275A66A8007053AA /* Products */,
+				FAE9992B2787359E00523B54 /* Waterlove copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +254,7 @@
 				FA54F067275A66A8007053AA /* Waterlove.app */,
 				FA54F080275A66AD007053AA /* WaterloveTests.xctest */,
 				FA54F08A275A66AD007053AA /* WaterloveUITests.xctest */,
+				FAE9992A2787359E00523B54 /* Waterlove Storybook.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +262,7 @@
 		FA54F069275A66A8007053AA /* Waterlove */ = {
 			isa = PBXGroup;
 			children = (
+				FAE9992E27873B2200523B54 /* Storybook */,
 				FA54F0B0275F9F96007053AA /* Feature */,
 				FA54F0A7275F97BF007053AA /* Library */,
 				FA54F06A275A66A8007053AA /* AppDelegate.swift */,
@@ -200,6 +271,7 @@
 				FA54F076275A66AD007053AA /* Assets.xcassets */,
 				FA54F078275A66AD007053AA /* LaunchScreen.storyboard */,
 				FA54F07B275A66AD007053AA /* Info.plist */,
+				FA51151D278C8FBB0090B1E5 /* example_entries.json */,
 			);
 			path = Waterlove;
 			sourceTree = "<group>";
@@ -410,6 +482,16 @@
 			path = Formatters;
 			sourceTree = "<group>";
 		};
+		FAE9992E27873B2200523B54 /* Storybook */ = {
+			isa = PBXGroup;
+			children = (
+				FAE9992C278736A600523B54 /* StorybookSceneDelegate.swift */,
+				FAE9993027873BAB00523B54 /* StorybookFlowController.swift */,
+				FAE9993327873CCC00523B54 /* StorybookTableViewController.swift */,
+			);
+			path = Storybook;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -473,6 +555,30 @@
 			productReference = FA54F08A275A66AD007053AA /* WaterloveUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		FAE998EB2787359E00523B54 /* Waterlove Storybook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAE999272787359E00523B54 /* Build configuration list for PBXNativeTarget "Waterlove Storybook" */;
+			buildPhases = (
+				FAE998F22787359E00523B54 /* ShellScript */,
+				FAE998F32787359E00523B54 /* ShellScript */,
+				FAE998F42787359E00523B54 /* Sources */,
+				FAE9991F2787359E00523B54 /* Frameworks */,
+				FAE999232787359E00523B54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Waterlove Storybook";
+			packageProductDependencies = (
+				FAE998EC2787359E00523B54 /* Rswift */,
+				FAE998EE2787359E00523B54 /* SnapKit */,
+				FAE998F02787359E00523B54 /* Charts */,
+			);
+			productName = Waterlove;
+			productReference = FAE9992A2787359E00523B54 /* Waterlove Storybook.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -515,6 +621,7 @@
 			projectRoot = "";
 			targets = (
 				FA54F066275A66A8007053AA /* Waterlove */,
+				FAE998EB2787359E00523B54 /* Waterlove Storybook */,
 				FA54F07F275A66AD007053AA /* WaterloveTests */,
 				FA54F089275A66AD007053AA /* WaterloveUITests */,
 			);
@@ -546,6 +653,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAE999232787359E00523B54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE999242787359E00523B54 /* LaunchScreen.storyboard in Resources */,
+				FA51151E278C8FBB0090B1E5 /* example_entries.json in Resources */,
+				FAE999252787359E00523B54 /* Assets.xcassets in Resources */,
+				FAE999262787359E00523B54 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -567,6 +685,43 @@
 			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --no-cache\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 		FA54F0A5275A6D61007053AA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif which rswift >/dev/null; then\n  rswift generate \"$SRCROOT/R.generated.swift\"\nelse\n  echo \"warning: Rswift not installed\"\nfi\n\n";
+		};
+		FAE998F22787359E00523B54 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif which swiftlint >/dev/null; then\n  swiftlint --no-cache\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+		FAE998F32787359E00523B54 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -652,6 +807,58 @@
 			files = (
 				FA54F091275A66AD007053AA /* WaterloveUITestsLaunchTests.swift in Sources */,
 				FA54F08F275A66AD007053AA /* WaterloveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE998F42787359E00523B54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE998F52787359E00523B54 /* IntakeEntrySearchRequests.swift in Sources */,
+				FAE998F62787359E00523B54 /* HistoryFlowController.swift in Sources */,
+				FAE998F72787359E00523B54 /* IntakeEntryEntity+CoreDataProperties.swift in Sources */,
+				FAE998F82787359E00523B54 /* WeekdayValueFormatter.swift in Sources */,
+				FAE998F92787359E00523B54 /* Command.swift in Sources */,
+				FAE998FA2787359E00523B54 /* HistoryStateMachine.swift in Sources */,
+				FAE9993627873CEE00523B54 /* OnboardingFlowController.swift in Sources */,
+				FAE998FB2787359E00523B54 /* MainFlowController.swift in Sources */,
+				FAE998FC2787359E00523B54 /* DailyWaterIntakeStore.swift in Sources */,
+				FAE998FD2787359E00523B54 /* Weekday.swift in Sources */,
+				FAE998FE2787359E00523B54 /* AnimationDelegate.swift in Sources */,
+				FAE998FF2787359E00523B54 /* HydrationProgressView.swift in Sources */,
+				FAE999012787359E00523B54 /* Date+Extensions.swift in Sources */,
+				FAE999022787359E00523B54 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */,
+				FAE999032787359E00523B54 /* DBContextProvider.swift in Sources */,
+				FAE999042787359E00523B54 /* TutorialViewController.swift in Sources */,
+				FAE999052787359E00523B54 /* AppDelegate.swift in Sources */,
+				FAE999062787359E00523B54 /* SaveIntakeEntryViewController.swift in Sources */,
+				FAE999072787359E00523B54 /* SceneDelegate.swift in Sources */,
+				FAE999082787359E00523B54 /* HistoryViewController.swift in Sources */,
+				FAE999092787359E00523B54 /* WaterIntakeCalculatorViewController.swift in Sources */,
+				FAE9990A2787359E00523B54 /* Waterlove.xcdatamodeld in Sources */,
+				FAE9990B2787359E00523B54 /* DBEntityMapper.swift in Sources */,
+				FAE9990C2787359E00523B54 /* WaterIntakeCalculator.swift in Sources */,
+				FAE9990D2787359E00523B54 /* CurrentHydrationFlowController.swift in Sources */,
+				FAE9990E2787359E00523B54 /* CurrentHydrationViewController.swift in Sources */,
+				FAE9990F2787359E00523B54 /* IntakeEntry.swift in Sources */,
+				FAE999102787359E00523B54 /* CircularProgressBar.swift in Sources */,
+				FAE999112787359E00523B54 /* IntakeEntryTableViewCell.swift in Sources */,
+				FAE999122787359E00523B54 /* CoreDataRepository.swift in Sources */,
+				FAE999132787359E00523B54 /* TutorialPageViewController.swift in Sources */,
+				FAE999142787359E00523B54 /* DependencyContainer.swift in Sources */,
+				FAE9993527873CCF00523B54 /* StorybookTableViewController.swift in Sources */,
+				FAE999152787359E00523B54 /* UIViewController+Extensions.swift in Sources */,
+				FAE999162787359E00523B54 /* DrinkType.swift in Sources */,
+				FAE999172787359E00523B54 /* TutorialStepViewController.swift in Sources */,
+				FAE999182787359E00523B54 /* IntakeEntryEntity+CoreDataClass.swift in Sources */,
+				FAE999192787359E00523B54 /* SettingsViewController.swift in Sources */,
+				FAE9991A2787359E00523B54 /* R.generated.swift in Sources */,
+				FAE9991B2787359E00523B54 /* IntakeEntryEntityMapper.swift in Sources */,
+				FAE9991C2787359E00523B54 /* AppFlowController.swift in Sources */,
+				FAE9993227873C0B00523B54 /* StorybookFlowController.swift in Sources */,
+				FAE9991D2787359E00523B54 /* Repository.swift in Sources */,
+				FAE9991E2787359E00523B54 /* String+capitalizeFirstLetter.swift in Sources */,
+				FAE9992D278736A600523B54 /* StorybookSceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,6 +1166,62 @@
 			};
 			name = Release;
 		};
+		FAE999282787359E00523B54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6MAKY98QY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Waterlove copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = oleksiy.petlyuk.WaterloveStorybook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FAE999292787359E00523B54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6MAKY98QY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Waterlove copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = oleksiy.petlyuk.WaterloveStorybook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -998,6 +1261,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		FAE999272787359E00523B54 /* Build configuration list for PBXNativeTarget "Waterlove Storybook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAE999282787359E00523B54 /* Debug */,
+				FAE999292787359E00523B54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1025,6 +1297,30 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		FAE998ED2787359E00523B54 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+		FAE998EF2787359E00523B54 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		FAE998F12787359E00523B54 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1042,6 +1338,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA59AC032769FEB900EF02A3 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FAE998EC2787359E00523B54 /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE998ED2787359E00523B54 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
+		FAE998EE2787359E00523B54 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE998EF2787359E00523B54 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		FAE998F02787359E00523B54 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAE998F12787359E00523B54 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 

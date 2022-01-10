@@ -43,6 +43,8 @@ class TutorialViewController: UIViewController {
   }
 
   override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+
     pageControl.numberOfPages = props.pageViewControllerProps.pages.count
     pageControl.currentPage = props.pageViewControllerProps.selectedPageIndex ?? 0
 

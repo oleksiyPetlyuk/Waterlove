@@ -7,7 +7,7 @@
 
 import Foundation
 
-class IntakeEntry {
+final class IntakeEntry {
   var guid: UUID
   var drinkType: DrinkType
   var amount: Measurement<UnitVolume>
@@ -27,3 +27,30 @@ class IntakeEntry {
 }
 
 extension IntakeEntry: Identifiable {}
+
+extension IntakeEntry: Codable {
+  enum CodingKeys: CodingKey {
+    case guid, drinkType, amount, createdAt
+  }
+
+  func encode(to encoder: Encoder) throws {
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    try container.encode(guid, forKey: .guid)
+    try container.encode(drinkType.rawValue, forKey: .drinkType)
+    try container.encode(amount.value, forKey: .amount)
+    try container.encode(createdAt, forKey: .createdAt)
+  }
+
+  convenience init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    let guid = try container.decode(UUID.self, forKey: .guid)
+    let drinkType = DrinkType(rawValue: try container.decode(String.self, forKey: .drinkType))
+    let amount: Measurement<UnitVolume> = .init(
+      value: try container.decode(Double.self, forKey: .amount),
+      unit: .milliliters
+    )
+    let createdAt = try container.decode(Date.self, forKey: .createdAt)
+
+    self.init(guid: guid, drinkType: drinkType ?? .water, amount: amount, createdAt: createdAt)
+  }
+}

@@ -40,6 +40,8 @@ class TutorialPageViewController: UIPageViewController {
   }
 
   override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+
     for page in props.pages {
       guard let controller = R.storyboard.main.tutorialStepViewController() else { return }
 
