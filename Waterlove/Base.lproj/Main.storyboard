@@ -761,31 +761,60 @@
             <point key="canvasLocation" x="32" y="2215"/>
         </scene>
         <!--Settings View Controller-->
-        <scene sceneID="Ksm-VP-htv">
+        <scene sceneID="atR-0z-mqQ">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="tFu-lG-8Iy" customClass="SettingsViewController" customModule="Waterlove" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w26-KG-Kt9">
+                <tableViewController storyboardIdentifier="SettingsViewController" id="h2Q-mp-o0K" customClass="SettingsViewController" customModule="Waterlove" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7IG-0C-30Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byV-nn-MNn">
-                                <rect key="frame" x="175.5" y="442.5" width="63" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="MaI-52-BQN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="byV-nn-MNn" firstAttribute="centerY" secondItem="MaI-52-BQN" secondAttribute="centerY" id="82D-BI-1hQ"/>
-                            <constraint firstItem="byV-nn-MNn" firstAttribute="centerX" secondItem="MaI-52-BQN" secondAttribute="centerX" id="MuC-GG-Rqb"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sGi-ea-wBZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <sections>
+                            <tableViewSection id="F8H-CG-o9K">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="8Zb-gQ-V9a">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Zb-gQ-V9a" id="OWT-Oe-c2F">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ph-QQ-Ujb">
+                                                    <rect key="frame" x="8" y="11.5" width="149" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-vS-PIc">
+                                                    <rect key="frame" x="357" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="didChangeAllowNotificationsValue:" destination="h2Q-mp-o0K" eventType="valueChanged" id="WzW-8w-3Ve"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Oan-vS-PIc" firstAttribute="centerY" secondItem="OWT-Oe-c2F" secondAttribute="centerY" id="2BG-n4-vQk"/>
+                                                <constraint firstItem="1ph-QQ-Ujb" firstAttribute="centerY" secondItem="OWT-Oe-c2F" secondAttribute="centerY" id="KYs-ZF-4Ni"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oan-vS-PIc" secondAttribute="trailing" constant="8" id="MMq-hQ-wjx"/>
+                                                <constraint firstItem="1ph-QQ-Ujb" firstAttribute="leading" secondItem="OWT-Oe-c2F" secondAttribute="leading" constant="8" id="XXo-35-vAV"/>
+                                                <constraint firstItem="Oan-vS-PIc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1ph-QQ-Ujb" secondAttribute="trailing" constant="16" id="gtg-ZW-esq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="h2Q-mp-o0K" id="WmY-Q1-9xb"/>
+                            <outlet property="delegate" destination="h2Q-mp-o0K" id="MIU-3j-vZj"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="isNotificationsEnabledSwitch" destination="Oan-vS-PIc" id="7yT-qt-KHh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OGu-4S-l9T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="3145"/>
+            <point key="canvasLocation" x="32" y="2991"/>
         </scene>
     </scenes>
     <resources>

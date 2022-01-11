@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FA51151E278C8FBB0090B1E5 /* example_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = FA51151D278C8FBB0090B1E5 /* example_entries.json */; };
+		FA511520278D97C70090B1E5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51151F278D97C70090B1E5 /* SettingsViewController.swift */; };
+		FA511522278D9CD90090B1E5 /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */; };
+		FA511524278DA0B80090B1E5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511523278DA0B80090B1E5 /* NotificationManager.swift */; };
 		FA516479277C816000D58204 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = FA516478277C816000D58204 /* Charts */; };
 		FA54F06B275A66A8007053AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06A275A66A8007053AA /* AppDelegate.swift */; };
 		FA54F06D275A66A8007053AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F06C275A66A8007053AA /* SceneDelegate.swift */; };
@@ -28,7 +31,6 @@
 		FA54F0C2275FCFDD007053AA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0A6275A6E34007053AA /* R.generated.swift */; };
 		FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C72760F241007053AA /* MainFlowController.swift */; };
 		FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */; };
-		FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */; };
 		FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0D12760F2D9007053AA /* HistoryViewController.swift */; };
 		FA59AC052769FEB900EF02A3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA59AC042769FEB900EF02A3 /* SnapKit */; };
 		FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */; };
@@ -94,7 +96,6 @@
 		FAE999162787359E00523B54 /* DrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65588227738531002A233B /* DrinkType.swift */; };
 		FAE999172787359E00523B54 /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0D276CC60100EF02A3 /* TutorialStepViewController.swift */; };
 		FAE999182787359E00523B54 /* IntakeEntryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655879277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift */; };
-		FAE999192787359E00523B54 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */; };
 		FAE9991A2787359E00523B54 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0A6275A6E34007053AA /* R.generated.swift */; };
 		FAE9991B2787359E00523B54 /* IntakeEntryEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558922774B2EE002A233B /* IntakeEntryEntityMapper.swift */; };
 		FAE9991C2787359E00523B54 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0A9275F97FE007053AA /* AppFlowController.swift */; };
@@ -131,6 +132,9 @@
 
 /* Begin PBXFileReference section */
 		FA51151D278C8FBB0090B1E5 /* example_entries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = example_entries.json; sourceTree = "<group>"; };
+		FA51151F278D97C70090B1E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowController.swift; sourceTree = "<group>"; };
+		FA511523278DA0B80090B1E5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		FA54F067275A66A8007053AA /* Waterlove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waterlove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA54F06A275A66A8007053AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA54F06C275A66A8007053AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,7 +161,6 @@
 		FA54F0BB275FBC7B007053AA /* TutorialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		FA54F0C72760F241007053AA /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHydrationViewController.swift; sourceTree = "<group>"; };
-		FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA54F0D12760F2D9007053AA /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationProgressView.swift; sourceTree = "<group>"; };
@@ -316,6 +319,7 @@
 				FA54F0C72760F241007053AA /* MainFlowController.swift */,
 				FA6558AB2779DB47002A233B /* CurrentHydrationFlowController.swift */,
 				FAAF1305278457FD008278EA /* HistoryFlowController.swift */,
+				FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -381,7 +385,7 @@
 		FA54F0CE2760F2C1007053AA /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				FA54F0CF2760F2D0007053AA /* SettingsViewController.swift */,
+				FA51151F278D97C70090B1E5 /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -462,6 +466,7 @@
 			children = (
 				FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */,
 				FA65587327733153002A233B /* DailyWaterIntakeStore.swift */,
+				FA511523278DA0B80090B1E5 /* NotificationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -771,8 +776,10 @@
 				FA54F0B6275FA14B007053AA /* WaterIntakeCalculatorViewController.swift in Sources */,
 				FA54F075275A66A8007053AA /* Waterlove.xcdatamodeld in Sources */,
 				FA6558992774B9C3002A233B /* DBEntityMapper.swift in Sources */,
+				FA511520278D97C70090B1E5 /* SettingsViewController.swift in Sources */,
 				FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */,
 				FA6558AC2779DB47002A233B /* CurrentHydrationFlowController.swift in Sources */,
+				FA511524278DA0B80090B1E5 /* NotificationManager.swift in Sources */,
 				FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */,
 				FA65588C2774AA81002A233B /* IntakeEntry.swift in Sources */,
 				FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */,
@@ -780,11 +787,11 @@
 				FA6558972774B498002A233B /* CoreDataRepository.swift in Sources */,
 				FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */,
 				FA655876277334B1002A233B /* DependencyContainer.swift in Sources */,
+				FA511522278D9CD90090B1E5 /* SettingsFlowController.swift in Sources */,
 				FA54F0AD275F99C2007053AA /* UIViewController+Extensions.swift in Sources */,
 				FA65588327738531002A233B /* DrinkType.swift in Sources */,
 				FA59AC0E276CC60100EF02A3 /* TutorialStepViewController.swift in Sources */,
 				FA65587B277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift in Sources */,
-				FA54F0D02760F2D0007053AA /* SettingsViewController.swift in Sources */,
 				FA54F0C2275FCFDD007053AA /* R.generated.swift in Sources */,
 				FA6558932774B2EE002A233B /* IntakeEntryEntityMapper.swift in Sources */,
 				FA54F0AA275F97FE007053AA /* AppFlowController.swift in Sources */,
@@ -851,7 +858,6 @@
 				FAE999162787359E00523B54 /* DrinkType.swift in Sources */,
 				FAE999172787359E00523B54 /* TutorialStepViewController.swift in Sources */,
 				FAE999182787359E00523B54 /* IntakeEntryEntity+CoreDataClass.swift in Sources */,
-				FAE999192787359E00523B54 /* SettingsViewController.swift in Sources */,
 				FAE9991A2787359E00523B54 /* R.generated.swift in Sources */,
 				FAE9991B2787359E00523B54 /* IntakeEntryEntityMapper.swift in Sources */,
 				FAE9991C2787359E00523B54 /* AppFlowController.swift in Sources */,

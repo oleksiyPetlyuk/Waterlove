@@ -31,30 +31,49 @@ final class MainFlowController: UIViewController {
   func start() {
     let currentHydrationController = CurrentHydrationFlowController(dependencies: dependencies)
     let historyController = HistoryFlowController(dependencies: dependencies)
-    let settingsController = R.storyboard.main.settingsViewController()
+    let settingsController = SettingsFlowController()
 
-    if let settingsController = settingsController {
-      historyController.tabBarItem = UITabBarItem(
-        title: "History",
-        image: UIImage(systemName: "clock"),
-        selectedImage: nil
-      )
-      currentHydrationController.tabBarItem = UITabBarItem(
-        title: "Current Hydration",
-        image: UIImage(systemName: "heart.fill"),
-        selectedImage: nil
-      )
-      settingsController.tabBarItem = UITabBarItem(
-        title: "Settings",
-        image: UIImage(systemName: "gear"),
-        selectedImage: nil
-      )
+    historyController.tabBarItem = UITabBarItem(
+      title: "History",
+      image: UIImage(systemName: "clock"),
+      selectedImage: nil
+    )
+    currentHydrationController.tabBarItem = UITabBarItem(
+      title: "Current Hydration",
+      image: UIImage(systemName: "heart.fill"),
+      selectedImage: nil
+    )
+    settingsController.tabBarItem = UITabBarItem(
+      title: "Settings",
+      image: UIImage(systemName: "gear"),
+      selectedImage: nil
+    )
 
-      embeddedTabBarController?.viewControllers = [historyController, currentHydrationController, settingsController]
-      embeddedTabBarController?.selectedViewController = currentHydrationController
+    embeddedTabBarController?.viewControllers = [historyController, currentHydrationController, settingsController]
+    embeddedTabBarController?.selectedViewController = currentHydrationController
 
-      historyController.start()
-      currentHydrationController.start()
+    historyController.start()
+    currentHydrationController.start()
+    settingsController.start()
+
+    configureUserNotifications()
+  }
+
+  private func configureUserNotifications() {
+    NotificationManager.shared.requestAuthorization { granted in
+      if granted {
+        let isNotificationsEnabled = UserDefaults
+          .standard
+          .bool(forKey: NotificationManagerConstants.isNotificationsEnabledKey)
+
+        if isNotificationsEnabled {
+          NotificationManager.shared.scheduleNotifications()
+
+          return
+        }
+      }
+
+      NotificationManager.shared.removeScheduledNotifications()
     }
   }
 }
