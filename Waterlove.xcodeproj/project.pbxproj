@@ -131,6 +131,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA28B012278EF37A008FE225 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FA51151D278C8FBB0090B1E5 /* example_entries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = example_entries.json; sourceTree = "<group>"; };
 		FA51151F278D97C70090B1E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowController.swift; sourceTree = "<group>"; };
@@ -238,6 +239,7 @@
 		FA54F05E275A66A8007053AA = {
 			isa = PBXGroup;
 			children = (
+				FA28B012278EF37A008FE225 /* README.md */,
 				FA54F09F275A6C00007053AA /* .gitignore */,
 				FA54F0A0275A6C00007053AA /* .ruby-version */,
 				FA54F09E275A6C00007053AA /* Gemfile */,
