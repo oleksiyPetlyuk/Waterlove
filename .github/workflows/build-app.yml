@@ -66,7 +66,7 @@ jobs:
         run: bundle exec fastlane lint
 
       - name: Run build lane
-        run: bundle exec fastlane build
+        run: bundle exec fastlane build || bundle exec fastlane build
 
       - name: Run test lane
         run: bundle exec fastlane test
