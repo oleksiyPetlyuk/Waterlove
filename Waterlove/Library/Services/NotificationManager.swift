@@ -8,15 +8,38 @@
 import Foundation
 import UserNotifications
 
-enum NotificationManagerConstants {
-  static let isNotificationsEnabledKey = "isNotificationsEnabled"
+protocol UNUserNotificationCenterProtocol: AnyObject {
+  func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void)
+
+  func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?)
+
+  func removeAllPendingNotificationRequests()
 }
 
-class NotificationManager {
-  static let shared = NotificationManager()
+extension UNUserNotificationCenter: UNUserNotificationCenterProtocol {}
+
+enum NotificationManagerConstants {
+  static let isNotificationsEnabledKey = "isNotificationsEnabled"
+  static let notificationScheduledHours = 9...23
+}
+
+protocol NotificationManagerProtocol {
+  func requestAuthorization(completion: @escaping (Bool) -> Void)
+
+  func scheduleNotifications()
+
+  func removeScheduledNotifications()
+}
+
+class NotificationManager: NotificationManagerProtocol {
+  let notificationCenter: UNUserNotificationCenterProtocol
+
+  init(notificationCenter: UNUserNotificationCenterProtocol) {
+    self.notificationCenter = notificationCenter
+  }
 
   func requestAuthorization(completion: @escaping (Bool) -> Void) {
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
+    notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
       completion(granted)
     }
   }
@@ -30,9 +53,8 @@ class NotificationManager {
     var dateComponents = DateComponents()
     dateComponents.calendar = Calendar.current
 
-    for hour in 9...23 {
+    for hour in NotificationManagerConstants.notificationScheduledHours {
       dateComponents.hour = hour
-      content.subtitle = "Should be received at \(hour):00"
 
       let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
       let request = UNNotificationRequest(
@@ -41,7 +63,7 @@ class NotificationManager {
         trigger: trigger
       )
 
-      UNUserNotificationCenter.current().add(request) { error in
+      notificationCenter.add(request) { error in
         if let error = error {
           print(error)
         }
@@ -50,6 +72,6 @@ class NotificationManager {
   }
 
   func removeScheduledNotifications() {
-    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    notificationCenter.removeAllPendingNotificationRequests()
   }
 }

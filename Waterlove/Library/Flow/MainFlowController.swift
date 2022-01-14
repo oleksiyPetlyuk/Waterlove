@@ -8,7 +8,7 @@
 import UIKit
 
 final class MainFlowController: UIViewController {
-  typealias Dependencies = HasDailyWaterIntakeStore
+  typealias Dependencies = HasDailyWaterIntakeStore & HasNotificationManager
 
   let dependencies: Dependencies
 
@@ -31,7 +31,7 @@ final class MainFlowController: UIViewController {
   func start() {
     let currentHydrationController = CurrentHydrationFlowController(dependencies: dependencies)
     let historyController = HistoryFlowController(dependencies: dependencies)
-    let settingsController = SettingsFlowController()
+    let settingsController = SettingsFlowController(dependencies: dependencies)
 
     historyController.tabBarItem = UITabBarItem(
       title: "History",
@@ -60,20 +60,22 @@ final class MainFlowController: UIViewController {
   }
 
   private func configureUserNotifications() {
-    NotificationManager.shared.requestAuthorization { granted in
+    dependencies.notificationManager.requestAuthorization { [weak self] granted in
+      guard let self = self else { return }
+
       if granted {
         let isNotificationsEnabled = UserDefaults
           .standard
           .bool(forKey: NotificationManagerConstants.isNotificationsEnabledKey)
 
         if isNotificationsEnabled {
-          NotificationManager.shared.scheduleNotifications()
+          self.dependencies.notificationManager.scheduleNotifications()
 
           return
         }
       }
 
-      NotificationManager.shared.removeScheduledNotifications()
+      self.dependencies.notificationManager.removeScheduledNotifications()
     }
   }
 }

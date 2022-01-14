@@ -8,6 +8,10 @@
 import UIKit
 
 final class SettingsFlowController: UIViewController {
+  typealias Dependencies = HasNotificationManager
+
+  let dependencies: Dependencies
+
   private var embeddedNavigationController: UINavigationController?
 
   private lazy var settingsVC: SettingsViewController? = {
@@ -23,7 +27,9 @@ final class SettingsFlowController: UIViewController {
     }
   }
 
-  init() {
+  init(dependencies: Dependencies) {
+    self.dependencies = dependencies
+
     super.init(nibName: nil, bundle: nil)
 
     let navigationController = UINavigationController()
@@ -48,15 +54,17 @@ final class SettingsFlowController: UIViewController {
     return .init(isNotificationsEnabled: .init(
       value: isNotificationsEnabled,
       didUpdate: .init { [weak self] isEnabled in
+        guard let self = self else { return }
+
         UserDefaults.standard.set(isEnabled, forKey: NotificationManagerConstants.isNotificationsEnabledKey)
 
         if isEnabled {
-          NotificationManager.shared.scheduleNotifications()
+          self.dependencies.notificationManager.scheduleNotifications()
         } else {
-          NotificationManager.shared.removeScheduledNotifications()
+          self.dependencies.notificationManager.removeScheduledNotifications()
         }
 
-        self?.isNotificationsEnabled = isEnabled
+        self.isNotificationsEnabled = isEnabled
       })
     )
   }

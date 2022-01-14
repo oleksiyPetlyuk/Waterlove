@@ -36,6 +36,10 @@ class HistoryStateMachine {
     }
   }
 
+  init(with state: State = .idle) {
+    self.state = state
+  }
+
   // swiftlint:disable:next cyclomatic_complexity
   func transition(with event: Event) {
     switch (state, event) {
