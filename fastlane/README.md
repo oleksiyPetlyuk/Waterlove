@@ -26,11 +26,11 @@ Run swift code validation using SwiftLint
 fastlane ios test
 ```
 Run tests
-### ios create_app
+### ios build
 ```
-fastlane ios create_app
+fastlane ios build
 ```
-Build the app
+Build the project
 
 ----
 

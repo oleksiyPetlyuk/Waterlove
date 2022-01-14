@@ -13,10 +13,46 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: self-hosted
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Run lane
+      - name: Cache SPM's packages
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-spm-packages
+        with:
+          # SPM cache files are stored in `SourcePackages`.
+          path: SourcePackages
+          key: ${{ runner.os }}-spm-source-packages
+
+      - name: Cache Mint's packages
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-mint-packages
+        with:
+          # Mint cache files are stored in `~/.mint`.
+          path: ~/.mint
+          key: ${{ runner.os }}-mint-packages
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.0.3"
+          bundler-cache: true
+
+      - name: Install Mint
+        run: brew install mint
+
+      - name: Run Mint bootstrap
+        run: mint bootstrap
+
+      - name: Run lint lane
+        run: bundle exec fastlane lint
+
+      - name: Run build lane
+        run: bundle exec fastlane build
+
+      - name: Run test lane
         run: bundle exec fastlane test
