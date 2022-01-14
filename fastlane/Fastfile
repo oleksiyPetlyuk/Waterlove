@@ -21,7 +21,8 @@ platform :ios do
       scheme: "Waterlove",
       destination: 'generic/platform=iOS Simulator',
       cloned_source_packages_path: "SourcePackages",
-      clean: true
+      clean: true,
+      export_method: "development"
     )
   end
 end
