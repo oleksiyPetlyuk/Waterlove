@@ -70,6 +70,10 @@ There is a workflow that creates a new build once a new code is pushed to `maste
 
 ## Project overview
 
+### Dependency Management
+Swift Package Manager is a preferred way to add dependencies to the project. For libraries that do not support SPM use
+CocoaPods instead.
+
 ### Targets
 There are 2 targets `Waterlove` and `Waterlove Storybook`.
 `Waterlove Storybook` is a storybook showcasing application screens and components in different states.
