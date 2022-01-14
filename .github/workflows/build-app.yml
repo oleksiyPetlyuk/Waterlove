@@ -36,6 +36,17 @@ jobs:
           path: ~/.mint
           key: ${{ runner.os }}-mint-packages
 
+      - name: Cache Cocoapods' packages
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-cocoapods-packages
+        with:
+          # Cocoapods cache files are stored in `Pods`.
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -47,6 +58,9 @@ jobs:
 
       - name: Run Mint bootstrap
         run: mint bootstrap
+
+      - name: CocoaPod Install
+        run: pod install
 
       - name: Run lint lane
         run: bundle exec fastlane lint
