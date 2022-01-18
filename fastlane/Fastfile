@@ -19,9 +19,10 @@ platform :ios do
   lane :build do
     gym(
       scheme: "Waterlove",
-      destination: 'generic/platform=iOS Simulator',
       cloned_source_packages_path: "SourcePackages",
-      clean: true
+      clean: true,
+      xcargs: "-allowProvisioningUpdates",
+      export_method: "development"
     )
   end
 end
