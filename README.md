@@ -27,29 +27,27 @@ and install required dependencies by running:
 
 `bundle install`
 
+### [Mint](https://github.com/yonaskolb/Mint)
+
+Mint is used to manage Swift command line tool packages.
+
+Install it with:
+```
+brew install mint
+```
+
+Install required packages specified in `Mintfile`:
+```
+mint bootstrap
+```
+
 ### [Swiftlint](https://github.com/realm/SwiftLint)
 
 This project uses Swiftlint for code linting during build phases.
 
-Make sure that `swiftlint` is available at your PATH.
-
-To install it using [Homebrew](https://brew.sh) run this command in your terminal:
-
-```
-brew install swiftlint
-```
-
 ### [R.swift](https://github.com/mac-cain13/R.swift)
 
 This project uses R.swift for autocompleting static resources.
-
-Make sure that `rswift` is available at your PATH.
-
-To install it using [Homebrew](https://brew.sh) run this command in your terminal:
-
-```
-brew install rswift
-```
 
 ## Distribution
 
@@ -73,6 +71,7 @@ There is a workflow that creates a new build once a new code is pushed to `maste
 ### Dependency Management
 Swift Package Manager is a preferred way to add dependencies to the project. For libraries that do not support SPM use
 CocoaPods instead.
+For CLI tools use Mint.
 
 ### Targets
 There are 2 targets `Waterlove` and `Waterlove Storybook`.
