@@ -21,8 +21,11 @@ platform :ios do
       scheme: "Waterlove",
       cloned_source_packages_path: "SourcePackages",
       clean: true,
-      xcargs: "-allowProvisioningUpdates",
-      export_method: "development"
+      export_method: "development",
+      skip_package_ipa: true,
+      skip_package_pkg: true,
+      skip_archive: true,
+      skip_codesigning: true
     )
   end
 end
