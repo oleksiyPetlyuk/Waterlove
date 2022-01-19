@@ -206,6 +206,7 @@
 		FA6558AB2779DB47002A233B /* CurrentHydrationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentHydrationFlowController.swift; sourceTree = "<group>"; };
 		FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+capitalizeFirstLetter.swift"; sourceTree = "<group>"; };
 		FA6FD792277CC0150048A8AD /* IntakeEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntryTableViewCell.swift; sourceTree = "<group>"; };
+		FA7E70732798600F008989D4 /* class_diagram.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = class_diagram.svg; sourceTree = "<group>"; };
 		FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntrySearchRequests.swift; sourceTree = "<group>"; };
 		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FAAF1305278457FD008278EA /* HistoryFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFlowController.swift; sourceTree = "<group>"; };
@@ -311,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				FA28B012278EF37A008FE225 /* README.md */,
+				FA7E70732798600F008989D4 /* class_diagram.svg */,
 				FA54F09F275A6C00007053AA /* .gitignore */,
 				FA54F0A0275A6C00007053AA /* .ruby-version */,
 				FA54F09E275A6C00007053AA /* Gemfile */,

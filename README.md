@@ -81,6 +81,9 @@ There are 2 targets `Waterlove` and `Waterlove Storybook`.
 For routing a concept of [FlowControllers](https://github.com/features/actions) is used.
 All flow controllers are located under `$SRCROOT/Waterlove/Library/Flow`
 
+Flow controllers class diagram:
+![class diagram](./class_diagram.svg)
+
 ### View Layer
 A concept of Data-Driven UI and Unidirectional Data flow is used, all views and view controllers should be configured
 using `Props`.
