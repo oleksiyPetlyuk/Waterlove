@@ -11,6 +11,20 @@
 		9E4140D66CAF53E0EF162F47 /* Pods_Waterlove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89C6199A8F25B2CC2B12AFB /* Pods_Waterlove.framework */; };
 		B71898007182CA8B4B7C356E /* Pods_WaterloveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8245721F36C10D0BF9A039FA /* Pods_WaterloveTests.framework */; };
 		C7B62DB1B3DA24CD9667FD7A /* Pods_Waterlove_Storybook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CE34B8AF1BC386DA4282F4 /* Pods_Waterlove_Storybook.framework */; };
+		FA11FB392799BA2B0083F4E7 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558842774A6B9002A233B /* Repository.swift */; };
+		FA11FB3A2799BA360083F4E7 /* IntakeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65588B2774AA81002A233B /* IntakeEntry.swift */; };
+		FA11FB3B2799BA9E0083F4E7 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558962774B498002A233B /* CoreDataRepository.swift */; };
+		FA11FB3C2799BAA50083F4E7 /* DBContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558942774B33B002A233B /* DBContextProvider.swift */; };
+		FA11FB3D2799BAAB0083F4E7 /* IntakeEntryEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558922774B2EE002A233B /* IntakeEntryEntityMapper.swift */; };
+		FA11FB3E2799BB600083F4E7 /* IntakeEntryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655879277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift */; };
+		FA11FB3F2799BB620083F4E7 /* IntakeEntryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587A277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift */; };
+		FA11FB402799BB6B0083F4E7 /* Waterlove.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA54F073275A66A8007053AA /* Waterlove.xcdatamodeld */; };
+		FA11FB412799BB780083F4E7 /* IntakeEntrySearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */; };
+		FA11FB422799BC0C0083F4E7 /* DrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65588227738531002A233B /* DrinkType.swift */; };
+		FA11FB432799BC350083F4E7 /* DBEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558982774B9C3002A233B /* DBEntityMapper.swift */; };
+		FA11FB442799BF020083F4E7 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655875277334B1002A233B /* DependencyContainer.swift */; };
+		FA11FB452799C11F0083F4E7 /* WaterIntakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587327733153002A233B /* WaterIntakeService.swift */; };
+		FA11FB462799C1270083F4E7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511523278DA0B80090B1E5 /* NotificationManager.swift */; };
 		FA28B01C2790359D008FE225 /* HistoryStateMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28B01B2790359D008FE225 /* HistoryStateMachineTests.swift */; };
 		FA28B02127907CA3008FE225 /* WaterIntakeCalculatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28B02027907CA3008FE225 /* WaterIntakeCalculatorSpec.swift */; };
 		FA28B02427908BFF008FE225 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28B02327908BFF008FE225 /* MockNotificationCenter.swift */; };
@@ -45,7 +59,10 @@
 		FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */; };
 		FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */; };
 		FA59AC0E276CC60100EF02A3 /* TutorialStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0D276CC60100EF02A3 /* TutorialStepViewController.swift */; };
-		FA65587427733153002A233B /* DailyWaterIntakeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587327733153002A233B /* DailyWaterIntakeStore.swift */; };
+		FA63DD50279B0F8100A50770 /* FileManager+sharedContainerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63DD4F279B0F8100A50770 /* FileManager+sharedContainerURL.swift */; };
+		FA63DD51279B0F8100A50770 /* FileManager+sharedContainerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63DD4F279B0F8100A50770 /* FileManager+sharedContainerURL.swift */; };
+		FA63DD52279B0F8100A50770 /* FileManager+sharedContainerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63DD4F279B0F8100A50770 /* FileManager+sharedContainerURL.swift */; };
+		FA65587427733153002A233B /* WaterIntakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587327733153002A233B /* WaterIntakeService.swift */; };
 		FA655876277334B1002A233B /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655875277334B1002A233B /* DependencyContainer.swift */; };
 		FA65587B277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA655879277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift */; };
 		FA65587C277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587A277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift */; };
@@ -60,12 +77,18 @@
 		FA6558AC2779DB47002A233B /* CurrentHydrationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558AB2779DB47002A233B /* CurrentHydrationFlowController.swift */; };
 		FA6558AE2779F8E5002A233B /* String+capitalizeFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */; };
 		FA6FD793277CC0150048A8AD /* IntakeEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FD792277CC0150048A8AD /* IntakeEntryTableViewCell.swift */; };
+		FA7E707A27998A31008989D4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E707927998A31008989D4 /* WidgetKit.framework */; };
+		FA7E707C27998A31008989D4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7E707B27998A31008989D4 /* SwiftUI.framework */; };
+		FA7E707F27998A31008989D4 /* WaterloveWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E707E27998A31008989D4 /* WaterloveWidget.swift */; };
+		FA7E708227998A34008989D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7E708127998A34008989D4 /* Assets.xcassets */; };
+		FA7E708827998A34008989D4 /* WaterloveWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA7E707827998A31008989D4 /* WaterloveWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FAA0D703277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */; };
 		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAAF1306278457FD008278EA /* HistoryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF1305278457FD008278EA /* HistoryFlowController.swift */; };
 		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
 		FACD599427849BCA00314891 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD599327849BCA00314891 /* Date+Extensions.swift */; };
 		FACD59962785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */; };
+		FAE302CD279ACAB400FD18BD /* IntakeEntryGetByGuidSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */; };
 		FAE998E527871D4700523B54 /* HistoryStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E427871D4700523B54 /* HistoryStateMachine.swift */; };
 		FAE998E82787336900523B54 /* WeekdayValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E72787336900523B54 /* WeekdayValueFormatter.swift */; };
 		FAE998EA2787340F00523B54 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E92787340F00523B54 /* Weekday.swift */; };
@@ -76,7 +99,7 @@
 		FAE998F92787359E00523B54 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAE998FA2787359E00523B54 /* HistoryStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E427871D4700523B54 /* HistoryStateMachine.swift */; };
 		FAE998FB2787359E00523B54 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C72760F241007053AA /* MainFlowController.swift */; };
-		FAE998FC2787359E00523B54 /* DailyWaterIntakeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587327733153002A233B /* DailyWaterIntakeStore.swift */; };
+		FAE998FC2787359E00523B54 /* WaterIntakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65587327733153002A233B /* WaterIntakeService.swift */; };
 		FAE998FD2787359E00523B54 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E92787340F00523B54 /* Weekday.swift */; };
 		FAE998FE2787359E00523B54 /* AnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */; };
 		FAE998FF2787359E00523B54 /* HydrationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */; };
@@ -136,7 +159,28 @@
 			remoteGlobalIDString = FA54F066275A66A8007053AA;
 			remoteInfo = Waterlove;
 		};
+		FA7E708627998A34008989D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA54F05F275A66A8007053AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA7E707727998A31008989D4;
+			remoteInfo = WaterloveWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA7E708C27998A34008989D4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FA7E708827998A34008989D4 /* WaterloveWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		013AF31EE15C44901C741D09 /* Pods-Waterlove-WaterloveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waterlove-WaterloveUITests.debug.xcconfig"; path = "Target Support Files/Pods-Waterlove-WaterloveUITests/Pods-Waterlove-WaterloveUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,7 +235,11 @@
 		FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationProgressView.swift; sourceTree = "<group>"; };
 		FA59AC0A276B7CB100EF02A3 /* AnimationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDelegate.swift; sourceTree = "<group>"; };
 		FA59AC0D276CC60100EF02A3 /* TutorialStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStepViewController.swift; sourceTree = "<group>"; };
-		FA65587327733153002A233B /* DailyWaterIntakeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWaterIntakeStore.swift; sourceTree = "<group>"; };
+		FA63DD4C279B0D0900A50770 /* WaterloveDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaterloveDebug.entitlements; sourceTree = "<group>"; };
+		FA63DD4D279B0D9200A50770 /* Waterlove StorybookDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Waterlove StorybookDebug.entitlements"; sourceTree = "<group>"; };
+		FA63DD4E279B0DAB00A50770 /* WaterloveWidgetExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaterloveWidgetExtensionDebug.entitlements; sourceTree = "<group>"; };
+		FA63DD4F279B0F8100A50770 /* FileManager+sharedContainerURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+sharedContainerURL.swift"; sourceTree = "<group>"; };
+		FA65587327733153002A233B /* WaterIntakeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeService.swift; sourceTree = "<group>"; };
 		FA655875277334B1002A233B /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		FA655879277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntakeEntryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA65587A277377CE002A233B /* IntakeEntryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntakeEntryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -207,6 +255,12 @@
 		FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+capitalizeFirstLetter.swift"; sourceTree = "<group>"; };
 		FA6FD792277CC0150048A8AD /* IntakeEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntryTableViewCell.swift; sourceTree = "<group>"; };
 		FA7E70732798600F008989D4 /* class_diagram.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = class_diagram.svg; sourceTree = "<group>"; };
+		FA7E707827998A31008989D4 /* WaterloveWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WaterloveWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA7E707927998A31008989D4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FA7E707B27998A31008989D4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FA7E707E27998A31008989D4 /* WaterloveWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterloveWidget.swift; sourceTree = "<group>"; };
+		FA7E708127998A34008989D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA7E708327998A34008989D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntrySearchRequests.swift; sourceTree = "<group>"; };
 		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FAAF1305278457FD008278EA /* HistoryFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFlowController.swift; sourceTree = "<group>"; };
@@ -251,6 +305,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA7E707527998A31008989D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA7E707C27998A31008989D4 /* SwiftUI.framework in Frameworks */,
+				FA7E707A27998A31008989D4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAE9991F2787359E00523B54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +350,8 @@
 				92CE34B8AF1BC386DA4282F4 /* Pods_Waterlove_Storybook.framework */,
 				6D6DCC5D206582C373C83BF4 /* Pods_Waterlove_WaterloveUITests.framework */,
 				8245721F36C10D0BF9A039FA /* Pods_WaterloveTests.framework */,
+				FA7E707927998A31008989D4 /* WidgetKit.framework */,
+				FA7E707B27998A31008989D4 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -311,6 +376,8 @@
 		FA54F05E275A66A8007053AA = {
 			isa = PBXGroup;
 			children = (
+				FA63DD4E279B0DAB00A50770 /* WaterloveWidgetExtensionDebug.entitlements */,
+				FA63DD4D279B0D9200A50770 /* Waterlove StorybookDebug.entitlements */,
 				FA28B012278EF37A008FE225 /* README.md */,
 				FA7E70732798600F008989D4 /* class_diagram.svg */,
 				FA54F09F275A6C00007053AA /* .gitignore */,
@@ -321,6 +388,7 @@
 				FA54F069275A66A8007053AA /* Waterlove */,
 				FA54F083275A66AD007053AA /* WaterloveTests */,
 				FA54F08D275A66AD007053AA /* WaterloveUITests */,
+				FA7E707D27998A31008989D4 /* WaterloveWidget */,
 				FA54F068275A66A8007053AA /* Products */,
 				FAE9992B2787359E00523B54 /* Waterlove copy-Info.plist */,
 				57B618F7AB4D29702576B432 /* Pods */,
@@ -335,6 +403,7 @@
 				FA54F080275A66AD007053AA /* WaterloveTests.xctest */,
 				FA54F08A275A66AD007053AA /* WaterloveUITests.xctest */,
 				FAE9992A2787359E00523B54 /* Waterlove Storybook.app */,
+				FA7E707827998A31008989D4 /* WaterloveWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -342,6 +411,7 @@
 		FA54F069275A66A8007053AA /* Waterlove */ = {
 			isa = PBXGroup;
 			children = (
+				FA63DD4C279B0D0900A50770 /* WaterloveDebug.entitlements */,
 				FAE9992E27873B2200523B54 /* Storybook */,
 				FA54F0B0275F9F96007053AA /* Feature */,
 				FA54F0A7275F97BF007053AA /* Library */,
@@ -410,6 +480,7 @@
 				FA54F0AC275F99C2007053AA /* UIViewController+Extensions.swift */,
 				FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */,
 				FACD599327849BCA00314891 /* Date+Extensions.swift */,
+				FA63DD4F279B0F8100A50770 /* FileManager+sharedContainerURL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -517,6 +588,16 @@
 			path = SaveIntakeEntry;
 			sourceTree = "<group>";
 		};
+		FA7E707D27998A31008989D4 /* WaterloveWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E707E27998A31008989D4 /* WaterloveWidget.swift */,
+				FA7E708127998A34008989D4 /* Assets.xcassets */,
+				FA7E708327998A34008989D4 /* Info.plist */,
+			);
+			path = WaterloveWidget;
+			sourceTree = "<group>";
+		};
 		FAA0D701277B2FA0009C7D14 /* SearchRequests */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,7 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */,
-				FA65587327733153002A233B /* DailyWaterIntakeStore.swift */,
+				FA65587327733153002A233B /* WaterIntakeService.swift */,
 				FA511523278DA0B80090B1E5 /* NotificationManager.swift */,
 			);
 			path = Services;
@@ -590,10 +671,12 @@
 				FA54F063275A66A8007053AA /* Sources */,
 				FA54F064275A66A8007053AA /* Frameworks */,
 				FA54F065275A66A8007053AA /* Resources */,
+				FA7E708C27998A34008989D4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FA7E708727998A34008989D4 /* PBXTargetDependency */,
 			);
 			name = Waterlove;
 			packageProductDependencies = (
@@ -644,6 +727,23 @@
 			productReference = FA54F08A275A66AD007053AA /* WaterloveUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		FA7E707727998A31008989D4 /* WaterloveWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA7E708927998A34008989D4 /* Build configuration list for PBXNativeTarget "WaterloveWidgetExtension" */;
+			buildPhases = (
+				FA7E707427998A31008989D4 /* Sources */,
+				FA7E707527998A31008989D4 /* Frameworks */,
+				FA7E707627998A31008989D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterloveWidgetExtension;
+			productName = WaterloveWidgetExtension;
+			productReference = FA7E707827998A31008989D4 /* WaterloveWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FAE998EB2787359E00523B54 /* Waterlove Storybook */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE999272787359E00523B54 /* Build configuration list for PBXNativeTarget "Waterlove Storybook" */;
@@ -676,7 +776,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					FA54F066275A66A8007053AA = {
@@ -689,6 +789,9 @@
 					FA54F089275A66AD007053AA = {
 						CreatedOnToolsVersion = 13.1;
 						TestTargetID = FA54F066275A66A8007053AA;
+					};
+					FA7E707727998A31008989D4 = {
+						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
@@ -714,6 +817,7 @@
 				FAE998EB2787359E00523B54 /* Waterlove Storybook */,
 				FA54F07F275A66AD007053AA /* WaterloveTests */,
 				FA54F089275A66AD007053AA /* WaterloveUITests */,
+				FA7E707727998A31008989D4 /* WaterloveWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -740,6 +844,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA7E707627998A31008989D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA7E708227998A34008989D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -951,7 +1063,7 @@
 				FAA30ED5276779490031B17E /* Command.swift in Sources */,
 				FAE998E527871D4700523B54 /* HistoryStateMachine.swift in Sources */,
 				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,
-				FA65587427733153002A233B /* DailyWaterIntakeStore.swift in Sources */,
+				FA65587427733153002A233B /* WaterIntakeService.swift in Sources */,
 				FAE998EA2787340F00523B54 /* Weekday.swift in Sources */,
 				FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */,
 				FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */,
@@ -982,6 +1094,7 @@
 				FA54F0AD275F99C2007053AA /* UIViewController+Extensions.swift in Sources */,
 				FA65588327738531002A233B /* DrinkType.swift in Sources */,
 				FA59AC0E276CC60100EF02A3 /* TutorialStepViewController.swift in Sources */,
+				FA63DD50279B0F8100A50770 /* FileManager+sharedContainerURL.swift in Sources */,
 				FA65587B277377CE002A233B /* IntakeEntryEntity+CoreDataClass.swift in Sources */,
 				FA54F0C2275FCFDD007053AA /* R.generated.swift in Sources */,
 				FA6558932774B2EE002A233B /* IntakeEntryEntityMapper.swift in Sources */,
@@ -1012,6 +1125,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA7E707427998A31008989D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA11FB422799BC0C0083F4E7 /* DrinkType.swift in Sources */,
+				FA11FB412799BB780083F4E7 /* IntakeEntrySearchRequests.swift in Sources */,
+				FA7E707F27998A31008989D4 /* WaterloveWidget.swift in Sources */,
+				FAE302CD279ACAB400FD18BD /* IntakeEntryGetByGuidSearchRequest.swift in Sources */,
+				FA11FB432799BC350083F4E7 /* DBEntityMapper.swift in Sources */,
+				FA11FB402799BB6B0083F4E7 /* Waterlove.xcdatamodeld in Sources */,
+				FA11FB3A2799BA360083F4E7 /* IntakeEntry.swift in Sources */,
+				FA11FB442799BF020083F4E7 /* DependencyContainer.swift in Sources */,
+				FA11FB3B2799BA9E0083F4E7 /* CoreDataRepository.swift in Sources */,
+				FA11FB3F2799BB620083F4E7 /* IntakeEntryEntity+CoreDataProperties.swift in Sources */,
+				FA11FB452799C11F0083F4E7 /* WaterIntakeService.swift in Sources */,
+				FA11FB392799BA2B0083F4E7 /* Repository.swift in Sources */,
+				FA11FB3D2799BAAB0083F4E7 /* IntakeEntryEntityMapper.swift in Sources */,
+				FA63DD52279B0F8100A50770 /* FileManager+sharedContainerURL.swift in Sources */,
+				FA11FB462799C1270083F4E7 /* NotificationManager.swift in Sources */,
+				FA11FB3C2799BAA50083F4E7 /* DBContextProvider.swift in Sources */,
+				FA11FB3E2799BB600083F4E7 /* IntakeEntryEntity+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FAE998F42787359E00523B54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1024,7 +1161,7 @@
 				FAE998FA2787359E00523B54 /* HistoryStateMachine.swift in Sources */,
 				FAE9993627873CEE00523B54 /* OnboardingFlowController.swift in Sources */,
 				FAE998FB2787359E00523B54 /* MainFlowController.swift in Sources */,
-				FAE998FC2787359E00523B54 /* DailyWaterIntakeStore.swift in Sources */,
+				FAE998FC2787359E00523B54 /* WaterIntakeService.swift in Sources */,
 				FAE998FD2787359E00523B54 /* Weekday.swift in Sources */,
 				FAE998FE2787359E00523B54 /* AnimationDelegate.swift in Sources */,
 				FAE998FF2787359E00523B54 /* HydrationProgressView.swift in Sources */,
@@ -1054,6 +1191,7 @@
 				FAE999172787359E00523B54 /* TutorialStepViewController.swift in Sources */,
 				FAE999182787359E00523B54 /* IntakeEntryEntity+CoreDataClass.swift in Sources */,
 				FAE9991A2787359E00523B54 /* R.generated.swift in Sources */,
+				FA63DD51279B0F8100A50770 /* FileManager+sharedContainerURL.swift in Sources */,
 				FAE9991B2787359E00523B54 /* IntakeEntryEntityMapper.swift in Sources */,
 				FAE9991C2787359E00523B54 /* AppFlowController.swift in Sources */,
 				FAE9993227873C0B00523B54 /* StorybookFlowController.swift in Sources */,
@@ -1075,6 +1213,11 @@
 			isa = PBXTargetDependency;
 			target = FA54F066275A66A8007053AA /* Waterlove */;
 			targetProxy = FA54F08B275A66AD007053AA /* PBXContainerItemProxy */;
+		};
+		FA7E708727998A34008989D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA7E707727998A31008989D4 /* WaterloveWidgetExtension */;
+			targetProxy = FA7E708627998A34008989D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1219,8 +1362,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D067AEFE4007A8DAA1F1CB07 /* Pods-Waterlove.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Waterlove/WaterloveDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1250,6 +1395,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10CE805A43CEFC62F11986E6 /* Pods-Waterlove.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1377,12 +1523,72 @@
 			};
 			name = Release;
 		};
+		FA7E708A27998A34008989D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WaterloveWidgetExtensionDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6MAKY98QY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterloveWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WaterloveWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = oleksiy.petlyuk.Waterlove.WaterloveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA7E708B27998A34008989D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6MAKY98QY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterloveWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WaterloveWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = oleksiy.petlyuk.Waterlove.WaterloveWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FAE999282787359E00523B54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFA30352F1416E8D888B472B /* Pods-Waterlove Storybook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Waterlove StorybookDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W6MAKY98QY;
@@ -1470,6 +1676,15 @@
 			buildConfigurations = (
 				FA54F09B275A66AD007053AA /* Debug */,
 				FA54F09C275A66AD007053AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA7E708927998A34008989D4 /* Build configuration list for PBXNativeTarget "WaterloveWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA7E708A27998A34008989D4 /* Debug */,
+				FA7E708B27998A34008989D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

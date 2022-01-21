@@ -8,7 +8,7 @@
 import UIKit
 
 final class HistoryFlowController: UIViewController {
-  typealias Dependencies = HasDailyWaterIntakeStore
+  typealias Dependencies = HasWaterIntakeService
 
   let dependencies: Dependencies
 
@@ -24,11 +24,9 @@ final class HistoryFlowController: UIViewController {
     return controller
   }()
 
-  private var repository: Repository<IntakeEntry>
-
   private var searchInterval = SearchInterval.week {
     didSet {
-      loadHistory()
+      Task { await loadHistory() }
     }
   }
 
@@ -40,12 +38,6 @@ final class HistoryFlowController: UIViewController {
 
   init(dependencies: Dependencies) {
     self.dependencies = dependencies
-
-    self.repository = DBRepository(
-      contextSource: DBContextProvider(),
-      entityMapper: IntakeEntryEntityMapper(),
-      autoUpdateSearchRequest: nil
-    )
 
     super.init(nibName: nil, bundle: nil)
 
@@ -61,7 +53,7 @@ final class HistoryFlowController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    loadHistory()
+    Task { await loadHistory() }
   }
 
   func start() {
@@ -70,7 +62,7 @@ final class HistoryFlowController: UIViewController {
 
   private func startHistory() {
     if let controller = historyVC {
-      loadHistory()
+      Task { await loadHistory() }
 
       embeddedNavigationController?.viewControllers = [controller]
     }
@@ -90,16 +82,14 @@ private extension HistoryFlowController {
         didDelete: .init { [weak self] in
           guard let self = self else { return }
 
-          self.repository.delete(by: IntakeEntryGetByGuidSearchRequest(guids: [entry.guid])) { result in
+          Task {
+            let result = await self.dependencies.waterIntakeService.deleteIntakeEntry(by: entry.guid)
+
             switch result {
             case .failure(let error):
-              DispatchQueue.main.async {
-                self.historyStateMachine.transition(with: .loadingFailed(error))
-              }
+              self.historyStateMachine.transition(with: .loadingFailed(error))
             case .success:
-              DispatchQueue.main.async {
-                self.loadHistory()
-              }
+              await self.loadHistory()
             }
           }
         }
@@ -109,27 +99,16 @@ private extension HistoryFlowController {
     return .init(
       entries: entries,
       searchInterval: searchInterval,
-      recommendedDailyAmount: dependencies.dailyWaterIntakeStore.getDailyIntake(),
+      recommendedDailyAmount: dependencies.waterIntakeService.getDailyIntake(),
       didChangeSearchInterval: .init { [weak self] newInterval in
         self?.searchInterval = newInterval
       }
     )
   }
 
-  func loadHistory() {
-    historyStateMachine.transition(with: .startLoading)
+  func loadHistory() async {
+    DispatchQueue.main.async { self.historyStateMachine.transition(with: .startLoading) }
 
-    fetchEntries { [weak self] result in
-      switch result {
-      case .failure(let error):
-        self?.historyStateMachine.transition(with: .loadingFailed(error))
-      case .success(let entries):
-        self?.entries = entries
-      }
-    }
-  }
-
-  func fetchEntries(completion: @escaping ((Result<[IntakeEntry], Error>) -> Void)) {
     let startDate: Date
     let endDate: Date
 
@@ -142,14 +121,13 @@ private extension HistoryFlowController {
       endDate = .now.endOfMonth()
     }
 
-    let sort = NSSortDescriptor(key: "createdAt", ascending: true)
+    let result = await dependencies.waterIntakeService.getIntakeEntries(startingFrom: startDate, endDate: endDate)
 
-    let request = IntakeEntrySpecificDateSearchRequest(startDate: startDate, endDate: endDate, sortDescriptors: [sort])
-
-    repository.present(by: request) { result in
-      DispatchQueue.main.async {
-        completion(result)
-      }
+    switch result {
+    case .failure(let error):
+      DispatchQueue.main.async { self.historyStateMachine.transition(with: .loadingFailed(error)) }
+    case .success(let entries):
+      DispatchQueue.main.async { self.entries = entries }
     }
   }
 }

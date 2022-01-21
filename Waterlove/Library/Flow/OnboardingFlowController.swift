@@ -8,7 +8,7 @@
 import UIKit
 
 final class OnboardingFlowController: UIViewController {
-  typealias Dependencies = HasDailyWaterIntakeStore
+  typealias Dependencies = HasWaterIntakeService
 
   let dependencies: Dependencies
 
@@ -149,7 +149,7 @@ extension OnboardingFlowController {
       didSaveWaterIntakeResults: .init { [weak self] in
         guard let self = self else { return }
 
-        self.dependencies.dailyWaterIntakeStore.storeDailyIntake(waterAmount)
+        self.dependencies.waterIntakeService.storeDailyIntake(waterAmount)
 
         if let controller = self.waterIntakeCalculatorVC {
           self.remove(childController: controller)

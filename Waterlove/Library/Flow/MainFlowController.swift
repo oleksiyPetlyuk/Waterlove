@@ -8,7 +8,7 @@
 import UIKit
 
 final class MainFlowController: UIViewController {
-  typealias Dependencies = HasDailyWaterIntakeStore & HasNotificationManager
+  typealias Dependencies = HasWaterIntakeService & HasNotificationManager
 
   let dependencies: Dependencies
 

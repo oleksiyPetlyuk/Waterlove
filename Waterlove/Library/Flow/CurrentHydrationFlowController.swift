@@ -8,7 +8,7 @@
 import UIKit
 
 final class CurrentHydrationFlowController: UIViewController {
-  typealias Dependencies = HasDailyWaterIntakeStore
+  typealias Dependencies = HasWaterIntakeService
 
   let dependencies: Dependencies
 
@@ -20,12 +20,6 @@ final class CurrentHydrationFlowController: UIViewController {
 
   private lazy var saveIntakeEntryVC: SaveIntakeEntryViewController? = {
     return R.storyboard.main.saveIntakeEntryViewController()
-  }()
-
-  private var repository: Repository<IntakeEntry>
-
-  private lazy var dailyIntakeAmount: Measurement<UnitVolume> = {
-    return dependencies.dailyWaterIntakeStore.getDailyIntake() ?? .init(value: 2500, unit: .milliliters)
   }()
 
   private var intakeEntryAmount: Measurement<UnitVolume> = .init(value: 0, unit: .milliliters) {
@@ -44,15 +38,10 @@ final class CurrentHydrationFlowController: UIViewController {
     }
   }
 
-  private var hydrationProgress: UInt8 = 0 {
-    didSet {
-      if let controller = currentHydrationVC {
-        controller.props = makeCurrentHydrationProps()
-      }
-    }
-  }
-
-  private var intookWaterAmount: Measurement<UnitVolume> = .init(value: 0, unit: .milliliters) {
+  private var hydrationProgress = HydrationProgress(
+    progress: 0,
+    intookWaterAmount: .init(value: 0, unit: .milliliters)
+  ) {
     didSet {
       if let controller = currentHydrationVC {
         controller.props = makeCurrentHydrationProps()
@@ -62,12 +51,6 @@ final class CurrentHydrationFlowController: UIViewController {
 
   init(dependencies: Dependencies) {
     self.dependencies = dependencies
-
-    self.repository = DBRepository(
-      contextSource: DBContextProvider(),
-      entityMapper: IntakeEntryEntityMapper(),
-      autoUpdateSearchRequest: nil
-    )
 
     super.init(nibName: nil, bundle: nil)
 
@@ -83,7 +66,7 @@ final class CurrentHydrationFlowController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    loadCurrentHydration()
+    Task { await loadCurrentHydration() }
   }
 
   func start() {
@@ -98,32 +81,12 @@ final class CurrentHydrationFlowController: UIViewController {
     }
   }
 
-  private func loadCurrentHydration() {
-    repository.present(by: IntakeEntrySpecificDateSearchRequest()) { [weak self] result in
-      guard let self = self else { return }
+  private func loadCurrentHydration() async {
+    let hydrationProgress = await dependencies.waterIntakeService.getHydrationProgress()
 
-      switch result {
-      case .failure(let error):
-        print(error)
-      case .success(let entries):
-        var totalAmount: Measurement<UnitVolume> = .init(value: 0, unit: .milliliters)
+    guard let hydrationProgress = hydrationProgress else { return }
 
-        entries.forEach { entry in
-          // swiftlint:disable:next shorthand_operator
-          totalAmount = totalAmount + entry.waterAmount
-        }
-
-        DispatchQueue.main.async {
-          if totalAmount >= self.dailyIntakeAmount {
-            self.hydrationProgress = 100
-          } else {
-            self.hydrationProgress = UInt8(totalAmount.value / self.dailyIntakeAmount.value * 100)
-          }
-
-          self.intookWaterAmount = totalAmount
-        }
-      }
-    }
+    DispatchQueue.main.async { self.hydrationProgress = hydrationProgress }
   }
 
   private func startSaveIntakeEntry() {
@@ -140,8 +103,8 @@ extension CurrentHydrationFlowController {
   private func makeCurrentHydrationProps() -> CurrentHydrationViewController.Props {
     return .init(
       hydrationProgressViewProps: .init(
-        progressBarProps: .init(progress: hydrationProgress),
-        intookWaterAmount: intookWaterAmount
+        progressBarProps: .init(progress: hydrationProgress.progress),
+        intookWaterAmount: hydrationProgress.intookWaterAmount
       ),
       didTapAddNewIntake: .init { [weak self] drinkType in
         self?.drinkType = drinkType
@@ -187,23 +150,26 @@ extension CurrentHydrationFlowController {
           return
         }
 
-        let newIntake = IntakeEntry(
-          guid: UUID(),
-          drinkType: self.drinkType,
-          amount: self.intakeEntryAmount,
-          createdAt: .now
-        )
+        Task {
+          let newIntake = IntakeEntry(
+            guid: UUID(),
+            drinkType: self.drinkType,
+            amount: self.intakeEntryAmount,
+            createdAt: .now
+          )
 
-        self.repository.save([newIntake]) { result in
+          let result = await self.dependencies.waterIntakeService.saveIntakeEntry(newIntake)
+
           switch result {
           case .success:
-            self.loadCurrentHydration()
+            await self.loadCurrentHydration()
+
             DispatchQueue.main.async {
               self.intakeEntryAmount = .init(value: 0, unit: .milliliters)
               self.embeddedNavigationController?.dismiss(animated: true, completion: nil)
             }
-          case .failure(let error):
-            print("Error occurred during saving a new intake entry: \(error)")
+          case .failure:
+            print("Error saving new entry")
           }
         }
       }

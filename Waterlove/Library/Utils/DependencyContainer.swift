@@ -8,21 +8,21 @@
 import Foundation
 import UserNotifications
 
-protocol HasDailyWaterIntakeStore {
-  var dailyWaterIntakeStore: DailyWaterIntakeStoreProtocol { get }
+protocol HasWaterIntakeService {
+  var waterIntakeService: WaterIntakeServiceProtocol { get }
 }
 
 protocol HasNotificationManager {
   var notificationManager: NotificationManagerProtocol { get }
 }
 
-struct DependencyContainer: HasDailyWaterIntakeStore, HasNotificationManager {
-  var dailyWaterIntakeStore: DailyWaterIntakeStoreProtocol
+struct DependencyContainer: HasWaterIntakeService, HasNotificationManager {
+  var waterIntakeService: WaterIntakeServiceProtocol
   var notificationManager: NotificationManagerProtocol
 
   static func make() -> DependencyContainer {
     let notificationManager = NotificationManager(notificationCenter: UNUserNotificationCenter.current())
 
-    return .init(dailyWaterIntakeStore: DailyWaterIntakeStore(), notificationManager: notificationManager)
+    return .init(waterIntakeService: WaterIntakeService(), notificationManager: notificationManager)
   }
 }
