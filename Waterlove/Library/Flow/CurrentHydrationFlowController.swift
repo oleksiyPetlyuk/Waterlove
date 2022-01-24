@@ -40,7 +40,8 @@ final class CurrentHydrationFlowController: UIViewController {
 
   private var hydrationProgress = HydrationProgress(
     progress: 0,
-    intookWaterAmount: .init(value: 0, unit: .milliliters)
+    intookWaterAmount: .init(value: 0, unit: .milliliters),
+    date: .now
   ) {
     didSet {
       if let controller = currentHydrationVC {

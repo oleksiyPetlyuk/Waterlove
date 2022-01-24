@@ -11,6 +11,7 @@ import WidgetKit
 struct HydrationProgress: Codable {
   let progress: UInt8
   let intookWaterAmount: Measurement<UnitVolume>
+  let date: Date
 }
 
 protocol WaterIntakeServiceProtocol {
@@ -52,6 +53,7 @@ class WaterIntakeService: WaterIntakeServiceProtocol {
     return try? PropertyListDecoder().decode(Measurement<UnitVolume>.self, from: data)
   }
 
+  @discardableResult
   func getHydrationProgress() async -> HydrationProgress? {
     guard let dailyIntake = self.getDailyIntake() else { return nil }
 
@@ -79,7 +81,7 @@ class WaterIntakeService: WaterIntakeServiceProtocol {
             progress = UInt8(totalAmount.value / dailyIntake.value * 100)
           }
 
-          let hydrationProgress = HydrationProgress(progress: progress, intookWaterAmount: totalAmount)
+          let hydrationProgress = HydrationProgress(progress: progress, intookWaterAmount: totalAmount, date: .now)
 
           continuation.resume(returning: hydrationProgress)
 
@@ -90,35 +92,50 @@ class WaterIntakeService: WaterIntakeServiceProtocol {
   }
 
   func saveIntakeEntry(_ entry: IntakeEntry) async -> Result<Void, Error> {
-    return await withCheckedContinuation { continuation in
+    let result: Result<Void, Error> = await withCheckedContinuation { continuation in
       repository.save([entry]) { result in
-        switch result {
-        case .failure(let error):
-          print("Error: \(error.localizedDescription)")
-        case .success:
-          WidgetCenter.shared.reloadTimelines(ofKind: "WaterloveWidget")
-        }
-
         continuation.resume(returning: result)
       }
     }
+
+    switch result {
+    case .failure(let error):
+      print("Error: \(error.localizedDescription)")
+    case .success:
+      DispatchQueue.global().async {
+        Task {
+          // Force
+          await self.getHydrationProgress()
+          WidgetCenter.shared.reloadTimelines(ofKind: "WaterloveWidget")
+        }
+      }
+    }
+
+    return result
   }
 
   func deleteIntakeEntry(by id: UUID) async -> Result<Void, Error> {
-    return await withCheckedContinuation { continuation in
+    let result: Result<Void, Error> = await withCheckedContinuation { continuation in
       let searchRequest = IntakeEntryGetByGuidSearchRequest(guids: [id])
 
       repository.delete(by: searchRequest) { result in
-        switch result {
-        case .success:
-          WidgetCenter.shared.reloadTimelines(ofKind: "WaterloveWidget")
-        case .failure:
-          print("Error: can`t delete intake entry")
-        }
-
         continuation.resume(returning: result)
       }
     }
+
+    switch result {
+    case .failure:
+      print("Error: Can`t delete intake entry")
+    case .success:
+      DispatchQueue.global().async {
+        Task {
+          await self.getHydrationProgress()
+          WidgetCenter.shared.reloadTimelines(ofKind: "WaterloveWidget")
+        }
+      }
+    }
+
+    return result
   }
 
   func getIntakeEntries(startingFrom: Date, endDate: Date) async -> Result<[IntakeEntry], Error> {

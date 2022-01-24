@@ -43,7 +43,6 @@
 		FA54F085275A66AD007053AA /* WaterloveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F084275A66AD007053AA /* WaterloveTests.swift */; };
 		FA54F08F275A66AD007053AA /* WaterloveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F08E275A66AD007053AA /* WaterloveUITests.swift */; };
 		FA54F091275A66AD007053AA /* WaterloveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F090275A66AD007053AA /* WaterloveUITestsLaunchTests.swift */; };
-		FA54F0A4275A6D2B007053AA /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = FA54F0A3275A6D2B007053AA /* Rswift */; };
 		FA54F0AA275F97FE007053AA /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0A9275F97FE007053AA /* AppFlowController.swift */; };
 		FA54F0AD275F99C2007053AA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0AC275F99C2007053AA /* UIViewController+Extensions.swift */; };
 		FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0AE275F9DA0007053AA /* OnboardingFlowController.swift */; };
@@ -54,6 +53,7 @@
 		FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C72760F241007053AA /* MainFlowController.swift */; };
 		FA54F0CA2760F29B007053AA /* CurrentHydrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0C92760F29B007053AA /* CurrentHydrationViewController.swift */; };
 		FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0D12760F2D9007053AA /* HistoryViewController.swift */; };
+		FA55F9A9279EDDA20032A143 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = FA55F9A8279EDDA20032A143 /* Rswift */; };
 		FA59AC052769FEB900EF02A3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA59AC042769FEB900EF02A3 /* SnapKit */; };
 		FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */; };
 		FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59AC08276B52D400EF02A3 /* HydrationProgressView.swift */; };
@@ -282,8 +282,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA54F0A4275A6D2B007053AA /* Rswift in Frameworks */,
 				FA516479277C816000D58204 /* Charts in Frameworks */,
+				FA55F9A9279EDDA20032A143 /* Rswift in Frameworks */,
 				FA59AC052769FEB900EF02A3 /* SnapKit in Frameworks */,
 				9E4140D66CAF53E0EF162F47 /* Pods_Waterlove.framework in Frameworks */,
 			);
@@ -680,9 +680,9 @@
 			);
 			name = Waterlove;
 			packageProductDependencies = (
-				FA54F0A3275A6D2B007053AA /* Rswift */,
 				FA59AC042769FEB900EF02A3 /* SnapKit */,
 				FA516478277C816000D58204 /* Charts */,
+				FA55F9A8279EDDA20032A143 /* Rswift */,
 			);
 			productName = Waterlove;
 			productReference = FA54F067275A66A8007053AA /* Waterlove.app */;
@@ -805,9 +805,9 @@
 			);
 			mainGroup = FA54F05E275A66A8007053AA;
 			packageReferences = (
-				FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */,
 				FA59AC032769FEB900EF02A3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FA516477277C816000D58204 /* XCRemoteSwiftPackageReference "Charts" */,
+				FA55F9A7279EDDA20032A143 /* XCRemoteSwiftPackageReference "R.swift" */,
 			);
 			productRefGroup = FA54F068275A66A8007053AA /* Products */;
 			projectDirPath = "";
@@ -1001,7 +1001,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(TEMP_DIR)/rswift-lastrun",
 			);
 			outputFileListPaths = (
 			);
@@ -1709,7 +1708,7 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */ = {
+		FA55F9A7279EDDA20032A143 /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
 			requirement = {
@@ -1757,9 +1756,9 @@
 			package = FA516477277C816000D58204 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
-		FA54F0A3275A6D2B007053AA /* Rswift */ = {
+		FA55F9A8279EDDA20032A143 /* Rswift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FA54F0A2275A6D2B007053AA /* XCRemoteSwiftPackageReference "R.swift" */;
+			package = FA55F9A7279EDDA20032A143 /* XCRemoteSwiftPackageReference "R.swift" */;
 			productName = Rswift;
 		};
 		FA59AC042769FEB900EF02A3 /* SnapKit */ = {

@@ -10,15 +10,15 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
   // swiftlint:disable:next line_length
-  private let defaultProgress = HydrationProgress(progress: 75, intookWaterAmount: .init(value: 1500, unit: .milliliters))
+  private let placeholderProgress = HydrationProgress(progress: 75, intookWaterAmount: .init(value: 1500, unit: .milliliters), date: .now)
 
   func placeholder(in context: Context) -> WaterloveWidgetContent {
-    return WaterloveWidgetContent(date: .now, hydrationProgress: defaultProgress)
+    return WaterloveWidgetContent(date: .now, hydrationProgress: placeholderProgress)
   }
 
   func getSnapshot(in context: Context, completion: @escaping (WaterloveWidgetContent) -> Void) {
     if context.isPreview {
-      let entry = WaterloveWidgetContent(date: .now, hydrationProgress: defaultProgress)
+      let entry = WaterloveWidgetContent(date: .now, hydrationProgress: placeholderProgress)
 
       completion(entry)
 
@@ -52,7 +52,20 @@ struct Provider: TimelineProvider {
       }
     }
 
-    return WaterloveWidgetContent(date: .now, hydrationProgress: contents ?? defaultProgress)
+    let defaultContent = WaterloveWidgetContent(
+      date: .now,
+      hydrationProgress: .init(progress: 0, intookWaterAmount: .init(value: 0, unit: .milliliters), date: .now)
+    )
+
+    guard let contents = contents else { return defaultContent }
+
+    let diff = Calendar.current.dateComponents([.year, .month, .day], from: contents.date, to: .now)
+
+    guard let diffYears = diff.year, let diffMonths = diff.month, let diffDays = diff.day else { return defaultContent }
+
+    guard diffDays == 0, diffMonths == 0, diffYears == 0 else { return defaultContent }
+
+    return WaterloveWidgetContent(date: .now, hydrationProgress: contents)
   }
 }
 
@@ -74,13 +87,13 @@ struct ProgressBar: View {
   var body: some View {
     ZStack {
       Circle()
-        .stroke(lineWidth: 15)
+        .stroke(lineWidth: 20)
         .opacity(0.3)
         .foregroundColor(.blue)
 
       Circle()
         .trim(from: 0.0, to: min(CGFloat(hydrationProgress.progress) / 100, 1))
-        .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
+        .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
         .foregroundColor(.blue)
         .rotationEffect(Angle(degrees: 270))
         .animation(.linear, value: 1)
@@ -110,7 +123,7 @@ struct WaterloveWidgetEntryView: View {
         Spacer()
 
         ProgressBar(hydrationProgress: entry.hydrationProgress)
-          .frame(width: 100, height: 100)
+          .frame(width: 120, height: 120)
 
         Spacer()
       }
@@ -145,7 +158,7 @@ struct WaterloveWidget_Previews: PreviewProvider {
   static var previews: some View {
     let entry = WaterloveWidgetContent(
       date: Date(),
-      hydrationProgress: .init(progress: 75, intookWaterAmount: .init(value: 1500, unit: .milliliters))
+      hydrationProgress: .init(progress: 75, intookWaterAmount: .init(value: 1500, unit: .milliliters), date: .now)
     )
 
     WaterloveWidgetEntryView(entry: entry)
