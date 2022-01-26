@@ -82,6 +82,9 @@
 		FA7E707F27998A31008989D4 /* WaterloveWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E707E27998A31008989D4 /* WaterloveWidget.swift */; };
 		FA7E708227998A34008989D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7E708127998A34008989D4 /* Assets.xcassets */; };
 		FA7E708827998A34008989D4 /* WaterloveWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA7E707827998A31008989D4 /* WaterloveWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA8C11FF27A018D9004CBEB1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51151F278D97C70090B1E5 /* SettingsViewController.swift */; };
+		FA8C120027A018EB004CBEB1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511523278DA0B80090B1E5 /* NotificationManager.swift */; };
+		FA8C120127A018FB004CBEB1 /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */; };
 		FAA0D703277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */; };
 		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAAF1306278457FD008278EA /* HistoryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF1305278457FD008278EA /* HistoryFlowController.swift */; };
@@ -1167,6 +1170,7 @@
 				FAE999012787359E00523B54 /* Date+Extensions.swift in Sources */,
 				FAE999022787359E00523B54 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */,
 				FAE999032787359E00523B54 /* DBContextProvider.swift in Sources */,
+				FA8C11FF27A018D9004CBEB1 /* SettingsViewController.swift in Sources */,
 				FAE999042787359E00523B54 /* TutorialViewController.swift in Sources */,
 				FAE999052787359E00523B54 /* AppDelegate.swift in Sources */,
 				FAE999062787359E00523B54 /* SaveIntakeEntryViewController.swift in Sources */,
@@ -1187,12 +1191,14 @@
 				FAE9993527873CCF00523B54 /* StorybookTableViewController.swift in Sources */,
 				FAE999152787359E00523B54 /* UIViewController+Extensions.swift in Sources */,
 				FAE999162787359E00523B54 /* DrinkType.swift in Sources */,
+				FA8C120127A018FB004CBEB1 /* SettingsFlowController.swift in Sources */,
 				FAE999172787359E00523B54 /* TutorialStepViewController.swift in Sources */,
 				FAE999182787359E00523B54 /* IntakeEntryEntity+CoreDataClass.swift in Sources */,
 				FAE9991A2787359E00523B54 /* R.generated.swift in Sources */,
 				FA63DD51279B0F8100A50770 /* FileManager+sharedContainerURL.swift in Sources */,
 				FAE9991B2787359E00523B54 /* IntakeEntryEntityMapper.swift in Sources */,
 				FAE9991C2787359E00523B54 /* AppFlowController.swift in Sources */,
+				FA8C120027A018EB004CBEB1 /* NotificationManager.swift in Sources */,
 				FAE9993227873C0B00523B54 /* StorybookFlowController.swift in Sources */,
 				FAE9991D2787359E00523B54 /* Repository.swift in Sources */,
 				FAE9991E2787359E00523B54 /* String+capitalizeFirstLetter.swift in Sources */,

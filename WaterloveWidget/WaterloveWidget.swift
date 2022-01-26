@@ -59,11 +59,7 @@ struct Provider: TimelineProvider {
 
     guard let contents = contents else { return defaultContent }
 
-    let diff = Calendar.current.dateComponents([.year, .month, .day], from: contents.date, to: .now)
-
-    guard let diffYears = diff.year, let diffMonths = diff.month, let diffDays = diff.day else { return defaultContent }
-
-    guard diffDays == 0, diffMonths == 0, diffYears == 0 else { return defaultContent }
+    guard Calendar.current.isDate(contents.date, inSameDayAs: .now) else { return defaultContent }
 
     return WaterloveWidgetContent(date: .now, hydrationProgress: contents)
   }
