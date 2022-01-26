@@ -41,7 +41,12 @@ class WaterIntakeCalculatorViewController: UIViewController {
   @IBOutlet private weak var genderControl: UISegmentedControl!
   @IBOutlet private weak var weightSlider: UISlider!
 
-  private let formatter = MeasurementFormatter()
+  private let formatter: MeasurementFormatter = {
+    let formatter = MeasurementFormatter()
+    formatter.unitOptions = .providedUnit
+
+    return formatter
+  }()
 
   private var currentWeightLabel: UILabel = {
     let label = UILabel(frame: .init(x: 0, y: 0, width: 50, height: 25))
