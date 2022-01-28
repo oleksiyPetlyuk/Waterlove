@@ -29,6 +29,8 @@
 		FA28B02127907CA3008FE225 /* WaterIntakeCalculatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28B02027907CA3008FE225 /* WaterIntakeCalculatorSpec.swift */; };
 		FA28B02427908BFF008FE225 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28B02327908BFF008FE225 /* MockNotificationCenter.swift */; };
 		FA28B02627908D04008FE225 /* NotificationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28B02527908D04008FE225 /* NotificationManagerSpec.swift */; };
+		FA473BEC27A4152200C77362 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */; };
+		FA473BED27A4152300C77362 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */; };
 		FA51151E278C8FBB0090B1E5 /* example_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = FA51151D278C8FBB0090B1E5 /* example_entries.json */; };
 		FA511520278D97C70090B1E5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51151F278D97C70090B1E5 /* SettingsViewController.swift */; };
 		FA511522278D9CD90090B1E5 /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */; };
@@ -85,6 +87,7 @@
 		FA8C11FF27A018D9004CBEB1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51151F278D97C70090B1E5 /* SettingsViewController.swift */; };
 		FA8C120027A018EB004CBEB1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511523278DA0B80090B1E5 /* NotificationManager.swift */; };
 		FA8C120127A018FB004CBEB1 /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */; };
+		FA8C120327A3EBE7004CBEB1 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */; };
 		FAA0D703277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */; };
 		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAAF1306278457FD008278EA /* HistoryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF1305278457FD008278EA /* HistoryFlowController.swift */; };
@@ -264,6 +267,7 @@
 		FA7E707E27998A31008989D4 /* WaterloveWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterloveWidget.swift; sourceTree = "<group>"; };
 		FA7E708127998A34008989D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7E708327998A34008989D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntrySearchRequests.swift; sourceTree = "<group>"; };
 		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FAAF1305278457FD008278EA /* HistoryFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFlowController.swift; sourceTree = "<group>"; };
@@ -631,6 +635,7 @@
 				FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */,
 				FA65587327733153002A233B /* WaterIntakeService.swift */,
 				FA511523278DA0B80090B1E5 /* NotificationManager.swift */,
+				FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1078,6 +1083,7 @@
 				FA6558AA2779D125002A233B /* SaveIntakeEntryViewController.swift in Sources */,
 				FA54F06D275A66A8007053AA /* SceneDelegate.swift in Sources */,
 				FA54F0D22760F2D9007053AA /* HistoryViewController.swift in Sources */,
+				FA8C120327A3EBE7004CBEB1 /* SettingsService.swift in Sources */,
 				FA54F0B6275FA14B007053AA /* WaterIntakeCalculatorViewController.swift in Sources */,
 				FA54F075275A66A8007053AA /* Waterlove.xcdatamodeld in Sources */,
 				FA6558992774B9C3002A233B /* DBEntityMapper.swift in Sources */,
@@ -1131,6 +1137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA473BED27A4152300C77362 /* SettingsService.swift in Sources */,
 				FA11FB422799BC0C0083F4E7 /* DrinkType.swift in Sources */,
 				FA11FB412799BB780083F4E7 /* IntakeEntrySearchRequests.swift in Sources */,
 				FA7E707F27998A31008989D4 /* WaterloveWidget.swift in Sources */,
@@ -1195,6 +1202,7 @@
 				FAE999172787359E00523B54 /* TutorialStepViewController.swift in Sources */,
 				FAE999182787359E00523B54 /* IntakeEntryEntity+CoreDataClass.swift in Sources */,
 				FAE9991A2787359E00523B54 /* R.generated.swift in Sources */,
+				FA473BEC27A4152200C77362 /* SettingsService.swift in Sources */,
 				FA63DD51279B0F8100A50770 /* FileManager+sharedContainerURL.swift in Sources */,
 				FAE9991B2787359E00523B54 /* IntakeEntryEntityMapper.swift in Sources */,
 				FAE9991C2787359E00523B54 /* AppFlowController.swift in Sources */,

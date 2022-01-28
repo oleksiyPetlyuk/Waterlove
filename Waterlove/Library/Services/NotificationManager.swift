@@ -19,7 +19,6 @@ protocol UNUserNotificationCenterProtocol: AnyObject {
 extension UNUserNotificationCenter: UNUserNotificationCenterProtocol {}
 
 enum NotificationManagerConstants {
-  static let isNotificationsEnabledKey = "isNotificationsEnabled"
   static let notificationScheduledHours = 9...23
 }
 

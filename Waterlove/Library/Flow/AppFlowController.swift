@@ -8,14 +8,13 @@
 import UIKit
 
 final class AppFlowController: UIViewController {
-  let dependencyContainer: DependencyContainer
+  private let dependencyContainer: DependencyContainer
 
-  private var isUserDidFinishTutorial: Bool {
-    return UserDefaults.standard.bool(forKey: "userDidFinishTutorial")
-  }
+  private var settingsService: SettingsServiceProtocol
 
   init(dependencyContainer: DependencyContainer) {
     self.dependencyContainer = dependencyContainer
+    self.settingsService = dependencyContainer.settingsService
 
     super.init(nibName: nil, bundle: nil)
   }
@@ -26,16 +25,18 @@ final class AppFlowController: UIViewController {
 
   /// Start the flow
   func start() {
-    isUserDidFinishTutorial ? startMain() : startTutorial()
+    settingsService.isUserDidFinishTutorial ? startMain() : startTutorial()
   }
 
   private func startTutorial() {
     let onboardingFlow = OnboardingFlowController(dependencies: dependencyContainer)
 
     onboardingFlow.didFinishOnboarding = { [weak self] in
-      UserDefaults.standard.set(true, forKey: "userDidFinishTutorial")
-      self?.remove(childController: onboardingFlow)
-      self?.startMain()
+      guard let self = self else { return }
+
+      self.settingsService.isUserDidFinishTutorial = true
+      self.remove(childController: onboardingFlow)
+      self.startMain()
     }
 
     add(childController: onboardingFlow)

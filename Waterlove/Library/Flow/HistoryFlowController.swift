@@ -10,7 +10,7 @@ import UIKit
 final class HistoryFlowController: UIViewController {
   typealias Dependencies = HasWaterIntakeService
 
-  let dependencies: Dependencies
+  private let waterIntakeService: WaterIntakeServiceProtocol
 
   private var embeddedNavigationController: UINavigationController?
 
@@ -37,7 +37,7 @@ final class HistoryFlowController: UIViewController {
   }
 
   init(dependencies: Dependencies) {
-    self.dependencies = dependencies
+    self.waterIntakeService = dependencies.waterIntakeService
 
     super.init(nibName: nil, bundle: nil)
 
@@ -83,7 +83,7 @@ private extension HistoryFlowController {
           guard let self = self else { return }
 
           Task {
-            let result = await self.dependencies.waterIntakeService.deleteIntakeEntry(by: entry.guid)
+            let result = await self.waterIntakeService.deleteIntakeEntry(by: entry.guid)
 
             switch result {
             case .failure(let error):
@@ -99,7 +99,7 @@ private extension HistoryFlowController {
     return .init(
       entries: entries,
       searchInterval: searchInterval,
-      recommendedDailyAmount: dependencies.waterIntakeService.getDailyIntake(),
+      recommendedDailyAmount: waterIntakeService.getDailyIntake(),
       didChangeSearchInterval: .init { [weak self] newInterval in
         self?.searchInterval = newInterval
       }
@@ -121,7 +121,7 @@ private extension HistoryFlowController {
       endDate = .now.endOfMonth()
     }
 
-    let result = await dependencies.waterIntakeService.getIntakeEntries(startingFrom: startDate, endDate: endDate)
+    let result = await waterIntakeService.getIntakeEntries(startingFrom: startDate, endDate: endDate)
 
     switch result {
     case .failure(let error):

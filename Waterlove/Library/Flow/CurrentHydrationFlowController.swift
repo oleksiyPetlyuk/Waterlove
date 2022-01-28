@@ -10,7 +10,7 @@ import UIKit
 final class CurrentHydrationFlowController: UIViewController {
   typealias Dependencies = HasWaterIntakeService
 
-  let dependencies: Dependencies
+  private let waterIntakeService: WaterIntakeServiceProtocol
 
   private var embeddedNavigationController: UINavigationController?
 
@@ -51,7 +51,7 @@ final class CurrentHydrationFlowController: UIViewController {
   }
 
   init(dependencies: Dependencies) {
-    self.dependencies = dependencies
+    self.waterIntakeService = dependencies.waterIntakeService
 
     super.init(nibName: nil, bundle: nil)
 
@@ -83,7 +83,7 @@ final class CurrentHydrationFlowController: UIViewController {
   }
 
   private func loadCurrentHydration() async {
-    let hydrationProgress = await dependencies.waterIntakeService.getHydrationProgress()
+    let hydrationProgress = await waterIntakeService.getHydrationProgress()
 
     guard let hydrationProgress = hydrationProgress else { return }
 
@@ -159,7 +159,7 @@ extension CurrentHydrationFlowController {
             createdAt: .now
           )
 
-          let result = await self.dependencies.waterIntakeService.saveIntakeEntry(newIntake)
+          let result = await self.waterIntakeService.saveIntakeEntry(newIntake)
 
           switch result {
           case .success:

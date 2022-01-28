@@ -19,8 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window?.makeKeyAndVisible()
     window?.rootViewController = appFlowController
 
-    UserDefaults.standard.register(defaults: [NotificationManagerConstants.isNotificationsEnabledKey: true])
-
     appFlowController.start()
   }
 }

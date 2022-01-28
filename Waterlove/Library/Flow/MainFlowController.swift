@@ -8,14 +8,23 @@
 import UIKit
 
 final class MainFlowController: UIViewController {
-  typealias Dependencies = HasWaterIntakeService & HasNotificationManager
+  typealias Dependencies = HasWaterIntakeService & HasNotificationManager & HasSettingsService
 
-  let dependencies: Dependencies
+  private let dependencies: Dependencies
+
+  private let waterIntakeService: WaterIntakeServiceProtocol
+
+  private let notificationManager: NotificationManagerProtocol
+
+  private let settingsService: SettingsServiceProtocol
 
   private var embeddedTabBarController: UITabBarController?
 
   init(dependencies: Dependencies) {
     self.dependencies = dependencies
+    self.waterIntakeService = dependencies.waterIntakeService
+    self.notificationManager = dependencies.notificationManager
+    self.settingsService = dependencies.settingsService
 
     super.init(nibName: nil, bundle: nil)
 
@@ -60,22 +69,16 @@ final class MainFlowController: UIViewController {
   }
 
   private func configureUserNotifications() {
-    dependencies.notificationManager.requestAuthorization { [weak self] granted in
+    notificationManager.requestAuthorization { [weak self] granted in
       guard let self = self else { return }
 
-      if granted {
-        let isNotificationsEnabled = UserDefaults
-          .standard
-          .bool(forKey: NotificationManagerConstants.isNotificationsEnabledKey)
+      if granted, self.settingsService.isNotificationsEnabled {
+        self.notificationManager.scheduleNotifications()
 
-        if isNotificationsEnabled {
-          self.dependencies.notificationManager.scheduleNotifications()
-
-          return
-        }
+        return
       }
 
-      self.dependencies.notificationManager.removeScheduledNotifications()
+      self.notificationManager.removeScheduledNotifications()
     }
   }
 }

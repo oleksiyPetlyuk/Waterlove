@@ -10,7 +10,7 @@ import UIKit
 final class OnboardingFlowController: UIViewController {
   typealias Dependencies = HasWaterIntakeService
 
-  let dependencies: Dependencies
+  private let waterIntakeService: WaterIntakeServiceProtocol
 
   private var embeddedNavigationController: UINavigationController?
 
@@ -49,7 +49,7 @@ final class OnboardingFlowController: UIViewController {
   var didFinishOnboarding: (() -> Void)?
 
   init(dependencies: Dependencies) {
-    self.dependencies = dependencies
+    self.waterIntakeService = dependencies.waterIntakeService
 
     super.init(nibName: nil, bundle: nil)
 
@@ -149,7 +149,7 @@ extension OnboardingFlowController {
       didSaveWaterIntakeResults: .init { [weak self] in
         guard let self = self else { return }
 
-        self.dependencies.waterIntakeService.storeDailyIntake(waterAmount)
+        self.waterIntakeService.storeDailyIntake(waterAmount)
 
         if let controller = self.waterIntakeCalculatorVC {
           self.remove(childController: controller)

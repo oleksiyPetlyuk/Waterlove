@@ -16,13 +16,22 @@ protocol HasNotificationManager {
   var notificationManager: NotificationManagerProtocol { get }
 }
 
-struct DependencyContainer: HasWaterIntakeService, HasNotificationManager {
+protocol HasSettingsService {
+  var settingsService: SettingsServiceProtocol { get }
+}
+
+struct DependencyContainer: HasWaterIntakeService, HasNotificationManager, HasSettingsService {
   var waterIntakeService: WaterIntakeServiceProtocol
   var notificationManager: NotificationManagerProtocol
+  var settingsService: SettingsServiceProtocol
 
   static func make() -> DependencyContainer {
     let notificationManager = NotificationManager(notificationCenter: UNUserNotificationCenter.current())
 
-    return .init(waterIntakeService: WaterIntakeService(), notificationManager: notificationManager)
+    return .init(
+      waterIntakeService: WaterIntakeService(),
+      notificationManager: notificationManager,
+      settingsService: SettingsService.shared
+    )
   }
 }

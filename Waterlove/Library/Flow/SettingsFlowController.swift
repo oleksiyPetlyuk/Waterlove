@@ -8,9 +8,11 @@
 import UIKit
 
 final class SettingsFlowController: UIViewController {
-  typealias Dependencies = HasNotificationManager
+  typealias Dependencies = HasNotificationManager & HasSettingsService
 
-  let dependencies: Dependencies
+  private let notificationManager: NotificationManagerProtocol
+
+  private var settingsService: SettingsServiceProtocol
 
   private var embeddedNavigationController: UINavigationController?
 
@@ -18,8 +20,7 @@ final class SettingsFlowController: UIViewController {
     return R.storyboard.main.settingsViewController()
   }()
 
-  // swiftlint:disable:next line_length
-  private var isNotificationsEnabled: Bool = UserDefaults.standard.bool(forKey: NotificationManagerConstants.isNotificationsEnabledKey) {
+  private lazy var isNotificationsEnabled = settingsService.isNotificationsEnabled {
     didSet {
       if let controller = settingsVC {
         controller.props = makeProps()
@@ -28,7 +29,8 @@ final class SettingsFlowController: UIViewController {
   }
 
   init(dependencies: Dependencies) {
-    self.dependencies = dependencies
+    self.notificationManager = dependencies.notificationManager
+    self.settingsService = dependencies.settingsService
 
     super.init(nibName: nil, bundle: nil)
 
@@ -56,12 +58,12 @@ final class SettingsFlowController: UIViewController {
       didUpdate: .init { [weak self] isEnabled in
         guard let self = self else { return }
 
-        UserDefaults.standard.set(isEnabled, forKey: NotificationManagerConstants.isNotificationsEnabledKey)
+        self.settingsService.isNotificationsEnabled = isEnabled
 
         if isEnabled {
-          self.dependencies.notificationManager.scheduleNotifications()
+          self.notificationManager.scheduleNotifications()
         } else {
-          self.dependencies.notificationManager.removeScheduledNotifications()
+          self.notificationManager.removeScheduledNotifications()
         }
 
         self.isNotificationsEnabled = isEnabled
