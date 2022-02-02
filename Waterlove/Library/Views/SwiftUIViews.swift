@@ -25,6 +25,7 @@ enum SwiftUIViews {
           .stroke(style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
           .foregroundColor(foregroundColor)
           .rotationEffect(Angle(degrees: 270))
+          .animation(.easeInOut, value: progress)
       }
       .padding()
     }
