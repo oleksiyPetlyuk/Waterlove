@@ -31,6 +31,25 @@
 		FA28B02627908D04008FE225 /* NotificationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28B02527908D04008FE225 /* NotificationManagerSpec.swift */; };
 		FA473BEC27A4152200C77362 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */; };
 		FA473BED27A4152300C77362 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */; };
+		FA473BF327A41B5000C77362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA473BF227A41B5000C77362 /* Assets.xcassets */; };
+		FA473BF927A41B5000C77362 /* WaterloveWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA473BF827A41B5000C77362 /* WaterloveWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA473BFE27A41B5000C77362 /* WaterloveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473BFD27A41B5000C77362 /* WaterloveApp.swift */; };
+		FA473C0027A41B5000C77362 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473BFF27A41B5000C77362 /* ContentView.swift */; };
+		FA473C0227A41B5000C77362 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473C0127A41B5000C77362 /* NotificationController.swift */; };
+		FA473C0427A41B5000C77362 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473C0327A41B5000C77362 /* NotificationView.swift */; };
+		FA473C0627A41B5000C77362 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473C0527A41B5000C77362 /* ComplicationController.swift */; };
+		FA473C0827A41B5100C77362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA473C0727A41B5100C77362 /* Assets.xcassets */; };
+		FA473C0B27A41B5100C77362 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA473C0A27A41B5100C77362 /* Preview Assets.xcassets */; };
+		FA473C1027A41B5100C77362 /* WaterloveWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FA473BF027A41B4E00C77362 /* WaterloveWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA473C2227A42A0700C77362 /* HydrationProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473C2127A42A0700C77362 /* HydrationProgress.swift */; };
+		FA473C2327A42A0700C77362 /* HydrationProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473C2127A42A0700C77362 /* HydrationProgress.swift */; };
+		FA473C2427A42A0700C77362 /* HydrationProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473C2127A42A0700C77362 /* HydrationProgress.swift */; };
+		FA473C2827A42D8C00C77362 /* HydrationProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473C2727A42D8C00C77362 /* HydrationProgressBar.swift */; };
+		FA473C2927A42D8C00C77362 /* HydrationProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473C2727A42D8C00C77362 /* HydrationProgressBar.swift */; };
+		FA473C2A27A42D8C00C77362 /* HydrationProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA473C2727A42D8C00C77362 /* HydrationProgressBar.swift */; };
+		FA47F5EF27A93FD400529612 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */; };
+		FA47F5F027A93FD400529612 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */; };
+		FA47F5F127A93FD400529612 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */; };
 		FA51151E278C8FBB0090B1E5 /* example_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = FA51151D278C8FBB0090B1E5 /* example_entries.json */; };
 		FA511520278D97C70090B1E5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51151F278D97C70090B1E5 /* SettingsViewController.swift */; };
 		FA511522278D9CD90090B1E5 /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */; };
@@ -88,6 +107,12 @@
 		FA8C120027A018EB004CBEB1 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511523278DA0B80090B1E5 /* NotificationManager.swift */; };
 		FA8C120127A018FB004CBEB1 /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */; };
 		FA8C120327A3EBE7004CBEB1 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */; };
+		FA94E22227A9734C00D091FF /* PhoneConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94E22127A9734C00D091FF /* PhoneConnectivityService.swift */; };
+		FA94E22427A9775100D091FF /* WatchConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94E22327A9775100D091FF /* WatchConnectivityService.swift */; };
+		FA94E22527A97D4700D091FF /* WatchConnectivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94E22327A9775100D091FF /* WatchConnectivityService.swift */; };
+		FA94E22727A982AA00D091FF /* WCSessionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94E22627A982AA00D091FF /* WCSessionMessage.swift */; };
+		FA94E22827A982AA00D091FF /* WCSessionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94E22627A982AA00D091FF /* WCSessionMessage.swift */; };
+		FA94E22927A9838300D091FF /* WCSessionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94E22627A982AA00D091FF /* WCSessionMessage.swift */; };
 		FAA0D703277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */; };
 		FAA30ED5276779490031B17E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA30ED4276779490031B17E /* Command.swift */; };
 		FAAF1306278457FD008278EA /* HistoryFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF1305278457FD008278EA /* HistoryFlowController.swift */; };
@@ -151,6 +176,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FA473BFA27A41B5000C77362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA54F05F275A66A8007053AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA473BF727A41B5000C77362;
+			remoteInfo = "WaterloveWatch WatchKit Extension";
+		};
+		FA473C0E27A41B5100C77362 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA54F05F275A66A8007053AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA473BEF27A41B4E00C77362;
+			remoteInfo = WaterloveWatch;
+		};
 		FA54F081275A66AD007053AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA54F05F275A66A8007053AA /* Project object */;
@@ -175,6 +214,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FA473C1427A41B5100C77362 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FA473BF927A41B5000C77362 /* WaterloveWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA473C1827A41B5100C77362 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FA473C1027A41B5100C77362 /* WaterloveWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA7E708C27998A34008989D4 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +267,21 @@
 		FA28B02027907CA3008FE225 /* WaterIntakeCalculatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculatorSpec.swift; sourceTree = "<group>"; };
 		FA28B02327908BFF008FE225 /* MockNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
 		FA28B02527908D04008FE225 /* NotificationManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerSpec.swift; sourceTree = "<group>"; };
+		FA473BF027A41B4E00C77362 /* WaterloveWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterloveWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA473BF227A41B5000C77362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA473BF827A41B5000C77362 /* WaterloveWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WaterloveWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA473BFD27A41B5000C77362 /* WaterloveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterloveApp.swift; sourceTree = "<group>"; };
+		FA473BFF27A41B5000C77362 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA473C0127A41B5000C77362 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		FA473C0327A41B5000C77362 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		FA473C0527A41B5000C77362 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		FA473C0727A41B5100C77362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA473C0A27A41B5100C77362 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA473C0C27A41B5100C77362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA473C0D27A41B5100C77362 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		FA473C2127A42A0700C77362 /* HydrationProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationProgress.swift; sourceTree = "<group>"; };
+		FA473C2727A42D8C00C77362 /* HydrationProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HydrationProgressBar.swift; sourceTree = "<group>"; };
+		FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViews.swift; sourceTree = "<group>"; };
 		FA51151D278C8FBB0090B1E5 /* example_entries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = example_entries.json; sourceTree = "<group>"; };
 		FA51151F278D97C70090B1E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowController.swift; sourceTree = "<group>"; };
@@ -268,6 +344,9 @@
 		FA7E708127998A34008989D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7E708327998A34008989D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		FA94E22127A9734C00D091FF /* PhoneConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnectivityService.swift; sourceTree = "<group>"; };
+		FA94E22327A9775100D091FF /* WatchConnectivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityService.swift; sourceTree = "<group>"; };
+		FA94E22627A982AA00D091FF /* WCSessionMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCSessionMessage.swift; sourceTree = "<group>"; };
 		FAA0D702277B2FD1009C7D14 /* IntakeEntrySearchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntrySearchRequests.swift; sourceTree = "<group>"; };
 		FAA30ED4276779490031B17E /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		FAAF1305278457FD008278EA /* HistoryFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryFlowController.swift; sourceTree = "<group>"; };
@@ -285,6 +364,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FA473BF527A41B5000C77362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA54F064275A66A8007053AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,6 +466,39 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		FA473BF127A41B4E00C77362 /* WaterloveWatch */ = {
+			isa = PBXGroup;
+			children = (
+				FA473BF227A41B5000C77362 /* Assets.xcassets */,
+			);
+			path = WaterloveWatch;
+			sourceTree = "<group>";
+		};
+		FA473BFC27A41B5000C77362 /* WaterloveWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA473BFD27A41B5000C77362 /* WaterloveApp.swift */,
+				FA473BFF27A41B5000C77362 /* ContentView.swift */,
+				FA473C0127A41B5000C77362 /* NotificationController.swift */,
+				FA473C0327A41B5000C77362 /* NotificationView.swift */,
+				FA473C0527A41B5000C77362 /* ComplicationController.swift */,
+				FA94E22127A9734C00D091FF /* PhoneConnectivityService.swift */,
+				FA473C0727A41B5100C77362 /* Assets.xcassets */,
+				FA473C0C27A41B5100C77362 /* Info.plist */,
+				FA473C0D27A41B5100C77362 /* PushNotificationPayload.apns */,
+				FA473C0927A41B5100C77362 /* Preview Content */,
+			);
+			path = "WaterloveWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		FA473C0927A41B5100C77362 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FA473C0A27A41B5100C77362 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		FA54F05E275A66A8007053AA = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +515,8 @@
 				FA54F083275A66AD007053AA /* WaterloveTests */,
 				FA54F08D275A66AD007053AA /* WaterloveUITests */,
 				FA7E707D27998A31008989D4 /* WaterloveWidget */,
+				FA473BF127A41B4E00C77362 /* WaterloveWatch */,
+				FA473BFC27A41B5000C77362 /* WaterloveWatch WatchKit Extension */,
 				FA54F068275A66A8007053AA /* Products */,
 				FAE9992B2787359E00523B54 /* Waterlove copy-Info.plist */,
 				57B618F7AB4D29702576B432 /* Pods */,
@@ -411,6 +532,8 @@
 				FA54F08A275A66AD007053AA /* WaterloveUITests.xctest */,
 				FAE9992A2787359E00523B54 /* Waterlove Storybook.app */,
 				FA7E707827998A31008989D4 /* WaterloveWidgetExtension.appex */,
+				FA473BF027A41B4E00C77362 /* WaterloveWatch.app */,
+				FA473BF827A41B5000C77362 /* WaterloveWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -552,7 +675,9 @@
 			isa = PBXGroup;
 			children = (
 				FA59AC06276A0C7500EF02A3 /* CircularProgressBar.swift */,
+				FA473C2727A42D8C00C77362 /* HydrationProgressBar.swift */,
 				FA6FD792277CC0150048A8AD /* IntakeEntryTableViewCell.swift */,
+				FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -563,6 +688,8 @@
 				FA65588A2774AA4F002A233B /* CoreData */,
 				FA65588227738531002A233B /* DrinkType.swift */,
 				FA65588B2774AA81002A233B /* IntakeEntry.swift */,
+				FA473C2127A42A0700C77362 /* HydrationProgress.swift */,
+				FA94E22627A982AA00D091FF /* WCSessionMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -636,6 +763,7 @@
 				FA65587327733153002A233B /* WaterIntakeService.swift */,
 				FA511523278DA0B80090B1E5 /* NotificationManager.swift */,
 				FA8C120227A3EBE7004CBEB1 /* SettingsService.swift */,
+				FA94E22327A9775100D091FF /* WatchConnectivityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -669,6 +797,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FA473BEF27A41B4E00C77362 /* WaterloveWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA473C1527A41B5100C77362 /* Build configuration list for PBXNativeTarget "WaterloveWatch" */;
+			buildPhases = (
+				FA473BEE27A41B4E00C77362 /* Resources */,
+				FA473C1427A41B5100C77362 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA473BFB27A41B5000C77362 /* PBXTargetDependency */,
+			);
+			name = WaterloveWatch;
+			productName = WaterloveWatch;
+			productReference = FA473BF027A41B4E00C77362 /* WaterloveWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FA473BF727A41B5000C77362 /* WaterloveWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA473C1127A41B5100C77362 /* Build configuration list for PBXNativeTarget "WaterloveWatch WatchKit Extension" */;
+			buildPhases = (
+				FA473BF427A41B5000C77362 /* Sources */,
+				FA473BF527A41B5000C77362 /* Frameworks */,
+				FA473BF627A41B5000C77362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WaterloveWatch WatchKit Extension";
+			productName = "WaterloveWatch WatchKit Extension";
+			productReference = FA473BF827A41B5000C77362 /* WaterloveWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		FA54F066275A66A8007053AA /* Waterlove */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA54F094275A66AD007053AA /* Build configuration list for PBXNativeTarget "Waterlove" */;
@@ -680,11 +842,13 @@
 				FA54F064275A66A8007053AA /* Frameworks */,
 				FA54F065275A66A8007053AA /* Resources */,
 				FA7E708C27998A34008989D4 /* Embed App Extensions */,
+				FA473C1827A41B5100C77362 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FA7E708727998A34008989D4 /* PBXTargetDependency */,
+				FA473C0F27A41B5100C77362 /* PBXTargetDependency */,
 			);
 			name = Waterlove;
 			packageProductDependencies = (
@@ -787,6 +951,12 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					FA473BEF27A41B4E00C77362 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					FA473BF727A41B5000C77362 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					FA54F066275A66A8007053AA = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -826,11 +996,30 @@
 				FA54F07F275A66AD007053AA /* WaterloveTests */,
 				FA54F089275A66AD007053AA /* WaterloveUITests */,
 				FA7E707727998A31008989D4 /* WaterloveWidgetExtension */,
+				FA473BEF27A41B4E00C77362 /* WaterloveWatch */,
+				FA473BF727A41B5000C77362 /* WaterloveWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FA473BEE27A41B4E00C77362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA473BF327A41B5000C77362 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA473BF627A41B5000C77362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA473C0B27A41B5100C77362 /* Preview Assets.xcassets in Resources */,
+				FA473C0827A41B5100C77362 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA54F065275A66A8007053AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1059,6 +1248,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FA473BF427A41B5000C77362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA473C2A27A42D8C00C77362 /* HydrationProgressBar.swift in Sources */,
+				FA473C2427A42A0700C77362 /* HydrationProgress.swift in Sources */,
+				FA94E22827A982AA00D091FF /* WCSessionMessage.swift in Sources */,
+				FA473C0227A41B5000C77362 /* NotificationController.swift in Sources */,
+				FA473C0027A41B5000C77362 /* ContentView.swift in Sources */,
+				FA473C0627A41B5000C77362 /* ComplicationController.swift in Sources */,
+				FA473BFE27A41B5000C77362 /* WaterloveApp.swift in Sources */,
+				FA47F5F127A93FD400529612 /* SwiftUIViews.swift in Sources */,
+				FA473C0427A41B5000C77362 /* NotificationView.swift in Sources */,
+				FA94E22227A9734C00D091FF /* PhoneConnectivityService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA54F063275A66A8007053AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1072,9 +1278,13 @@
 				FA54F0C82760F241007053AA /* MainFlowController.swift in Sources */,
 				FA65587427733153002A233B /* WaterIntakeService.swift in Sources */,
 				FAE998EA2787340F00523B54 /* Weekday.swift in Sources */,
+				FA473C2227A42A0700C77362 /* HydrationProgress.swift in Sources */,
+				FA94E22427A9775100D091FF /* WatchConnectivityService.swift in Sources */,
 				FA59AC0B276B7CB100EF02A3 /* AnimationDelegate.swift in Sources */,
 				FA59AC09276B52D400EF02A3 /* HydrationProgressView.swift in Sources */,
+				FA94E22727A982AA00D091FF /* WCSessionMessage.swift in Sources */,
 				FA54F0AF275F9DA0007053AA /* OnboardingFlowController.swift in Sources */,
+				FA47F5EF27A93FD400529612 /* SwiftUIViews.swift in Sources */,
 				FACD599427849BCA00314891 /* Date+Extensions.swift in Sources */,
 				FACD59962785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */,
 				FA6558952774B33B002A233B /* DBContextProvider.swift in Sources */,
@@ -1095,6 +1305,7 @@
 				FA65588C2774AA81002A233B /* IntakeEntry.swift in Sources */,
 				FA59AC07276A0C7500EF02A3 /* CircularProgressBar.swift in Sources */,
 				FA6FD793277CC0150048A8AD /* IntakeEntryTableViewCell.swift in Sources */,
+				FA473C2827A42D8C00C77362 /* HydrationProgressBar.swift in Sources */,
 				FA6558972774B498002A233B /* CoreDataRepository.swift in Sources */,
 				FA54F0BC275FBC7B007053AA /* TutorialPageViewController.swift in Sources */,
 				FA655876277334B1002A233B /* DependencyContainer.swift in Sources */,
@@ -1137,10 +1348,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA94E22527A97D4700D091FF /* WatchConnectivityService.swift in Sources */,
 				FA473BED27A4152300C77362 /* SettingsService.swift in Sources */,
 				FA11FB422799BC0C0083F4E7 /* DrinkType.swift in Sources */,
 				FA11FB412799BB780083F4E7 /* IntakeEntrySearchRequests.swift in Sources */,
 				FA7E707F27998A31008989D4 /* WaterloveWidget.swift in Sources */,
+				FA473C2327A42A0700C77362 /* HydrationProgress.swift in Sources */,
+				FA473C2927A42D8C00C77362 /* HydrationProgressBar.swift in Sources */,
 				FAE302CD279ACAB400FD18BD /* IntakeEntryGetByGuidSearchRequest.swift in Sources */,
 				FA11FB432799BC350083F4E7 /* DBEntityMapper.swift in Sources */,
 				FA11FB402799BB6B0083F4E7 /* Waterlove.xcdatamodeld in Sources */,
@@ -1148,6 +1362,8 @@
 				FA11FB442799BF020083F4E7 /* DependencyContainer.swift in Sources */,
 				FA11FB3B2799BA9E0083F4E7 /* CoreDataRepository.swift in Sources */,
 				FA11FB3F2799BB620083F4E7 /* IntakeEntryEntity+CoreDataProperties.swift in Sources */,
+				FA94E22927A9838300D091FF /* WCSessionMessage.swift in Sources */,
+				FA47F5F027A93FD400529612 /* SwiftUIViews.swift in Sources */,
 				FA11FB452799C11F0083F4E7 /* WaterIntakeService.swift in Sources */,
 				FA11FB392799BA2B0083F4E7 /* Repository.swift in Sources */,
 				FA11FB3D2799BAAB0083F4E7 /* IntakeEntryEntityMapper.swift in Sources */,
@@ -1217,6 +1433,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FA473BFB27A41B5000C77362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA473BF727A41B5000C77362 /* WaterloveWatch WatchKit Extension */;
+			targetProxy = FA473BFA27A41B5000C77362 /* PBXContainerItemProxy */;
+		};
+		FA473C0F27A41B5100C77362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA473BEF27A41B4E00C77362 /* WaterloveWatch */;
+			targetProxy = FA473C0E27A41B5100C77362 /* PBXContainerItemProxy */;
+		};
 		FA54F082275A66AD007053AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FA54F066275A66A8007053AA /* Waterlove */;
@@ -1254,6 +1480,124 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FA473C1227A41B5100C77362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterloveWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W6MAKY98QY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WaterloveWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WaterloveWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = WaterloveWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = oleksiy.petlyuk.Waterlove.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		FA473C1327A41B5100C77362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterloveWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W6MAKY98QY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WaterloveWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WaterloveWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = WaterloveWatch_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = oleksiy.petlyuk.Waterlove.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
+		FA473C1627A41B5100C77362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6MAKY98QY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WaterloveWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WaterloveWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = oleksiy.petlyuk.Waterlove;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = oleksiy.petlyuk.Waterlove.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Debug;
+		};
+		FA473C1727A41B5100C77362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6MAKY98QY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WaterloveWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WaterloveWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = oleksiy.petlyuk.Waterlove;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = oleksiy.petlyuk.Waterlove.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.3;
+			};
+			name = Release;
+		};
 		FA54F092275A66AD007053AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1657,6 +2001,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FA473C1127A41B5100C77362 /* Build configuration list for PBXNativeTarget "WaterloveWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA473C1227A41B5100C77362 /* Debug */,
+				FA473C1327A41B5100C77362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA473C1527A41B5100C77362 /* Build configuration list for PBXNativeTarget "WaterloveWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA473C1627A41B5100C77362 /* Debug */,
+				FA473C1727A41B5100C77362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FA54F062275A66A8007053AA /* Build configuration list for PBXProject "Waterlove" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

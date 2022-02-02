@@ -70,43 +70,6 @@ struct WaterloveWidgetContent: TimelineEntry {
   let hydrationProgress: HydrationProgress
 }
 
-struct ProgressBar: View {
-  var hydrationProgress: HydrationProgress
-
-  private let formatter: MeasurementFormatter = {
-    let formatter = MeasurementFormatter()
-    formatter.unitOptions = .providedUnit
-
-    return formatter
-  }()
-
-  var body: some View {
-    ZStack {
-      Circle()
-        .stroke(lineWidth: 20)
-        .opacity(0.3)
-        .foregroundColor(.blue)
-
-      Circle()
-        .trim(from: 0.0, to: min(CGFloat(hydrationProgress.progress) / 100, 1))
-        .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
-        .foregroundColor(.blue)
-        .rotationEffect(Angle(degrees: 270))
-        .animation(.linear, value: 1)
-
-      VStack {
-        Text("\(min(hydrationProgress.progress, 100)) %")
-          .font(.title2)
-          .bold()
-
-        Text(formatter.string(from: hydrationProgress.intookWaterAmount.converted(to: .liters)))
-          .font(.body)
-          .bold()
-      }
-    }
-  }
-}
-
 struct WaterloveWidgetEntryView: View {
   var entry: Provider.Entry
 
@@ -118,7 +81,7 @@ struct WaterloveWidgetEntryView: View {
       VStack {
         Spacer()
 
-        ProgressBar(hydrationProgress: entry.hydrationProgress)
+        HydrationProgressBar(hydrationProgress: entry.hydrationProgress)
           .frame(width: 120, height: 120)
 
         Spacer()

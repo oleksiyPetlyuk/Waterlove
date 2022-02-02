@@ -8,12 +8,6 @@
 import Foundation
 import WidgetKit
 
-struct HydrationProgress: Codable {
-  let progress: UInt8
-  let intookWaterAmount: Measurement<UnitVolume>
-  let date: Date
-}
-
 protocol WaterIntakeServiceProtocol {
   func storeDailyIntake(_ amount: Measurement<UnitVolume>)
 
@@ -35,12 +29,18 @@ class WaterIntakeService: WaterIntakeServiceProtocol {
 
   private var repository: Repository<IntakeEntry>
 
-  init() {
+  private var watchConnectivityService: WatchConnectivityServiceProtocol
+
+  init(watchConnectivityService: WatchConnectivityServiceProtocol) {
     self.repository = DBRepository(
       contextSource: DBContextProvider(),
       entityMapper: IntakeEntryEntityMapper(),
       autoUpdateSearchRequest: nil
     )
+
+    self.watchConnectivityService = watchConnectivityService
+    self.watchConnectivityService.observer = self
+    self.watchConnectivityService.createWCSession()
   }
 
   func storeDailyIntake(_ amount: Measurement<UnitVolume>) {
@@ -104,9 +104,11 @@ class WaterIntakeService: WaterIntakeServiceProtocol {
     case .success:
       DispatchQueue.global().async {
         Task {
-          // Force
-          await self.getHydrationProgress()
+          guard let progress = await self.getHydrationProgress() else { return }
+
           WidgetCenter.shared.reloadTimelines(ofKind: "WaterloveWidget")
+
+          self.watchConnectivityService.send(currentHydration: progress)
         }
       }
     }
@@ -129,8 +131,11 @@ class WaterIntakeService: WaterIntakeServiceProtocol {
     case .success:
       DispatchQueue.global().async {
         Task {
-          await self.getHydrationProgress()
+          guard let progress = await self.getHydrationProgress() else { return }
+
           WidgetCenter.shared.reloadTimelines(ofKind: "WaterloveWidget")
+
+          self.watchConnectivityService.send(currentHydration: progress)
         }
       }
     }
@@ -162,6 +167,26 @@ class WaterIntakeService: WaterIntakeServiceProtocol {
       } catch {
         print("Error: Cannot write widget contents")
       }
+    }
+  }
+}
+
+extension WaterIntakeService: WatchConnectivityServiceObserver {
+  private func sendDataToWatch() async {
+    guard let currentHydration = await getHydrationProgress() else { return }
+
+    watchConnectivityService.send(currentHydration: currentHydration)
+  }
+
+  func watchConnectivityServiceDidActivated(_ service: WatchConnectivityServiceProtocol) {
+    Task {
+      await sendDataToWatch()
+    }
+  }
+
+  func watchConnectivityServiceDidReceivedContextUpdateRequest(_ service: WatchConnectivityServiceProtocol) {
+    Task {
+      await sendDataToWatch()
     }
   }
 }

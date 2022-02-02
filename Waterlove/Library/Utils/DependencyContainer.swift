@@ -20,18 +20,28 @@ protocol HasSettingsService {
   var settingsService: SettingsServiceProtocol { get }
 }
 
-struct DependencyContainer: HasWaterIntakeService, HasNotificationManager, HasSettingsService {
+protocol HasWatchConnectivityService {
+  var watchConnectivityService: WatchConnectivityServiceProtocol { get }
+}
+
+struct DependencyContainer: HasWaterIntakeService,
+                            HasNotificationManager, // swiftlint:disable:this indentation_width
+                            HasSettingsService,
+                            HasWatchConnectivityService {
   var waterIntakeService: WaterIntakeServiceProtocol
   var notificationManager: NotificationManagerProtocol
   var settingsService: SettingsServiceProtocol
+  var watchConnectivityService: WatchConnectivityServiceProtocol
 
   static func make() -> DependencyContainer {
     let notificationManager = NotificationManager(notificationCenter: UNUserNotificationCenter.current())
+    let watchConnectivityService = WatchConnectivityService()
 
     return .init(
-      waterIntakeService: WaterIntakeService(),
+      waterIntakeService: WaterIntakeService(watchConnectivityService: watchConnectivityService),
       notificationManager: notificationManager,
-      settingsService: SettingsService.shared
+      settingsService: SettingsService.shared,
+      watchConnectivityService: watchConnectivityService
     )
   }
 }
