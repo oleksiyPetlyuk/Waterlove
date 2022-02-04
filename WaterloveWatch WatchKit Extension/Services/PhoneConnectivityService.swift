@@ -8,6 +8,7 @@
 import Foundation
 import WatchConnectivity
 import Combine
+import ClockKit
 
 class PhoneConnectivityService: NSObject, ObservableObject {
   private var session: WCSession?
@@ -51,6 +52,29 @@ extension PhoneConnectivityService: WCSessionDelegate {
       } catch {
         print("Error: Can`t decode hydration progress data")
       }
+    }
+  }
+
+  func session(_ session: WCSession, didReceiveUserInfo userInfo: [String: Any] = [:]) {
+    if let hydrationProgress = userInfo[WCSessionMessage.hydrationProgress.rawValue] as? Data {
+      guard let url = FileManager.complicationDataURL() else { return }
+
+      do {
+        try hydrationProgress.write(to: url)
+        updateComplications()
+      } catch {
+        print("Error: Cannot write complication contents")
+      }
+    }
+  }
+}
+
+extension PhoneConnectivityService {
+  private func updateComplications() {
+    let complicationServer = CLKComplicationServer.sharedInstance()
+
+    complicationServer.activeComplications?.forEach { complication in
+      complicationServer.extendTimeline(for: complication)
     }
   }
 }

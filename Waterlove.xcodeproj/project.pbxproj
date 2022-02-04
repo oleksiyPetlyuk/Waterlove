@@ -50,6 +50,7 @@
 		FA47F5EF27A93FD400529612 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */; };
 		FA47F5F027A93FD400529612 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */; };
 		FA47F5F127A93FD400529612 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */; };
+		FA5017F627AD515800D79626 /* ComplicationTemplateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5017F527AD515800D79626 /* ComplicationTemplateProvider.swift */; };
 		FA51151E278C8FBB0090B1E5 /* example_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = FA51151D278C8FBB0090B1E5 /* example_entries.json */; };
 		FA511520278D97C70090B1E5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51151F278D97C70090B1E5 /* SettingsViewController.swift */; };
 		FA511522278D9CD90090B1E5 /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */; };
@@ -119,6 +120,7 @@
 		FAC2824D276280B700A031BA /* WaterIntakeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */; };
 		FACD599427849BCA00314891 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD599327849BCA00314891 /* Date+Extensions.swift */; };
 		FACD59962785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */; };
+		FADB4E0827AD404000CD05F8 /* FileManager+urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADB4E0727AD404000CD05F8 /* FileManager+urls.swift */; };
 		FAE302CD279ACAB400FD18BD /* IntakeEntryGetByGuidSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */; };
 		FAE998E527871D4700523B54 /* HistoryStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E427871D4700523B54 /* HistoryStateMachine.swift */; };
 		FAE998E82787336900523B54 /* WeekdayValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE998E72787336900523B54 /* WeekdayValueFormatter.swift */; };
@@ -173,6 +175,7 @@
 		FAE9993227873C0B00523B54 /* StorybookFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9993027873BAB00523B54 /* StorybookFlowController.swift */; };
 		FAE9993527873CCF00523B54 /* StorybookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9993327873CCC00523B54 /* StorybookTableViewController.swift */; };
 		FAE9993627873CEE00523B54 /* OnboardingFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F0AE275F9DA0007053AA /* OnboardingFlowController.swift */; };
+		FAFE41C127AAE32D00BEDC17 /* ComplicationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE41C027AAE32D00BEDC17 /* ComplicationViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -282,6 +285,7 @@
 		FA473C2127A42A0700C77362 /* HydrationProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationProgress.swift; sourceTree = "<group>"; };
 		FA473C2727A42D8C00C77362 /* HydrationProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HydrationProgressBar.swift; sourceTree = "<group>"; };
 		FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViews.swift; sourceTree = "<group>"; };
+		FA5017F527AD515800D79626 /* ComplicationTemplateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationTemplateProvider.swift; sourceTree = "<group>"; };
 		FA51151D278C8FBB0090B1E5 /* example_entries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = example_entries.json; sourceTree = "<group>"; };
 		FA51151F278D97C70090B1E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowController.swift; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 		FAC2824C276280B700A031BA /* WaterIntakeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterIntakeCalculator.swift; sourceTree = "<group>"; };
 		FACD599327849BCA00314891 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		FACD59952785E90C00314891 /* IntakeEntryGetByGuidSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeEntryGetByGuidSearchRequest.swift; sourceTree = "<group>"; };
+		FADB4E0727AD404000CD05F8 /* FileManager+urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+urls.swift"; sourceTree = "<group>"; };
 		FAE998E427871D4700523B54 /* HistoryStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStateMachine.swift; sourceTree = "<group>"; };
 		FAE998E72787336900523B54 /* WeekdayValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayValueFormatter.swift; sourceTree = "<group>"; };
 		FAE998E92787340F00523B54 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
@@ -361,6 +366,7 @@
 		FAE9992C278736A600523B54 /* StorybookSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookSceneDelegate.swift; sourceTree = "<group>"; };
 		FAE9993027873BAB00523B54 /* StorybookFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookFlowController.swift; sourceTree = "<group>"; };
 		FAE9993327873CCC00523B54 /* StorybookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookTableViewController.swift; sourceTree = "<group>"; };
+		FAFE41C027AAE32D00BEDC17 /* ComplicationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,12 +483,12 @@
 		FA473BFC27A41B5000C77362 /* WaterloveWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FA5017F427AD45CA00D79626 /* Services */,
+				FA5017F327AD45B000D79626 /* Views */,
+				FADB4E0627AD401100CD05F8 /* Extensions */,
 				FA473BFD27A41B5000C77362 /* WaterloveApp.swift */,
-				FA473BFF27A41B5000C77362 /* ContentView.swift */,
 				FA473C0127A41B5000C77362 /* NotificationController.swift */,
-				FA473C0327A41B5000C77362 /* NotificationView.swift */,
 				FA473C0527A41B5000C77362 /* ComplicationController.swift */,
-				FA94E22127A9734C00D091FF /* PhoneConnectivityService.swift */,
 				FA473C0727A41B5100C77362 /* Assets.xcassets */,
 				FA473C0C27A41B5100C77362 /* Info.plist */,
 				FA473C0D27A41B5100C77362 /* PushNotificationPayload.apns */,
@@ -497,6 +503,25 @@
 				FA473C0A27A41B5100C77362 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA5017F327AD45B000D79626 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE41C027AAE32D00BEDC17 /* ComplicationViews.swift */,
+				FA473C0327A41B5000C77362 /* NotificationView.swift */,
+				FA473BFF27A41B5000C77362 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA5017F427AD45CA00D79626 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA94E22127A9734C00D091FF /* PhoneConnectivityService.swift */,
+				FA5017F527AD515800D79626 /* ComplicationTemplateProvider.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FA54F05E275A66A8007053AA = {
@@ -766,6 +791,14 @@
 				FA94E22327A9775100D091FF /* WatchConnectivityService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FADB4E0627AD401100CD05F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FADB4E0727AD404000CD05F8 /* FileManager+urls.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FAE998E327871D2100523B54 /* StateMachines */ = {
@@ -1255,11 +1288,14 @@
 				FA473C2A27A42D8C00C77362 /* HydrationProgressBar.swift in Sources */,
 				FA473C2427A42A0700C77362 /* HydrationProgress.swift in Sources */,
 				FA94E22827A982AA00D091FF /* WCSessionMessage.swift in Sources */,
+				FA5017F627AD515800D79626 /* ComplicationTemplateProvider.swift in Sources */,
 				FA473C0227A41B5000C77362 /* NotificationController.swift in Sources */,
 				FA473C0027A41B5000C77362 /* ContentView.swift in Sources */,
+				FADB4E0827AD404000CD05F8 /* FileManager+urls.swift in Sources */,
 				FA473C0627A41B5000C77362 /* ComplicationController.swift in Sources */,
 				FA473BFE27A41B5000C77362 /* WaterloveApp.swift in Sources */,
 				FA47F5F127A93FD400529612 /* SwiftUIViews.swift in Sources */,
+				FAFE41C127AAE32D00BEDC17 /* ComplicationViews.swift in Sources */,
 				FA473C0427A41B5000C77362 /* NotificationView.swift in Sources */,
 				FA94E22227A9734C00D091FF /* PhoneConnectivityService.swift in Sources */,
 			);

@@ -42,6 +42,10 @@ class WatchConnectivityService: NSObject, WatchConnectivityServiceProtocol {
 
     do {
       try session.updateApplicationContext([WCSessionMessage.hydrationProgress.rawValue: data])
+
+      if session.isComplicationEnabled {
+        session.transferCurrentComplicationUserInfo([WCSessionMessage.hydrationProgress.rawValue: data])
+      }
     } catch {
       print("Error sending application context to a watch: \(error.localizedDescription)")
     }
