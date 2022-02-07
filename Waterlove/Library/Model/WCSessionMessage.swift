@@ -10,4 +10,5 @@ import Foundation
 enum WCSessionMessage: String {
   case hydrationProgress
   case contextUpdateRequired
+  case deleteIntakeEntry
 }

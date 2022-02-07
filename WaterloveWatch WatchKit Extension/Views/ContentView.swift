@@ -9,14 +9,15 @@ import SwiftUI
 import Foundation
 
 struct ContentView: View {
-  @State private var pageIndex = 1
-
   @EnvironmentObject var phoneConnectivityService: PhoneConnectivityService
 
   var body: some View {
-    TabView(selection: $pageIndex) {
-      HistoryView().tag(0)
-      CurrentHydrationView(hydrationProgress: phoneConnectivityService.hydrationProgress).tag(1)
+    TabView {
+      CurrentHydrationView(hydrationProgress: phoneConnectivityService.hydrationProgress)
+
+      HistoryView(entries: phoneConnectivityService.hydrationProgress.history) { entry in
+        phoneConnectivityService.deleteIntakeEntry(entry.guid)
+      }
     }
   }
 }
@@ -38,41 +39,79 @@ struct CurrentHydrationView: View {
   }
 }
 
-struct Hero: Identifiable {
-  let id = UUID()
-  let name: String
-}
-
 struct HistoryView: View {
-  let heroes = [
-    Hero(name: "One"),
-    Hero(name: "Two"),
-    Hero(name: "Three"),
-    Hero(name: "Four"),
-    Hero(name: "Five"),
-    Hero(name: "Six")
-  ]
+  let entries: [IntakeEntry]?
+  var onDelete: ((IntakeEntry) -> Void)?
 
   var body: some View {
-    List {
-      ForEach(heroes) { hero in
-        Text(hero.name)
+    if let entries = entries, !entries.isEmpty {
+      List {
+        ForEach(entries) { entry in
+          HistoryRow(entry: entry)
+            .swipeActions {
+              Button(role: .destructive, action: {
+                onDelete?(entry)
+              }, label: {
+                Label("Delete", systemImage: "trash.fill")
+              })
+            }
+        }
       }
+    } else {
+      Text("There is no data yet 😔").padding()
+    }
+  }
+}
+
+struct HistoryRow: View {
+  let entry: IntakeEntry
+
+  @EnvironmentObject var formatter: MeasurementFormatter
+
+  var body: some View {
+    HStack {
+      Text(entry.drinkType.rawValue.capitalizingFirstLetter())
+
+      Spacer()
+
+      Text(formatter.string(from: entry.amount))
     }
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
+  static let progress = HydrationProgress(
+    progress: 75,
+    intookWaterAmount: .init(value: 1500, unit: .milliliters),
+    date: .now,
+    history: [
+      IntakeEntry(guid: UUID(), drinkType: .water, amount: .init(value: 100, unit: .milliliters), createdAt: .now),
+      IntakeEntry(guid: UUID(), drinkType: .coffee, amount: .init(value: 250, unit: .milliliters), createdAt: .now),
+      IntakeEntry(guid: UUID(), drinkType: .water, amount: .init(value: 350, unit: .milliliters), createdAt: .now),
+      IntakeEntry(guid: UUID(), drinkType: .juice, amount: .init(value: 400, unit: .milliliters), createdAt: .now),
+      IntakeEntry(guid: UUID(), drinkType: .tea, amount: .init(value: 150, unit: .milliliters), createdAt: .now),
+      IntakeEntry(guid: UUID(), drinkType: .water, amount: .init(value: 250, unit: .milliliters), createdAt: .now)
+    ]
+  )
+
+  static let formatter: MeasurementFormatter = {
+    let formatter = MeasurementFormatter()
+    formatter.unitOptions = .providedUnit
+
+    return formatter
+  }()
+
   static var previews: some View {
-    ContentView()
-      .environmentObject(PhoneConnectivityService())
+    Group {
+      ContentView()
+        .environmentObject(PhoneConnectivityService())
 
-    HistoryView()
+      HistoryView(entries: progress.history)
 
-    CurrentHydrationView(hydrationProgress: HydrationProgress(
-      progress: 75,
-      intookWaterAmount: .init(value: 1500, unit: .milliliters),
-      date: .now
-    ))
+      HistoryView(entries: nil)
+
+      CurrentHydrationView(hydrationProgress: progress)
+    }
+    .environmentObject(formatter)
   }
 }

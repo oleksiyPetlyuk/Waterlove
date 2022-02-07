@@ -81,7 +81,12 @@ class WaterIntakeService: WaterIntakeServiceProtocol {
             progress = UInt8(totalAmount.value / dailyIntake.value * 100)
           }
 
-          let hydrationProgress = HydrationProgress(progress: progress, intookWaterAmount: totalAmount, date: .now)
+          let hydrationProgress = HydrationProgress(
+            progress: progress,
+            intookWaterAmount: totalAmount,
+            date: .now,
+            history: entries
+          )
 
           continuation.resume(returning: hydrationProgress)
 
@@ -181,6 +186,19 @@ extension WaterIntakeService: WatchConnectivityServiceObserver {
   func watchConnectivityServiceDidActivated(_ service: WatchConnectivityServiceProtocol) {
     Task {
       await sendDataToWatch()
+    }
+  }
+
+  func watchConnectivityServiceDidReceiveDeleteIntakeEntryRequest(_ service: WatchConnectivityServiceProtocol, by id: UUID) {
+    Task {
+      let result = await deleteIntakeEntry(by: id)
+
+      switch result {
+      case .success:
+        await sendDataToWatch()
+      case .failure:
+        return
+      }
     }
   }
 

@@ -30,11 +30,26 @@ class PhoneConnectivityService: NSObject, ObservableObject {
       session?.activate()
     }
   }
+
+  func deleteIntakeEntry(_ id: UUID) {
+    guard
+      let session = session,
+      session.activationState == .activated,
+      session.isCompanionAppInstalled,
+      session.isReachable
+    else { return }
+
+    hydrationProgress.history?.removeAll { $0.guid == id }
+
+    guard let data = try? JSONEncoder().encode(id) else { return }
+
+    session.sendMessage([WCSessionMessage.deleteIntakeEntry.rawValue: data], replyHandler: nil, errorHandler: nil)
+  }
 }
 
 extension PhoneConnectivityService: WCSessionDelegate {
   func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-    guard activationState == .activated else { return }
+    guard activationState == .activated, session.isReachable else { return }
 
     session.sendMessage([WCSessionMessage.contextUpdateRequired.rawValue: true], replyHandler: nil, errorHandler: nil)
   }
@@ -64,6 +79,22 @@ extension PhoneConnectivityService: WCSessionDelegate {
         updateComplications()
       } catch {
         print("Error: Cannot write complication contents")
+      }
+    }
+  }
+
+  func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
+    if let hydrationProgressData = message[WCSessionMessage.hydrationProgress.rawValue] as? Data {
+      do {
+        let hydrationProgress = try JSONDecoder().decode(HydrationProgress.self, from: hydrationProgressData)
+
+        guard Calendar.current.isDate(hydrationProgress.date, inSameDayAs: .now) else { return }
+
+        DispatchQueue.main.async {
+          self.hydrationProgress = hydrationProgress
+        }
+      } catch {
+        print("Error: Can`t decode hydration progress data")
       }
     }
   }

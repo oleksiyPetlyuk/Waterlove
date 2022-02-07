@@ -20,6 +20,8 @@ protocol WatchConnectivityServiceObserver {
   func watchConnectivityServiceDidActivated(_ service: WatchConnectivityServiceProtocol)
 
   func watchConnectivityServiceDidReceivedContextUpdateRequest(_ service: WatchConnectivityServiceProtocol)
+
+  func watchConnectivityServiceDidReceiveDeleteIntakeEntryRequest(_ service: WatchConnectivityServiceProtocol, by id: UUID)
 }
 
 class WatchConnectivityService: NSObject, WatchConnectivityServiceProtocol {
@@ -43,6 +45,8 @@ class WatchConnectivityService: NSObject, WatchConnectivityServiceProtocol {
     do {
       try session.updateApplicationContext([WCSessionMessage.hydrationProgress.rawValue: data])
 
+      session.sendMessage([WCSessionMessage.hydrationProgress.rawValue: data], replyHandler: nil, errorHandler: nil)
+
       if session.isComplicationEnabled {
         session.transferCurrentComplicationUserInfo([WCSessionMessage.hydrationProgress.rawValue: data])
       }
@@ -62,6 +66,12 @@ extension WatchConnectivityService: WCSessionDelegate {
   func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
     if message[WCSessionMessage.contextUpdateRequired.rawValue] as? Bool != nil {
       observer?.watchConnectivityServiceDidReceivedContextUpdateRequest(self)
+    }
+
+    if
+      let data = message[WCSessionMessage.deleteIntakeEntry.rawValue] as? Data,
+      let id = try? JSONDecoder().decode(UUID.self, from: data) {
+      observer?.watchConnectivityServiceDidReceiveDeleteIntakeEntryRequest(self, by: id)
     }
   }
 

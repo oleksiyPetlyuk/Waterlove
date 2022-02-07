@@ -11,14 +11,24 @@ import SwiftUI
 struct WaterloveApp: App {
   let phoneConnectivityService = PhoneConnectivityService()
 
+  private let formatter: MeasurementFormatter = {
+    let formatter = MeasurementFormatter()
+    formatter.unitOptions = .providedUnit
+
+    return formatter
+  }()
+
   @SceneBuilder var body: some Scene {
     WindowGroup {
       NavigationView {
         ContentView()
       }
       .environmentObject(phoneConnectivityService)
+      .environmentObject(formatter)
     }
 
     WKNotificationScene(controller: NotificationController.self, category: "myCategory")
   }
 }
+
+extension MeasurementFormatter: ObservableObject {}

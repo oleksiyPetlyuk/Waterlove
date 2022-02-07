@@ -51,6 +51,9 @@
 		FA47F5F027A93FD400529612 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */; };
 		FA47F5F127A93FD400529612 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F5EE27A93FD400529612 /* SwiftUIViews.swift */; };
 		FA5017F627AD515800D79626 /* ComplicationTemplateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5017F527AD515800D79626 /* ComplicationTemplateProvider.swift */; };
+		FA5017F727AD712100D79626 /* IntakeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65588B2774AA81002A233B /* IntakeEntry.swift */; };
+		FA5017F827AD713400D79626 /* DrinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65588227738531002A233B /* DrinkType.swift */; };
+		FA5017F927AD757700D79626 /* String+capitalizeFirstLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6558AD2779F8E5002A233B /* String+capitalizeFirstLetter.swift */; };
 		FA51151E278C8FBB0090B1E5 /* example_entries.json in Resources */ = {isa = PBXBuildFile; fileRef = FA51151D278C8FBB0090B1E5 /* example_entries.json */; };
 		FA511520278D97C70090B1E5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51151F278D97C70090B1E5 /* SettingsViewController.swift */; };
 		FA511522278D9CD90090B1E5 /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA511521278D9CD90090B1E5 /* SettingsFlowController.swift */; };
@@ -1286,14 +1289,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA473C2A27A42D8C00C77362 /* HydrationProgressBar.swift in Sources */,
+				FA5017F927AD757700D79626 /* String+capitalizeFirstLetter.swift in Sources */,
 				FA473C2427A42A0700C77362 /* HydrationProgress.swift in Sources */,
 				FA94E22827A982AA00D091FF /* WCSessionMessage.swift in Sources */,
 				FA5017F627AD515800D79626 /* ComplicationTemplateProvider.swift in Sources */,
+				FA5017F727AD712100D79626 /* IntakeEntry.swift in Sources */,
 				FA473C0227A41B5000C77362 /* NotificationController.swift in Sources */,
 				FA473C0027A41B5000C77362 /* ContentView.swift in Sources */,
 				FADB4E0827AD404000CD05F8 /* FileManager+urls.swift in Sources */,
 				FA473C0627A41B5000C77362 /* ComplicationController.swift in Sources */,
 				FA473BFE27A41B5000C77362 /* WaterloveApp.swift in Sources */,
+				FA5017F827AD713400D79626 /* DrinkType.swift in Sources */,
 				FA47F5F127A93FD400529612 /* SwiftUIViews.swift in Sources */,
 				FAFE41C127AAE32D00BEDC17 /* ComplicationViews.swift in Sources */,
 				FA473C0427A41B5000C77362 /* NotificationView.swift in Sources */,

@@ -11,4 +11,5 @@ struct HydrationProgress: Codable {
   let progress: UInt8
   let intookWaterAmount: Measurement<UnitVolume>
   let date: Date
+  var history: [IntakeEntry]?
 }
