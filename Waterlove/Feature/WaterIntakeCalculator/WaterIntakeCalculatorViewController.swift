@@ -82,7 +82,7 @@ class WaterIntakeCalculatorViewController: UIViewController {
   }
 
   @IBAction private func didChangeWeight(_ sender: UISlider) {
-    props.weight.didUpdate.perform(with: .init(value: Double(sender.value), unit: .kilograms))
+    props.weight.didUpdate.perform(with: .init(value: Double(Int(sender.value)), unit: .kilograms))
   }
 
   private func renderWeightSliderLabel() {
